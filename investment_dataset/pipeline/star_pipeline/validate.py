@@ -3,6 +3,7 @@ from pathlib import Path
 import pyarrow.parquet as pq
 from jsonschema import Draft202012Validator,FormatChecker
 from .core import digest
+csv.field_size_limit(4_000_000)
 
 
 def validate_bundle(root, verify_hashes=True):
@@ -17,6 +18,8 @@ def validate_bundle(root, verify_hashes=True):
     ids=[r['report_id'] for r in reports]
     if len(ids)!=len(set(ids)): raise ValueError('duplicate_report_ids')
     for r in reports:
+        if any(u.startswith('data:') for u in json.loads(r.get('embedded_image_urls') or '[]')):
+            raise ValueError('inline_image_payload_in_metadata')
         if r.get('ticker') and (len(r['ticker'])!=6 or not r['ticker'].isdigit()): raise ValueError('invalid_ticker')
         if r.get('training_eligible')=='True' and not r.get('available_at'): raise ValueError('eligible_without_availability')
     checked['data/reports.csv']=len(reports)

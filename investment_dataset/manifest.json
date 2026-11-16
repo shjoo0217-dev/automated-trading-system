@@ -1,11 +1,12 @@
 {
   "dataset_version": "0.1.0+pilot",
-  "generated_at": "2026-11-16T15:58:42.838532+00:00",
+  "generated_at": "2026-11-16T16:06:55.646672+00:00",
   "timezone": "Asia/Seoul",
   "source": "http://starskku.com/board/board_list?code=research",
   "data_as_of": "2026-11-16T15:41:25.583053+00:00",
   "collection": {
     "kind": "metadata",
+    "coverage_status": null,
     "successes": 10,
     "failures": 0,
     "source_requests": 12,
@@ -69,9 +70,9 @@
   "files": [
     {
       "path": "CODEX_HANDOFF.md",
-      "bytes": 8646,
+      "bytes": 8903,
       "rows": null,
-      "sha256": "2112376cda6da7a67f61b946dd613b5a7c8f8c8b9df0cae3ef2d6415c3fb63d9"
+      "sha256": "e4a57866f2a93e7ad5e71be5783c823f95e26ec5eeab0ff729c3df68ea474503"
     },
     {
       "path": "README.md",
@@ -158,10 +159,16 @@
       "sha256": "c47c07c473819bf3b86e1b731bcce3d16786663f706e1bbe7f0eff137919bfcd"
     },
     {
-      "path": "operations/RUNBOOK.md",
-      "bytes": 4079,
+      "path": "operations/INCIDENTS.md",
+      "bytes": 1875,
       "rows": null,
-      "sha256": "4eb59df87f24c234a5220429217530d84c62d310f5ffe234a6595f4ac6d3b582"
+      "sha256": "60be19eaf5afc7688a865a81c43d151511f83c97b395b0cce3453ec8d242592b"
+    },
+    {
+      "path": "operations/RUNBOOK.md",
+      "bytes": 4406,
+      "rows": null,
+      "sha256": "01416e0a95012220dbf09b333a72e84f23a0088779bd82149d125a8934e3c193"
     },
     {
       "path": "operations/checkpoint_summary.json",
@@ -191,7 +198,7 @@
       "path": "operations/test_results.txt",
       "bytes": 99,
       "rows": null,
-      "sha256": "15ba7f21aa55cce5d73880a0453bda497733a575b29ba667a5993a845e0cbec0"
+      "sha256": "88fb557394be724cba8032ceaedd3490b404e8b3bfa5c383435e5580bd842434"
     },
     {
       "path": "pipeline/Dockerfile",
@@ -243,9 +250,9 @@
     },
     {
       "path": "pipeline/star_pipeline/collect.py",
-      "bytes": 10341,
+      "bytes": 11290,
       "rows": null,
-      "sha256": "1cab5c3bb75be17c8730fc2834b2007cf2205b75456db5bd8aad5f891766a6b9"
+      "sha256": "a74a986ea677328220f183e105a95f11365fed46105f3d479d8eab60dc17cdd7"
     },
     {
       "path": "pipeline/star_pipeline/core.py",
@@ -279,9 +286,9 @@
     },
     {
       "path": "pipeline/star_pipeline/package.py",
-      "bytes": 8609,
+      "bytes": 8659,
       "rows": null,
-      "sha256": "35d303324050c39c42cccccbe69d7cb59af804549d958454aa71d6c8dbea800f"
+      "sha256": "bf8c1db3eee836a2ba27a808f1e57ed861b7d225764cb6e3334141fa60647ea3"
     },
     {
       "path": "pipeline/star_pipeline/quality.py",
@@ -297,9 +304,9 @@
     },
     {
       "path": "pipeline/star_pipeline/validate.py",
-      "bytes": 2798,
+      "bytes": 2992,
       "rows": null,
-      "sha256": "8905bb022f0a665be2c9cdad8b4a4533233b881b22b459c455944fd75404018b"
+      "sha256": "97a27b9857df149092bbbaccebf7e5556a416d92b98e970fda7aba5c6b1f1f88"
     },
     {
       "path": "pipeline/tests/test_collection.py",
@@ -309,9 +316,9 @@
     },
     {
       "path": "pipeline/tests/test_safety.py",
-      "bytes": 7311,
+      "bytes": 7849,
       "rows": null,
-      "sha256": "dd4e185efb2be6a5c40fedd4a5610062e50eb53ea6b7bd4dc89f71480ec8e890"
+      "sha256": "ce137a213f5f422b9b19b641ef6014857af9060d2fbf934f017f99d372adac44"
     },
     {
       "path": "pipeline/training_config.json",

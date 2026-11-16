@@ -17,7 +17,7 @@ class BoundedClient:
         self.requests = self.bytes = self.failures = 0; self.last = 0.0
         self.receipts = []; self.session = requests.Session(); self.session.headers['User-Agent'] = UA
         self.robots = None
-    def get(self, url, max_bytes=2_000_000, robots=False):
+    def get(self, url, max_bytes=16_000_000, robots=False):
         if urlsplit(url).hostname not in ('starskku.com', 'www.starskku.com'):
             raise ValueError('unapproved_source_host')
         if not robots and (self.robots is None or not self.robots.can_fetch(UA, url)):
@@ -43,8 +43,10 @@ class BoundedClient:
                 buf = bytearray()
                 for chunk in r.iter_content(65536):
                     self.bytes += len(chunk); buf.extend(chunk)
-                    if len(buf) > max_bytes or self.bytes > self.byte_limit:
-                        r.close(); raise RuntimeError('byte_budget_exhausted')
+                    if len(buf) > max_bytes:
+                        r.close(); raise RuntimeError('response_too_large')
+                    if self.bytes > self.byte_limit:
+                        r.close(); raise RuntimeError('run_byte_budget_exhausted')
                 r.close(); data = bytes(buf)
                 self.receipts.append({'url': url, 'status': 200, 'at': now(), 'bytes': len(data), 'sha256': digest(data)})
                 return data
@@ -76,7 +78,11 @@ def parse_post(body, url):
     title = title.get_text(' ', strip=True); dt = re.search(r'\d{4}-\d{2}-\d{2}', date.get_text())
     published = re.search(r'발간일\s*:\s*(\d{6})', title)
     attachments = [urljoin(BASE, a['href']) for a in s.select('.extra_cont a[href]')]
-    images = [urljoin(BASE, a['src']) for a in s.select('.view_cont img[src]')]
+    image_sources = [a['src'] for a in s.select('.view_cont img[src]')]
+    # data: URLs contain image bytes, not link metadata. Never persist them.
+    inline_hashes = [digest(u.encode()) for u in image_sources if u.startswith('data:')]
+    images = [urljoin(BASE, u) for u in image_sources if not u.startswith('data:') and len(u) <= 8192
+              and urlsplit(urljoin(BASE, u)).scheme in ('http', 'https')]
     # Hash stable content only: the site's dynamic CURRENT_DATE script is excluded.
     content = s.select_one('.view_cont')
     record = {'report_id': 'star-' + parse_qs(urlsplit(url).query)['no'][0], 'post_url': url,
@@ -85,7 +91,8 @@ def parse_post(body, url):
               'publication_date_source': 'post_title' if published else None,
               'posted_date': dt[0] if dt else None, 'posted_time': None,
               'attachment_urls': attachments, 'embedded_image_urls': images,
-              'content_fingerprint': digest({'text': content.get_text(' ', strip=True) if content else '', 'images': images}),
+              'inline_image_count': len(inline_hashes), 'inline_image_sha256': inline_hashes,
+              'content_fingerprint': digest({'text': content.get_text(' ', strip=True) if content else '', 'images': images, 'inline_hashes': inline_hashes}),
               'ticker': None, 'market': None, 'file_sha256': None,
               'identity_status': 'not_verified', 'quality_status': 'metadata_only',
               'training_eligible': False, 'rights_status': 'pdf_permission_required'}
@@ -105,6 +112,10 @@ def metadata_run(state_store, policy, max_posts=350, max_pages=40, max_requests=
         raise PermissionError('source_terms_changed_review_required')
     first = client.get(BOARD); listed, total_pages, total_count = parse_listing(first)
     if not listed: raise RuntimeError('listing_layout_changed')
+    if state.get('pending_urls'):
+        priority = [r['post_url'] for r in listed if r['report_id'] not in state['reports'] or
+                    state['reports'][r['report_id']]['title'] != r['title']]
+        state['pending_urls'] = list(dict.fromkeys(priority + state['pending_urls']))
     # Complete an interrupted bounded queue before starting a new snapshot.
     if not state.get('pending_urls'):
         urls = [r['post_url'] for r in listed]
@@ -155,6 +166,7 @@ def metadata_run(state_store, policy, max_posts=350, max_pages=40, max_requests=
     state['last_run_at'] = now(); state['errors'] = state['errors'][-1000:]
     state_store.save(state)
     return state, {'kind': 'metadata', 'successes': successes, 'changed': changes, 'failures': failures,
+                   'coverage_status': 'partial' if state['pending_urls'] else 'scan_complete',
                    'source_requests': client.requests, 'source_bytes': client.bytes,
                    'pending': len(state['pending_urls']), 'listed_total': total_count,
                    'listing_pages': total_pages, 'robots': robots, 'receipts': client.receipts,

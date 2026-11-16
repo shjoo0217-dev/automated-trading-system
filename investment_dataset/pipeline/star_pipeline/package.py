@@ -4,6 +4,7 @@ from pathlib import Path
 import pyarrow as pa
 import pyarrow.parquet as pq
 from .core import dump, digest, now
+csv.field_size_limit(4_000_000)
 
 FINANCIAL_SCHEMA = pa.schema([
     ('fact_id',pa.string()),('report_id',pa.string()),('ticker',pa.string()),('file_sha256',pa.string()),
@@ -100,7 +101,7 @@ def manifest(root, deployment):
     eligible=sum(r.get('quality_status') == 'passed' and r.get('training_eligible') is True and r.get('labels',{}).get('status') == 'observed' for r in samples)
     value={'dataset_version':'0.1.0+'+deployment['version_suffix'],'generated_at':now(),'timezone':'Asia/Seoul',
            'source':'http://starskku.com/board/board_list?code=research','data_as_of':run['completed_at'],
-           'collection':{k:run.get(k) for k in ['kind','successes','failures','source_requests','source_bytes','pending','listed_total']},
+           'collection':{k:run.get(k) for k in ['kind','coverage_status','successes','failures','source_requests','source_bytes','pending','listed_total']},
            'pdf_inspected':int((root/'quality/yesti_audit.json').exists()),'pdf_included':0,'eligible_training_samples':eligible,
            'rights':json.loads((root/'pipeline/source_policy.json').read_text()),
            'deployment':deployment,'files':files,'self_hash_policy':'manifest excluded from its own file hashes; zip hash in delivery receipt'}

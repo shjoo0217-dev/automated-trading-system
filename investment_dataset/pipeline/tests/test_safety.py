@@ -107,3 +107,11 @@ def test_financial_conflicts_keep_input_provenance():
     fs=[{**base,'fact_id':i,'metric':m,'value':v,'unit':u} for i,m,v,u in [('a','revenue',100,'KRW'),('b','net_income',10,'KRW'),('c','net_margin',.2,'ratio')]]
     issue=numeric_issues(fs)[0]
     assert issue['code']=='margin_arithmetic_conflict';assert issue['input_fact_ids']==['a','b','c']
+
+def test_inline_images_are_hashed_never_stored():
+    body='<div class="view_tit"><h3>test, title (발간일: 260101)</h3><p>admin / 2026-01-02</p></div><div class="view_cont"><img src="data:image/png;base64,AAAABBBB"/><img src="/upload/x.jpg"/></div>'
+    r=parse_post(body,'http://starskku.com/board/board_view?code=research&no=1')
+    assert r['embedded_image_urls']==['http://starskku.com/upload/x.jpg']
+    assert r['inline_image_count']==1
+    assert 'AAAABBBB' not in json.dumps(r)
+    assert len(r['inline_image_sha256'][0])==64
