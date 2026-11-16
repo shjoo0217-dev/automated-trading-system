@@ -1,0 +1,115 @@
+﻿table,field,type,nullable,description,join_or_time_rule,actual_coverage
+report,report_id,"""string""",False,source-scoped 게시물 고정 ID; 예: star-340,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,title,"[""string"", ""null""]",True,게시물 원제목,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,company_name,"[""string"", ""null""]",True,표시명; 조인 키로 사용 금지,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,ticker,"[""string"", ""null""]",True,6자리 종목코드; 앞자리 0 보존,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,market,"[""string"", ""null""]",True,KOSPI/KOSDAQ/KONEX 등; 미확인 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,publication_date,"[""string"", ""null""]",True,보고서 기재 발간일 또는 게시물 제목 발간일; source 필드로 구별,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,publication_date_source,"[""string"", ""null""]",True,발간일의 근거,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,posted_date,"[""string"", ""null""]",True,홈페이지 게시일; YYYY-MM-DD,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,posted_time,"[""string"", ""null""]",True,홈페이지 게시시각; 미표시 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,first_collected_at,"[""string"", ""null""]",True,최초 메타데이터 수집 UTC 시각,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,last_checked_at,"[""string"", ""null""]",True,게시글 메타데이터 최종 확인 UTC 시각,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,modified_detected_at,"[""string"", ""null""]",True,메타데이터 변경을 처음 발견한 시각; 서버 수정시각과 다름,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,version_first_seen_at,"[""string"", ""null""]",True,현재 메타데이터 버전 최초 관측 UTC 시각,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,available_not_before,"[""string"", ""null""]",True,입력 사용시점 하한. 원문 버전은 PDF 최초 관측을 별도로 확인,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,available_at,"[""string"", ""null""]",True,검증된 다음 거래일 시가 시각; 달력 미연결 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,availability_rule,"[""string"", ""null""]",True,보수적 가용시점 정책,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,post_url,"[""string"", ""null""]",True,원문 게시글 URL,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,attachment_urls,"""array""",False,공개 첨부 URL 목록; CSV에서는 JSON 문자열,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,embedded_image_urls,"""array""",False,게시물 내 이미지 URL; 이미지 내용 미수집,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,file_sha256,"[""string"", ""null""]",True,실제 확인한 PDF 바이트 SHA-256; 미수집 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,file_hash_verified_at,"[""string"", ""null""]",True,위 PDF 파일 해시를 실제 확인한 시각,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,pdf_current_version_verified,"""boolean""",False,최신 게시글 조회와 PDF 내용 재조회는 다름; 이번 감사 이후 false,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,document_version,"[""string"", ""null""]",True,내용 기반 sha256 버전; 이전 버전 덮어쓰기 금지,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,metadata_version,"[""integer"", ""null""]",True,게시글 메타데이터 버전 정수,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,metadata_sha256,"[""string"", ""null""]",True,안정적인 메타데이터 지문; 동적 스크립트 시각 제외,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,content_fingerprint,"[""string"", ""null""]",True,게시글 표시 텍스트/이미지 URL 지문,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,identity_status,"[""string"", ""null""]",True,종목코드 외부 마스터 검증 상태,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,quality_status,"[""string"", ""null""]",True,검토·제외·메타데이터 상태,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,rights_status,"[""string"", ""null""]",True,원문 처리 이용허가 상태,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+report,training_eligible,"""boolean""",False,모든 품질/권리/시간 조건 통과 여부,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+financial,fact_id,"[""string"", ""null""]",True,fact_id,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,report_id,"[""string"", ""null""]",True,report_id,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,ticker,"[""string"", ""null""]",True,ticker,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,file_sha256,"[""string"", ""null""]",True,file_sha256,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,metric,"[""string"", ""null""]",True,revenue/operating_income/net_income/operating_margin/net_margin/eps/per 등,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,period_year,"[""integer"", ""null""]",True,period_year,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,period_quarter,"[""integer"", ""null""]",True,period_quarter,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,estimate_type,"[""string"", ""null""]",True,확정 실적/보고서 과거치 미검증/학회 추정치/인용 컨센서스/불명 구분; 자동 후보는 확정 실적로 승인하지 않음,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,currency,"[""string"", ""null""]",True,currency,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,raw_value,"[""string"", ""null""]",True,원문 표기; 결측과 0 구분,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,raw_unit,"[""string"", ""null""]",True,원/천원/백만원/억원/%/배 등,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,value,"[""number"", ""null""]",True,"정규화 값; %는 0~1 비율, 원화 금액은 KRW",ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,unit,"[""string"", ""null""]",True,unit,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,consolidation,"[""string"", ""null""]",True,연결/별도/미확인 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,business_segment,"[""string"", ""null""]",True,사업부; 미확인 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,page,"[""integer"", ""null""]",True,PDF 물리적 페이지 1부터,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,source_url,"[""string"", ""null""]",True,원문 첨부 URL,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,formula,"[""string"", ""null""]",True,계산값의 계산식; 직접 추출값 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,input_evidence_ids,"""array""",False,input_evidence_ids,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,quality_status,"[""string"", ""null""]",True,quality_status,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+financial,training_eligible,"""boolean""",False,training_eligible,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+valuation,evidence_id,"[""string"", ""null""]",True,출처·버전·페이지·필드를 가리키는 고유 ID,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,report_id,"[""string"", ""null""]",True,report_id,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,ticker,"[""string"", ""null""]",True,ticker,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,file_sha256,"[""string"", ""null""]",True,file_sha256,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,field,"[""string"", ""null""]",True,target_price/reference_price/reported_upside/investment_horizon/multiple 등,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,raw_value,"[""string"", ""null""]",True,raw_value,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,value,"[""number"", ""null""]",True,정규화 값; 감사 2행은 목표주가 KRW,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,raw_unit,"[""string"", ""null""]",True,raw_unit,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,unit,"[""string"", ""null""]",True,unit,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,page,"[""integer"", ""null""]",True,page,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,role,"[""string"", ""null""]",True,cover 또는 target_history; 현재값/과거 변경 구분,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,effective_date,"[""string"", ""null""]",True,변경내역 행의 적용일; 표지 후보 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,opinion_raw,"[""string"", ""null""]",True,opinion_raw,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,source_url,"[""string"", ""null""]",True,source_url,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,observed_at,"[""string"", ""null""]",True,observed_at,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,quality_status,"[""string"", ""null""]",True,quality_status,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+valuation,training_eligible,"""boolean""",False,training_eligible,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,sample_id,"""string""",False,문서 버전 기반 표본 ID,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,report_id,"""string""",False,source-scoped 게시물 고정 ID; 예: star-340,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,ticker,"[""string"", ""null""]",True,6자리 종목코드; 앞자리 0 보존,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,file_sha256,"[""string"", ""null""]",True,실제 확인한 PDF 바이트 SHA-256; 미수집 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,available_at,"[""string"", ""null""]",True,검증된 다음 거래일 시가 시각; 달력 미연결 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,available_not_before,"[""string"", ""null""]",True,입력 사용시점 하한. 원문 버전은 PDF 최초 관측을 별도로 확인,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,features,"""object""",False,features,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,labels,"""object""",False,labels,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,evidence,"""array""",False,evidence,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,quality_status,"""string""",False,passed 또는 격리 사유,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,training_eligible,"""boolean""",False,학습 허용 여부,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,split,"""string""",False,train/validation/test/excluded,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+training_sample,record_kind,"[""string"", ""null""]",True,real_source_audit_not_training_eligible 등 실제/합성 구분,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,see_manifest
+event,event_id,"[""string"", ""null""]",True,사건 고유 ID,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,report_id,"""string""",False,source-scoped 게시물 고정 ID; 예: star-340,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,ticker,"[""string"", ""null""]",True,6자리 종목코드; 앞자리 0 보존,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,file_sha256,"[""string"", ""null""]",True,실제 확인한 PDF 바이트 SHA-256; 미수집 null,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,event_type,"[""string"", ""null""]",True,order/new_product/policy/litigation/regulation/competition/capacity 등,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,event_role,"[""string"", ""null""]",True,growth_driver/risk/assumption,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,summary,"[""string"", ""null""]",True,근거 기반 요약; 허가 이후 작성,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,occurred_at,"[""string"", ""null""]",True,실제 발생일,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,expected_at,"[""string"", ""null""]",True,예상 발생일,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,date_precision,"[""string"", ""null""]",True,day/month/year/unknown,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,assertion_type,"[""string"", ""null""]",True,reported_fact/forecast/opinion,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,original_excerpt,"[""string"", ""null""]",True,허가 범위 내 최소 원문 근거,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,page,"[""integer"", ""null""]",True,PDF 근거 페이지,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,source_url,"[""string"", ""null""]",True,원문 URL,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,known_at,"[""string"", ""null""]",True,실제 가용시각,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,quality_status,"[""string"", ""null""]",True,검토 상태,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,industry_metric,"[""string"", ""null""]",True,market_size/growth/order_backlog/capacity/utilization/price/cost/market_share,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,raw_value,"[""string"", ""null""]",True,원문 수치,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,value,"[""number"", ""null""]",True,정규화 수치,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,raw_unit,"[""string"", ""null""]",True,원문 단위,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,unit,"[""string"", ""null""]",True,정규화 단위,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+event,period,"[""string"", ""null""]",True,수치 대상 기간,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,ticker,"[""string"", ""null""]",True,6자리 종목코드; 앞자리 0 보존,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,security_id,"[""string"", ""null""]",True,동일 코드 재사용을 구분하는 불변 증권 ID,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,name,"[""string"", ""null""]",True,당시 종목명,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,market,"[""string"", ""null""]",True,당시 거래시장,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,valid_from,"[""string"", ""null""]",True,명칭/시장 이력 시작,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,valid_to,"[""string"", ""null""]",True,이력 종료,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,listed_at,"[""string"", ""null""]",True,상장일,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,delisted_at,"[""string"", ""null""]",True,상장폐지일,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,corp_code,"[""string"", ""null""]",True,OpenDART 법인코드,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,known_at,"[""string"", ""null""]",True,이 연결정보를 알 수 있었던 시점,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+security_history,source_id,"[""string"", ""null""]",True,공급자·라이선스·원문 식별자,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only

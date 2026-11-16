@@ -1,0 +1,954 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:star:investment-dataset:0.1.0",
+  "title": "STAR dataset record contracts",
+  "description": "Validate records using the named $defs; CSV blank means null. Arrow schemas enforce Parquet dtypes.",
+  "$defs": {
+    "report": {
+      "type": "object",
+      "properties": {
+        "report_id": {
+          "type": "string",
+          "description": "source-scoped 게시물 고정 ID; 예: star-340"
+        },
+        "title": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "게시물 원제목"
+        },
+        "company_name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "표시명; 조인 키로 사용 금지"
+        },
+        "ticker": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{6}$",
+          "description": "6자리 종목코드; 앞자리 0 보존"
+        },
+        "market": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "KOSPI/KOSDAQ/KONEX 등; 미확인 null"
+        },
+        "publication_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "보고서 기재 발간일 또는 게시물 제목 발간일; source 필드로 구별"
+        },
+        "publication_date_source": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "발간일의 근거"
+        },
+        "posted_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "홈페이지 게시일; YYYY-MM-DD"
+        },
+        "posted_time": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "홈페이지 게시시각; 미표시 null"
+        },
+        "first_collected_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "최초 메타데이터 수집 UTC 시각"
+        },
+        "last_checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "게시글 메타데이터 최종 확인 UTC 시각"
+        },
+        "modified_detected_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "메타데이터 변경을 처음 발견한 시각; 서버 수정시각과 다름"
+        },
+        "version_first_seen_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "현재 메타데이터 버전 최초 관측 UTC 시각"
+        },
+        "available_not_before": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "입력 사용시점 하한. 원문 버전은 PDF 최초 관측을 별도로 확인"
+        },
+        "available_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "검증된 다음 거래일 시가 시각; 달력 미연결 null"
+        },
+        "availability_rule": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "보수적 가용시점 정책"
+        },
+        "post_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원문 게시글 URL"
+        },
+        "attachment_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "공개 첨부 URL 목록; CSV에서는 JSON 문자열"
+        },
+        "embedded_image_urls": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "게시물 내 이미지 URL; 이미지 내용 미수집"
+        },
+        "file_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "실제 확인한 PDF 바이트 SHA-256; 미수집 null"
+        },
+        "file_hash_verified_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "위 PDF 파일 해시를 실제 확인한 시각"
+        },
+        "pdf_current_version_verified": {
+          "type": "boolean",
+          "description": "최신 게시글 조회와 PDF 내용 재조회는 다름; 이번 감사 이후 false"
+        },
+        "document_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "내용 기반 sha256 버전; 이전 버전 덮어쓰기 금지"
+        },
+        "metadata_version": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "게시글 메타데이터 버전 정수"
+        },
+        "metadata_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "안정적인 메타데이터 지문; 동적 스크립트 시각 제외"
+        },
+        "content_fingerprint": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "게시글 표시 텍스트/이미지 URL 지문"
+        },
+        "identity_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "종목코드 외부 마스터 검증 상태"
+        },
+        "quality_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "검토·제외·메타데이터 상태"
+        },
+        "rights_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원문 처리 이용허가 상태"
+        },
+        "training_eligible": {
+          "type": "boolean",
+          "description": "모든 품질/권리/시간 조건 통과 여부"
+        }
+      },
+      "required": [
+        "report_id",
+        "title",
+        "post_url"
+      ],
+      "additionalProperties": true
+    },
+    "financial": {
+      "type": "object",
+      "properties": {
+        "fact_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "fact_id"
+        },
+        "report_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "report_id"
+        },
+        "ticker": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ticker"
+        },
+        "file_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "file_sha256"
+        },
+        "metric": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "revenue/operating_income/net_income/operating_margin/net_margin/eps/per 등"
+        },
+        "period_year": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "period_year"
+        },
+        "period_quarter": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "period_quarter"
+        },
+        "estimate_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "확정 실적/보고서 과거치 미검증/학회 추정치/인용 컨센서스/불명 구분; 자동 후보는 확정 실적로 승인하지 않음"
+        },
+        "currency": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "currency"
+        },
+        "raw_value": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원문 표기; 결측과 0 구분"
+        },
+        "raw_unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원/천원/백만원/억원/%/배 등"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "정규화 값; %는 0~1 비율, 원화 금액은 KRW"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "unit"
+        },
+        "consolidation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "연결/별도/미확인 null"
+        },
+        "business_segment": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "사업부; 미확인 null"
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "PDF 물리적 페이지 1부터"
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원문 첨부 URL"
+        },
+        "formula": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "계산값의 계산식; 직접 추출값 null"
+        },
+        "input_evidence_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "input_evidence_ids"
+        },
+        "quality_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "quality_status"
+        },
+        "training_eligible": {
+          "type": "boolean",
+          "description": "training_eligible"
+        }
+      },
+      "required": [],
+      "additionalProperties": true
+    },
+    "valuation": {
+      "type": "object",
+      "properties": {
+        "evidence_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "출처·버전·페이지·필드를 가리키는 고유 ID"
+        },
+        "report_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "report_id"
+        },
+        "ticker": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "ticker"
+        },
+        "file_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "file_sha256"
+        },
+        "field": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "target_price/reference_price/reported_upside/investment_horizon/multiple 등"
+        },
+        "raw_value": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "raw_value"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "정규화 값; 감사 2행은 목표주가 KRW"
+        },
+        "raw_unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "raw_unit"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "unit"
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "page"
+        },
+        "role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "cover 또는 target_history; 현재값/과거 변경 구분"
+        },
+        "effective_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "변경내역 행의 적용일; 표지 후보 null"
+        },
+        "opinion_raw": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "opinion_raw"
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "source_url"
+        },
+        "observed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "observed_at"
+        },
+        "quality_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "quality_status"
+        },
+        "training_eligible": {
+          "type": "boolean",
+          "description": "training_eligible"
+        }
+      },
+      "required": [],
+      "additionalProperties": true
+    },
+    "training_sample": {
+      "type": "object",
+      "properties": {
+        "sample_id": {
+          "type": "string",
+          "description": "문서 버전 기반 표본 ID"
+        },
+        "report_id": {
+          "type": "string",
+          "description": "source-scoped 게시물 고정 ID; 예: star-340"
+        },
+        "ticker": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{6}$",
+          "description": "6자리 종목코드; 앞자리 0 보존"
+        },
+        "file_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "실제 확인한 PDF 바이트 SHA-256; 미수집 null"
+        },
+        "available_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "검증된 다음 거래일 시가 시각; 달력 미연결 null"
+        },
+        "available_not_before": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "입력 사용시점 하한. 원문 버전은 PDF 최초 관측을 별도로 확인"
+        },
+        "features": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": [
+                  "number",
+                  "null"
+                ],
+                "description": "수치 특징; 미확인 null"
+              },
+              "known_at": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "실제 입력 가용 시각"
+              },
+              "evidence_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "value",
+              "known_at",
+              "evidence_ids"
+            ],
+            "additionalProperties": true
+          }
+        },
+        "labels": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "description": "observed/unavailable/insufficient_horizon 등"
+            },
+            "excess_return_20d": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "실제 관측한 20거래일 지수 대비 초과 총수익률"
+            },
+            "net_excess_return_20d": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "비용 차감 초과수익률"
+            },
+            "entry_at": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "실제 진입 시각"
+            },
+            "exit_at": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "실제 청산 시각"
+            },
+            "entry_price": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "진입 수정시가"
+            },
+            "exit_price": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "20번째 거래일 수정종가"
+            },
+            "benchmark_id": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "사전 지정 지수"
+            },
+            "adjustment_method": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "forward_total_return_anchor_entry"
+            },
+            "roundtrip_bps": {
+              "type": [
+                "number",
+                "null"
+              ],
+              "description": "왕복 수수료/세금/슬리피지 가정"
+            }
+          },
+          "required": [
+            "status",
+            "excess_return_20d"
+          ],
+          "additionalProperties": true
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "evidence_id": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "관측값 ID"
+              },
+              "page": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "description": "1부터 시작"
+              },
+              "source_url": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "description": "원문 URL"
+              }
+            },
+            "required": [],
+            "additionalProperties": true
+          }
+        },
+        "quality_status": {
+          "type": "string",
+          "description": "passed 또는 격리 사유"
+        },
+        "training_eligible": {
+          "type": "boolean",
+          "description": "학습 허용 여부"
+        },
+        "split": {
+          "type": "string",
+          "description": "train/validation/test/excluded"
+        },
+        "record_kind": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "real_source_audit_not_training_eligible 등 실제/합성 구분"
+        }
+      },
+      "required": [
+        "sample_id",
+        "report_id",
+        "ticker",
+        "available_at",
+        "features",
+        "labels",
+        "evidence",
+        "quality_status",
+        "split"
+      ],
+      "additionalProperties": true
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "event_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "사건 고유 ID"
+        },
+        "report_id": {
+          "type": "string",
+          "description": "source-scoped 게시물 고정 ID; 예: star-340"
+        },
+        "ticker": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{6}$",
+          "description": "6자리 종목코드; 앞자리 0 보존"
+        },
+        "file_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "실제 확인한 PDF 바이트 SHA-256; 미수집 null"
+        },
+        "event_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "order/new_product/policy/litigation/regulation/competition/capacity 등"
+        },
+        "event_role": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "growth_driver/risk/assumption"
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "근거 기반 요약; 허가 이후 작성"
+        },
+        "occurred_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "실제 발생일"
+        },
+        "expected_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "예상 발생일"
+        },
+        "date_precision": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "day/month/year/unknown"
+        },
+        "assertion_type": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "reported_fact/forecast/opinion"
+        },
+        "original_excerpt": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "허가 범위 내 최소 원문 근거"
+        },
+        "page": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "PDF 근거 페이지"
+        },
+        "source_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원문 URL"
+        },
+        "known_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "실제 가용시각"
+        },
+        "quality_status": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "검토 상태"
+        },
+        "industry_metric": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "market_size/growth/order_backlog/capacity/utilization/price/cost/market_share"
+        },
+        "raw_value": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원문 수치"
+        },
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "description": "정규화 수치"
+        },
+        "raw_unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "원문 단위"
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "정규화 단위"
+        },
+        "period": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "수치 대상 기간"
+        }
+      },
+      "required": [],
+      "additionalProperties": true
+    },
+    "security_history": {
+      "type": "object",
+      "properties": {
+        "ticker": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9]{6}$",
+          "description": "6자리 종목코드; 앞자리 0 보존"
+        },
+        "security_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "동일 코드 재사용을 구분하는 불변 증권 ID"
+        },
+        "name": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "당시 종목명"
+        },
+        "market": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "당시 거래시장"
+        },
+        "valid_from": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "명칭/시장 이력 시작"
+        },
+        "valid_to": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "이력 종료"
+        },
+        "listed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "상장일"
+        },
+        "delisted_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "상장폐지일"
+        },
+        "corp_code": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "OpenDART 법인코드"
+        },
+        "known_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "이 연결정보를 알 수 있었던 시점"
+        },
+        "source_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "공급자·라이선스·원문 식별자"
+        }
+      },
+      "required": [],
+      "additionalProperties": true
+    }
+  }
+}
