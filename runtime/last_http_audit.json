@@ -1,0 +1,59 @@
+[
+  {
+    "url": "https://www.kirs.or.kr/robots.txt",
+    "started_at": "2026-11-16T16:01:55.170683+00:00",
+    "attempt": 1,
+    "error": "ConnectTimeout",
+    "finished_at": "2026-11-16T16:02:05.521293+00:00"
+  },
+  {
+    "url": "https://www.kirs.or.kr/robots.txt",
+    "started_at": "2026-11-16T16:02:07.521536+00:00",
+    "attempt": 2,
+    "error": "ConnectTimeout",
+    "finished_at": "2026-11-16T16:02:17.855244+00:00"
+  },
+  {
+    "url": "https://www.kirs.or.kr/robots.txt",
+    "started_at": "2026-11-16T16:02:21.855463+00:00",
+    "attempt": 3,
+    "error": "ConnectTimeout",
+    "finished_at": "2026-11-16T16:02:32.187575+00:00"
+  },
+  {
+    "url": "https://www.t3.co.kr/robots.txt",
+    "started_at": "2026-11-16T16:02:32.188900+00:00",
+    "attempt": 1,
+    "status": 200,
+    "bytes": 22,
+    "sha256": "e01d8b26b9503d3335076d6c3f04921538d6fc43a3db5486eea3cba8d5aa1d19",
+    "finished_at": "2026-11-16T16:02:33.030687+00:00"
+  },
+  {
+    "url": "https://www.t3.co.kr/kr/ir/ir.php",
+    "started_at": "2026-11-16T16:02:42.189002+00:00",
+    "attempt": 1,
+    "status": 200,
+    "bytes": 33864,
+    "sha256": "b413fd0fb75b1b0facb584f09a75b9b288bc908bd4276d6f7a8d47dae2d8af49",
+    "finished_at": "2026-11-16T16:02:42.355009+00:00"
+  },
+  {
+    "url": "https://www.redcap.co.kr/robots.txt",
+    "started_at": "2026-11-16T16:02:42.466184+00:00",
+    "attempt": 1,
+    "status": 200,
+    "bytes": 280,
+    "sha256": "b5365f368af1fb4b15f9607953d378642c059e7f63261eda6ba33286b56391f7",
+    "finished_at": "2026-11-16T16:02:43.473246+00:00"
+  },
+  {
+    "url": "https://www.redcap.co.kr/sub/ir/ir_data02.php",
+    "started_at": "2026-11-16T16:02:52.466300+00:00",
+    "attempt": 1,
+    "status": 200,
+    "bytes": 40255,
+    "sha256": "93d933c9b11bf65b4909bf3ed0de72c1730c3573136c4bc97a516c7a0a4fd96b",
+    "finished_at": "2026-11-16T16:02:54.786901+00:00"
+  }
+]
