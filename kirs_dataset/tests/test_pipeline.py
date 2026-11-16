@@ -140,3 +140,25 @@ def test_transitive_lineage_and_cross_company_rejection():
     assert len({x['family_id'] for x in apply_lineage(r,links)})==1
     r[2]['stock_code']='006789'
     with pytest.raises(ValueError,match='cross-company'):apply_lineage(r,links)
+
+
+def test_uncertain_tradability_and_nonfinite_exit_cannot_create_a_label():
+    f,p,c=calendar_fixture()
+    p["tradable"]=p.tradable.astype("boolean")
+    p.loc[1,"tradable"]=pd.NA
+    with pytest.raises(ValueError,match="Tradability"):
+        labels_from_prices(f,p,c,license_confirmed=True)
+    p.loc[1,"tradable"]=True
+    p["adjusted_open"]=p.adjusted_open.astype(float)
+    p.loc[21,"adjusted_open"]=float("inf")
+    r=labels_from_prices(f,p,c,license_confirmed=True,as_of="2025-01-01T00:00:00Z")
+    assert r.iloc[0].label_status=="invalid_price" and r.iloc[0].label is None
+
+
+def test_deferred_retraining_preserves_previous_successful_evaluation(tmp_path):
+    out=tmp_path/"evaluation";out.mkdir()
+    dump_json(out/"model_evaluation.json",{"actually_trained":True,"status":"trained","metrics":{"test":{"mae":0.1}}})
+    result=train(tmp_path/"features.parquet",tmp_path/"labels.parquet",out,{"min_samples":500})
+    assert result["status"]=="deferred"
+    assert json.loads((out/"model_evaluation.json").read_text())["actually_trained"] is True
+    assert json.loads((out/"last_training_attempt.json").read_text())["actually_trained"] is False

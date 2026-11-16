@@ -139,6 +139,10 @@ reference_date는 명확한 일자만, reference_date_text는 `8/3` 등의 원�
 
 annotation_id, report_id, source_id, family_id, stock_code 식별 키. kind=business/risk, tag=정규화 태그, summary=짧은 출처 근거 요약, source_url/page/evidence_location=근거, as_of=가용시점, assertion_owner=research_publisher. annotation_status는 assistant 출처 확인 요약이며 사람 gold 아님. training_use_permitted=false.
 
+### 학습 예제의 근거 입력
+
+QA의 `evidence_context`는 표의 행·열, 원문 숫자 토큰, 단위, 기간, 실적/전망 구분과 추정 주체를 담는다. 추출 예제의 `input.raw_value`는 원문 셀 토큰이다. 확인 불가 예제에는 실제 확인된 발간일과 미확인 `published_at=null`을 넣는다. 변환 어댑터는 이 근거를 질문과 함께 입력으로 전달한다. URL만으로 모델의 원문 접근을 가정하지 않는다.
+
 ## research_examples.jsonl
 
 example_id / task(grounded_qa, structured_extraction, unanswerable); question/answer 또는 instruction/input/output; source_id/report_id/family_id/source_url; evidence_page, evidence_table/row/column/bbox 또는 evidence_scope; fact_id; as_of; target_period; label_status; training_use_permitted; split_group; generation_method. task별 해당하지 않는 필드는 생략되며 값 0으로 대체하지 않는다. exact public time 부재 답변은 확인 불가이며 collected_at를 정답으로 쓰지 않는다.

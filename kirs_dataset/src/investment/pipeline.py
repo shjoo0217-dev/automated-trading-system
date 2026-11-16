@@ -14,7 +14,7 @@ from .common import dump_json, now, stable_id
 from .http import PublicClient, AccessBlocked
 from .state import State
 from .quality import validate_directory
-from .package import promote
+from .package import promote, included
 from .train import train
 
 
@@ -70,10 +70,22 @@ def run(root: Path, state_dir: Path, mode="collect", run_key=None):
             if mode == "train":
                 model = train(root / "data/features.parquet", root / "data/labels.parquet", state_dir / "training/evaluation", config["training"])
                 record["training"] = model
-            # Initial immutable bundle is durable on the state branch. New releases
-            # are published only when curated reports/facts change, not each poll.
-            input_hash = stable_id((root / "data/reports.jsonl").read_bytes(), (root / "data/financials.parquet").read_bytes(),
-                                   (root / "data/forecasts.parquet").read_bytes())
+            # Rehydrate the last successfully trained bundle on ephemeral runners.
+            # Deferred attempts keep that evaluation and model pair unchanged.
+            trained_eval = state_dir / "training/evaluation/model_evaluation.json"
+            if trained_eval.exists() and json.loads(trained_eval.read_text()).get("actually_trained"):
+                model_dir = state_dir / "training/models"
+                for required in ["ridge_pipeline.joblib", "mean_baseline.joblib", "training_config.json", "trained_sample_ids.json"]:
+                    if not (model_dir / required).is_file():
+                        raise ValueError("Incomplete previously trained model bundle")
+                shutil.copytree(model_dir, root / "models", dirs_exist_ok=True)
+                shutil.copy2(trained_eval, root / "evaluation/model_evaluation.json")
+                (root / "models/TRAINING_DEFERRED.json").unlink(missing_ok=True)
+            # Release identity includes code/docs/status as well as data. Exclude
+            # generated manifest timestamps so unchanged scheduled polls do not
+            # create another archive. Previous immutable releases stay intact.
+            input_hash = stable_id(*[stable_id(str(p.relative_to(root)), p.read_bytes())
+                for p in included(root) if p.name != "manifest.json"])
             if state.data.get("last_validated_input_hash") != input_hash:
                 version = "v0.1.0-cloud-" + started[:19].replace(":", "").replace("-", "")
                 archive = promote(root, state_dir / "archive", version,

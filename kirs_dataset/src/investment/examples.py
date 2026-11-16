@@ -1,3 +1,5 @@
+import json
+
 from .common import stable_id
 
 
@@ -15,6 +17,7 @@ def examples_from_facts(reports, facts):
                        "evidence_row": f["row_label"], "evidence_column": f["column_label"], "evidence_bbox": f["bbox"],
                        "fact_id": f["fact_id"], "as_of": r["available_at"], "target_period": f["fiscal_period"],
                        "label_status": "rule_verified_not_human_gold", "training_use_permitted": False,
+                       "evidence_context": {k: f[k] for k in ["row_label", "column_label", "raw_value", "unit", "currency", "fiscal_period", "value_type", "estimate_owner", "statement_scope"]},
                        "split_group": r["family_id"], "generation_method": "deterministic_template_no_llm"}
             owner = "작성기관 전망" if f["value_type"] == "forecast" else "보고서 기재 실적"
             answer = f"{f['raw_value']} {f['unit']} ({owner}; OpenDART 미대조)."
@@ -25,7 +28,8 @@ def examples_from_facts(reports, facts):
             f = selected[0]
             examples.append({"example_id": stable_id(r["report_id"], "extract"), "task": "structured_extraction",
                 "instruction": "지정한 원문 표의 값·단위·시점·전망 주체를 분리해 추출하라.",
-                "input": {"page": f["page"], "table": f["table"], "row": f["row_label"], "column": f["column_label"]},
+                "input": {"page": f["page"], "table": f["table"], "row": f["row_label"], "column": f["column_label"],
+                          **{k: f[k] for k in ["raw_value", "unit", "currency", "value_type", "estimate_owner", "statement_scope"]}},
                 "output": {k: f[k] for k in ["metric", "value", "unit", "currency", "fiscal_period", "value_type", "estimate_owner", "statement_scope"]},
                 "source_id": r["source_id"], "report_id": r["report_id"], "family_id": r["family_id"],
                 "source_url": r["source_url"], "evidence_page": f["page"], "fact_id": f["fact_id"],
@@ -39,6 +43,7 @@ def examples_from_facts(reports, facts):
             "answer": "확인 불가. 발간일만 확인되며 실제 최초 공개 시각은 검증되지 않았다. 수집 시각을 공개 시각으로 대체할 수 없다.",
             "source_id": r["source_id"], "report_id": r["report_id"], "family_id": r["family_id"],
             "source_url": r["source_url"], "evidence_page": 1, "evidence_scope": "PDF cover date and source metadata",
+            "evidence_context": {"publication_date": r["publication_date"], "published_at": None, "public_time_verification": "date_only_unverified_exact_time"},
             "as_of": r["available_at"], "target_period": r["publication_date"], "split_group": r["family_id"],
             "label_status": "metadata_gap_verified_not_human_gold", "training_use_permitted": False,
             "generation_method": "deterministic_template_no_llm"})
@@ -52,6 +57,6 @@ def to_chat_examples(examples, *, rights_confirmed=False, human_reviewed=False):
         if example["task"] not in {"grounded_qa", "unanswerable"}:
             continue
         yield {"messages": [{"role": "system", "content": "출처에 근거해 답하고 근거가 없으면 확인 불가라고 답하라."},
-                            {"role": "user", "content": example["question"]},
+                            {"role": "user", "content": "근거 데이터: " + json.dumps(example["evidence_context"], ensure_ascii=False) + "\n질문: " + example["question"]},
                             {"role": "assistant", "content": example["answer"]}],
                "metadata": {"source_id": example["source_id"], "split_group": example["split_group"]}}

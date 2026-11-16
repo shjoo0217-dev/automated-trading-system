@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 
 import pandas as pd
@@ -53,7 +54,7 @@ def build_features(reports, facts, tags=()):
         rev = current.get("revenue", {})
         key = (report["family_id"], current_year, rev.get("currency"), rev.get("statement_scope"), rev.get("unit"))
         prev = previous.get(key)
-        if prev and rev.get("value_type") == "forecast" and prev["value_type"] == "forecast" and prev["value"] and prev["value"] > 0:
+        if prev and rev.get("value") is not None and rev.get("value_type") == "forecast" and prev["value_type"] == "forecast" and prev["value"] and prev["value"] > 0:
             if timestamp(prev["available_at"]) < timestamp(report["available_at"]):
                 row["revenue_forecast_revision_pct"] = 100 * (rev["value"] / prev["value"] - 1)
                 used.extend([rev["fact_id"], prev["fact_id"]])
@@ -82,6 +83,12 @@ def labels_from_prices(features: pd.DataFrame, prices: pd.DataFrame, sessions: p
     required = {"stock_code", "session_date", "adjusted_open", "tradable", "source_id"}
     if not required <= set(prices):
         raise ValueError("Incomplete price schema")
+    if horizon < 1 or not isinstance(horizon, int) or decision_lag_seconds < 0:
+        raise ValueError("Invalid horizon or decision lag")
+    if prices.tradable.isna().any() or not pd.api.types.is_bool_dtype(prices.tradable.dtype):
+        raise ValueError("Tradability must be explicit booleans without missing values")
+    if not prices.source_id.map(lambda v: isinstance(v, str) and bool(v.strip())).all():
+        raise ValueError("Every price needs a nonempty source identifier")
     if prices.duplicated(["stock_code", "session_date"]).any():
         raise ValueError("Duplicate price observations")
     if sessions.session_date.duplicated().any():
@@ -92,7 +99,7 @@ def labels_from_prices(features: pd.DataFrame, prices: pd.DataFrame, sessions: p
     sessions["open_at"] = pd.to_datetime(sessions.open_at.map(lambda v: timestamp(v)), utc=True)
     if not sessions.open_at.is_monotonic_increasing:
         raise ValueError("Non-monotonic calendar")
-    observed_at = pd.Timestamp(as_of or pd.Timestamp.now(tz="UTC"))
+    observed_at = pd.Timestamp(timestamp(as_of)) if as_of else pd.Timestamp.now(tz="UTC")
     out = []
     for sample in features.to_dict("records"):
         cutoff = pd.Timestamp(timestamp(sample["available_at"])) + pd.Timedelta(seconds=decision_lag_seconds)
@@ -121,7 +128,9 @@ def labels_from_prices(features: pd.DataFrame, prices: pd.DataFrame, sessions: p
         else:
             p0 = by_date.loc[base["entry_date"]]
             p1 = by_date.loc[base["exit_date"]]
-            if pd.isna(p0.adjusted_open) or pd.isna(p1.adjusted_open) or p0.adjusted_open <= 0 or p1.adjusted_open <= 0:
+            if (pd.isna(p0.adjusted_open) or pd.isna(p1.adjusted_open)
+                    or not math.isfinite(p0.adjusted_open) or not math.isfinite(p1.adjusted_open)
+                    or p0.adjusted_open <= 0 or p1.adjusted_open <= 0):
                 base["label_status"] = "invalid_price"
             elif p0.source_id != p1.source_id:
                 base["label_status"] = "price_source_mismatch"

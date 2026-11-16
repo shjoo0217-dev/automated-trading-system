@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import json
 
 import joblib
 import pandas as pd
@@ -13,6 +14,16 @@ from sklearn.preprocessing import StandardScaler
 
 from .common import dump_json, now
 from .features import NUMERIC_FEATURES
+
+
+def record_evaluation(output, result):
+    """A deferred attempt must not erase the last successfully trained result."""
+    dump_json(output / "last_training_attempt.json", result)
+    latest = output / "model_evaluation.json"
+    previous = json.loads(latest.read_text()) if latest.exists() else {}
+    if result["actually_trained"] or not previous.get("actually_trained"):
+        dump_json(latest, result)
+    return result
 
 
 def time_split(frame):
@@ -46,8 +57,7 @@ def train(features_path: Path, labels_path: Path, output: Path, settings: dict):
               "resume_conditions": settings}
     if not features_path.exists() or not labels_path.exists():
         result["reason"] = "Licensed prices/labels not available; no fabricated labels or evaluation"
-        dump_json(output / "model_evaluation.json", result)
-        return result
+        return record_evaluation(output, result)
     f = pd.read_parquet(features_path)
     labels = pd.read_parquet(labels_path)
     if labels.duplicated("sample_id").any() or f.duplicated("sample_id").any():
@@ -57,20 +67,17 @@ def train(features_path: Path, labels_path: Path, output: Path, settings: dict):
     result["companies"] = int(frame.stock_code.nunique())
     months = 0 if frame.empty else (pd.to_datetime(frame.available_at, utc=True).max() - pd.to_datetime(frame.available_at, utc=True).min()).days / 30.4375
     seen_path = output.parent / "models" / "trained_sample_ids.json"
-    import json
     trained_ids = set(json.loads(seen_path.read_text())) if seen_path.exists() else set()
     new_count = len(set(frame.sample_id) - trained_ids)
     result["new_valid_samples"] = new_count
     if (len(frame) < settings["min_samples"] or frame.stock_code.nunique() < settings["min_companies"]
             or months < settings["min_months"] or new_count < settings["min_new_samples"]):
         result["reason"] = "Insufficient licensed, validated, time-separated new observations"
-        dump_json(output / "model_evaluation.json", result)
-        return result
+        return record_evaluation(output, result)
     tr, va, te = time_split(frame)
     if min(map(len, [tr, va, te])) < settings["min_split_samples"]:
         result["reason"] = "Too few samples after family grouping and label-overlap purging"
-        dump_json(output / "model_evaluation.json", result)
-        return result
+        return record_evaluation(output, result)
     # Fit all transforms on TRAIN ONLY. Fixed alpha: no test-set tuning.
     model = make_pipeline(SimpleImputer(strategy="median", add_indicator=True, keep_empty_features=True), StandardScaler(), Ridge(alpha=1.0))
     baseline = DummyRegressor(strategy="mean")
@@ -92,5 +99,4 @@ def train(features_path: Path, labels_path: Path, output: Path, settings: dict):
         "train_sample_ids": tr.sample_id.tolist(), "validation_sample_ids": va.sample_id.tolist(), "test_sample_ids": te.sample_id.tolist()})
     dump_json(seen_path, sorted(set(frame.sample_id)))
     result.update(status="trained", actually_trained=True, reason=None, metrics=scores)
-    dump_json(output / "model_evaluation.json", result)
-    return result
+    return record_evaluation(output, result)
