@@ -9,6 +9,10 @@ on:
         description: Metadata collection or gated model training
         options: [collect, train]
         default: collect
+      dataset_tag:
+        type: string
+        description: Existing private Release tag containing reviewed data (required for train)
+        required: false
   push:
     branches: [main]
     paths: ['.github/workflows/star-pipeline.yml', 'investment_dataset/pipeline/**']
@@ -48,11 +52,15 @@ jobs:
       - name: Collect metadata or run gated training
         env:
           REQUESTED_MODE: ${{ inputs.mode }}
+          DATASET_TAG: ${{ inputs.dataset_tag }}
         run: |
           set -o pipefail
           mode="${REQUESTED_MODE:-collect}"
           if [ "$mode" = train ]; then
-            python -m star_pipeline train 2>&1 | tee /tmp/star-run.log
+            test -n "$DATASET_TAG"
+            mkdir -p /tmp/star-training-input
+            gh release download "$DATASET_TAG" --pattern investment_dataset.zip --dir /tmp/star-training-input
+            python -m star_pipeline train --training-archive /tmp/star-training-input/investment_dataset.zip 2>&1 | tee /tmp/star-run.log
           elif [ "$GITHUB_EVENT_NAME" = push ]; then
             python -m star_pipeline collect --github-state --max-posts 10 --max-pages 1 --max-requests 20 2>&1 | tee /tmp/star-run.log
           else
@@ -60,6 +68,8 @@ jobs:
           fi
       - name: Save run log and versioned bundle
         if: always()
+        env:
+          PIPELINE_JOB_STATUS: ${{ job.status }}
         run: |
           if [ -f /tmp/star-run.log ]; then cp /tmp/star-run.log investment_dataset/operations/run.log; fi
           python -m star_pipeline package

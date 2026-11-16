@@ -62,6 +62,16 @@ def check_sample(row):
 
 def train(root, config, policy):
     root = Path(root); out = root / 'evaluation'
+    from .validate import validate_bundle
+    validate_bundle(root, verify_hashes=False)
+    def save_result(result):
+        dump(out/'metrics.json', result)
+        title = '실제 모델 학습 완료' if result.get('trained') else '모델 학습 미실행'
+        (out/'evaluation_report.md').write_text('# ' + title + '\n\n' +
+            ('이용 가능한 표본으로 학습·평가했습니다. metrics.json과 모델별 설정을 확인하세요.' if result.get('trained') else
+             '성과 수치는 생성하지 않았습니다. 차단 사유: ' + ', '.join(result.get('reasons', []))) +
+            '\n\n평가 정의와 한계는 evaluation_methodology.md를 참조하세요.\n', encoding='utf-8')
+        return result
     samples = [json.loads(x) for x in (root / 'data/training_samples.jsonl').read_text().splitlines() if x.strip()]
     usable = [r for r in samples if check_sample(r)]
     reasons = []
@@ -73,13 +83,13 @@ def train(root, config, policy):
     if reasons:
         result = {'status': 'not_run', 'trained': False, 'reasons': reasons, 'eligible_samples': len(usable),
                   'input_records': len(samples), 'metrics': None, 'checked_at': now()}
-        dump(out/'metrics.json', result); dump(root/'data/splits.json', {'status':'not_created','reasons':reasons,'assignments':{}})
-        return result
+        dump(root/'data/splits.json', {'status':'not_created','reasons':reasons,'assignments':{}})
+        return save_result(result)
     split = purged_splits(usable, config['validation_start'], config['test_start']); dump(root/'data/splits.json', split)
     parts = {k: [r for r in usable if split['assignments'][r['sample_id']] == k] for k in ['train','validation','test']}
     if any(len(parts[k]) < config['min_per_split'][k] for k in parts):
         result = {'status':'not_run','trained':False,'reasons':['insufficient_samples_after_purge'],
-                  'split_counts':{k:len(v) for k,v in parts.items()},'metrics':None}; dump(out/'metrics.json',result); return result
+                  'split_counts':{k:len(v) for k,v in parts.items()},'metrics':None}; return save_result(result)
     def xy(rows):
         return (np.array([[r['features'].get(k,{}).get('value') if r['features'].get(k,{}).get('value') is not None else np.nan for k in FEATURES] for r in rows],dtype=float),
                 np.array([r['labels']['excess_return_20d'] for r in rows], dtype=float))
@@ -103,9 +113,10 @@ def train(root, config, policy):
             'all_long_mean_net_excess':float((yt-costs).mean()),'no_trade_return':0,
             'roundtrip_bps':config['roundtrip_bps'], 'evaluation_scope':'per-report diagnostics, not a portfolio backtest; overlapping holdings not aggregated',
             'data_sha256':digest((root/'data/training_samples.jsonl').read_bytes())}
-    version=digest({'data':result['data_sha256'],'config':config,'features':FEATURES})[:16]
+    result['code_revision'] = digest(Path(__file__).read_bytes())
+    version=digest({'data':result['data_sha256'],'config':config,'features':FEATURES,'code':result['code_revision']})[:16]
     dest=root/'models'/version; dest.mkdir(parents=True,exist_ok=False)
     joblib.dump(model,dest/'ridge.joblib'); dump(dest/'config.json',config); dump(dest/'metrics.json',result)
     dump(dest/'features.json',FEATURES)
     (dest/'libraries.txt').write_text(subprocess.check_output(['python','-m','pip','freeze'],text=True))
-    dump(out/'metrics.json',result); return result
+    return save_result(result)

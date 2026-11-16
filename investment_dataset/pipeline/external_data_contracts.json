@@ -1,0 +1,11 @@
+{
+  "status":"interfaces_and_contracts_only_no_external_data_acquired",
+  "security_history":{"key":["security_id","valid_from","known_at"],"columns":["ticker","name","market","corp_code","valid_from","valid_to","listed_at","delisted_at","known_at","source_id"],"policy":"include historical and delisted securities; never join by name alone"},
+  "sessions":{"columns":["market","session","open_at","close_at","source_id"],"policy":"official verified exchange sessions; timezone-aware; never weekday-only generation"},
+  "bars":{"columns":["ticker","security_id","session","raw_open","raw_close","volume","adjusted_open","adjusted_close","tradable","adjustment_method","source_id","known_at"],"policy":"no silent forward fill across suspensions or delistings; record unavailable periods"},
+  "corporate_actions":{"columns":["ticker","action_type","announced_at","ex_date","record_date","cash_amount","split_ratio","currency","known_at","source_id"],"policy":"point-in-time feature joins; label adjustments use observed realized dividends/splits/settlement"},
+  "benchmark":{"mapping":{"KOSPI":"KOSPI_TOTAL_RETURN","KOSDAQ":"KOSDAQ_TOTAL_RETURN"},"policy":"same entry/exit timestamps and return adjustment definition as stock"},
+  "disclosures":{"columns":["corp_code","ticker","receipt_no","receipt_date","first_observed_at","known_at","amends_receipt_no","metric","period_end","consolidation","value","unit","source_id"],"policy":"retain all revisions; receipt_date without timestamp not enough for intraday availability"},
+  "consensus":{"columns":["ticker","metric","period_end","currency","unit","consolidation","value","known_at","provider_license_id","source_id"],"policy":"report-quoted consensus is not a live historical consensus feed; separate both"},
+  "provider_access":{"KRX_or_licensed_price_vendor":"not_connected; usage and redistribution licence required","OpenDART":"adapter only; no API key; consult API terms and rate limits","broker_live":"interface only; not connected"}
+}

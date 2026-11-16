@@ -12,6 +12,7 @@ def main():
     p.add_argument('--github-state',action='store_true'); p.add_argument('--max-posts',type=int,default=350)
     p.add_argument('--max-pages',type=int,default=40); p.add_argument('--max-requests',type=int,default=450)
     p.add_argument('--pdf'); p.add_argument('--report-json'); p.add_argument('--ocr',action='store_true')
+    p.add_argument('--training-archive')
     args=p.parse_args(); root=Path(args.root); policy=json.loads((root/'pipeline/source_policy.json').read_text())
     if args.command=='extract':
         from .extract import licensed_extract
@@ -22,11 +23,16 @@ def main():
     if args.command=='collect':
         store=GitHubState(os.environ['GITHUB_REPOSITORY']) if args.github_state else LocalState(args.state)
         state,run=metadata_run(store,policy,args.max_posts,args.max_pages,args.max_requests)
+        run['execution_id'] = os.environ.get('GITHUB_RUN_ID', 'managed-workspace-pilot')
         audit_path=root/'quality/yesti_audit.json'; audit=json.loads(audit_path.read_text()) if audit_path.exists() else None
         build(root,state,run,audit)
         emit('collection_complete',successes=run['successes'],failures=run['failures'],pending=run['pending'])
         # Persist checkpoint even if partial; mark job failure after packaging by workflow validation.
     if args.command in ('collect','train'):
+        if args.training_archive:
+            from .validate import restore_training_data
+            version = restore_training_data(args.training_archive, root)
+            emit('training_input_restored', dataset_version=version)
         result=train(root,json.loads((root/'pipeline/training_config.json').read_text()),policy)
         emit('training_gate',status=result['status'],reasons=result.get('reasons',[]))
     if args.command in ('collect','train','package'):
@@ -36,6 +42,9 @@ def main():
             deployment.update(status='github_job_running_snapshot',run_id=os.environ['GITHUB_RUN_ID'],
                               run_attempt=os.environ.get('GITHUB_RUN_ATTEMPT'),
                               version_suffix=os.environ['GITHUB_RUN_ID']+'-'+os.environ.get('GITHUB_RUN_ATTEMPT','1'))
+            deployment['prior_steps_status'] = os.environ.get('PIPELINE_JOB_STATUS', 'not_yet_final')
+            run = json.loads((root/'operations/collection_run.json').read_text())
+            deployment['collection_snapshot_from_this_run'] = run.get('execution_id') == os.environ['GITHUB_RUN_ID']
         dump(deployment_path,deployment); manifest(root,deployment)
         archive(root,root.parent/'investment_dataset.zip')
 

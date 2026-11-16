@@ -64,7 +64,7 @@ report 상승여력은 features 후보이며 observed future excess return은 la
 6. 허가된 가격 공급자의 가격/거래량/거래달력/주식수 이벤트/지수와 OpenDART를 연결합니다. market.py는 인터페이스와 시간 필터·20일 라벨 함수, dart.py는 제한된 공시 목록 어댑터입니다. 유료 가격 API 실제 연동은 미완료입니다.
 7. 모든 특징값에 value/known_at/evidence_ids를 지정합니다. 계산 특징은 원본 사실의 evidence_ids와 formula를 별도 사실 행에 기록합니다. 현재 특징 생성 전반은 수동 승인 필요입니다.
 8. 원문 이용허가·schema/quality 검사·실제 라벨을 모두 통과한 표본만 quality_status=passed, training_eligible=true로 전환합니다. 그냥 플래그만 바꾸지 마세요.
-9. training_config.json의 시점 경계를 사전에 지정하고 train을 원격 실행합니다. 시간순 train/validation/test, 훈련 구간 전처리, validation alpha 선택, test 최종 평가가 구현되어 있습니다.
+9. training_config.json의 시점 경계를 사전에 지정합니다. 검수한 데이터 ZIP을 private Release에 올린 후 workflow_dispatch에서 mode=train, dataset_tag=<검수된 Release tag>로 원격 실행합니다. 데이터/모델 파일의 manifest 해시를 확인해 복원하고, 아카이브의 실행 코드는 실행하지 않습니다. 시간순 train/validation/test, 훈련 구간 전처리, validation alpha 선택, test 최종 평가가 구현되어 있습니다.
 10. 모델은 데이터+설정 해시 디렉터리에 별도 저장됩니다. 자동 승격·실계좌 주문은 구현하지 않았습니다. 이전 모델과 동일 비용 조건으로 비교한 뒤 승인된 모델만 실행 계층에 연결하세요.
 
 JSONL은 특정 LLM 파인튜닝 메시지 형식이 아닙니다. 본 데이터로 특정 LLM을 파인튜닝하는 변환기는 요구될 때 별도 작성하며 현재 포함하지 않습니다.

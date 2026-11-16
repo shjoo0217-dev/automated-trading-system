@@ -74,6 +74,8 @@ def build(root, state, run, audit=None):
                  'detail':'현재 PDF 버전의 과거 공개 증거 없음. 최초 관측 이전 사용 금지. 거래일 달력 미연결.','pages':'1;28','training_action':'exclude'}]
     issues += [{'issue_id':'DATA-LABELS','report_id':'*','severity':'blocker','code':'market_labels_missing',
                 'detail':'검증된 가격·거래일·배당·분할·상장폐지·지수 데이터 미연결. 미래 수익률 null.','pages':'','training_action':'exclude'}]
+    from .quality import date_issues
+    issues += [i for r in reports for i in date_issues(r) if not (r['report_id']=='star-340' and i['code']=='publication_posting_gap')]
     csv_write(root/'quality/issues.csv',issues)
     dump(root/'operations/collection_run.json',run)
     dump(root/'operations/checkpoint_summary.json',{'reports':len(reports),'pending':len(state.get('pending_urls',[])),
@@ -94,10 +96,12 @@ def manifest(root, deployment):
             with p.open(encoding='utf-8-sig',newline='') as f: rows=sum(1 for _ in csv.DictReader(f))
         files.append({'path':rel,'bytes':p.stat().st_size,'rows':rows,'sha256':digest(p.read_bytes())})
     run=json.loads((root/'operations/collection_run.json').read_text())
+    samples=[json.loads(x) for x in (root/'data/training_samples.jsonl').read_text().splitlines() if x.strip()]
+    eligible=sum(r.get('quality_status') == 'passed' and r.get('training_eligible') is True and r.get('labels',{}).get('status') == 'observed' for r in samples)
     value={'dataset_version':'0.1.0+'+deployment['version_suffix'],'generated_at':now(),'timezone':'Asia/Seoul',
            'source':'http://starskku.com/board/board_list?code=research','data_as_of':run['completed_at'],
            'collection':{k:run.get(k) for k in ['kind','successes','failures','source_requests','source_bytes','pending','listed_total']},
-           'pdf_inspected':1,'pdf_included':0,'eligible_training_samples':0,
+           'pdf_inspected':int((root/'quality/yesti_audit.json').exists()),'pdf_included':0,'eligible_training_samples':eligible,
            'rights':json.loads((root/'pipeline/source_policy.json').read_text()),
            'deployment':deployment,'files':files,'self_hash_policy':'manifest excluded from its own file hashes; zip hash in delivery receipt'}
     dump(root/'manifest.json',value); return value

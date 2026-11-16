@@ -66,10 +66,18 @@
     "text_pages": 28,
     "ocr_pages": 0,
     "pages_requiring_ocr": 0,
-    "detected_tables": 40
+    "detected_tables": 44,
+    "parser_version": "PyMuPDF 1.26.6 (pinned rerun)"
   },
   "rights_note_page": 28,
   "raw_pdf_included": false,
   "training_eligible": false,
-  "scope": "minimal_factual_quality_audit"
+  "scope": "minimal_factual_quality_audit",
+  "initial_extraction_summary": {
+    "text_pages": 28,
+    "ocr_pages": 0,
+    "pages_requiring_ocr": 0,
+    "detected_tables": 40,
+    "parser_version": "PyMuPDF 2.1"
+  }
 }

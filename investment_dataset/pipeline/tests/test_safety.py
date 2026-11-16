@@ -79,3 +79,31 @@ def test_stable_metadata_and_date_sources():
     b=parse_post(body+'<script>time=2</script>','http://starskku.com/board/board_view?code=research&no=1')
     assert a['metadata_sha256']==b['metadata_sha256']; assert a['posted_date']=='2026-09-09'; assert a['publication_date']=='2026-08-14'
     assert a['ticker'] is None
+
+def test_feature_missing_units_future_and_negative_base():
+    from star_pipeline.features import ratio_feature
+    a={'value':120,'unit':'KRW','quality_status':'passed','known_at':'2026-01-01T00:00Z','evidence_id':'a'}
+    b={**a,'value':100,'evidence_id':'b'}
+    assert ratio_feature(a,b,'2026-01-02T00:00Z',True)['value']==pytest.approx(.2)
+    assert ratio_feature(a,{**b,'unit':'USD'},'2026-01-02T00:00Z')['value'] is None
+    assert ratio_feature(a,{**b,'value':-100},'2026-01-02T00:00Z')['value'] is None
+    assert ratio_feature(a,b,'2025-01-02T00:00Z')['value'] is None
+
+def test_actual_release_records_schema():
+    from star_pipeline.validate import validate_bundle
+    root=Path(__file__).resolve().parents[2]
+    if (root/'schema.json').exists(): assert validate_bundle(root,verify_hashes=False)['status']=='passed'
+
+def test_dates_are_compared_without_backdating():
+    from star_pipeline.quality import date_issues
+    r={'report_id':'test','publication_date':'2026-08-14','posted_date':'2026-09-09','posted_time':None}
+    issues=date_issues(r)
+    assert issues[0]['code']=='publication_posting_gap';assert '26일' in issues[0]['detail']
+    assert issues[1]['code']=='posting_time_missing'
+
+def test_financial_conflicts_keep_input_provenance():
+    from star_pipeline.quality import numeric_issues
+    base={'report_id':'test','period_year':2026,'period_quarter':None,'estimate_type':'forecast','consolidation':'C','business_segment':None,'currency':'KRW'}
+    fs=[{**base,'fact_id':i,'metric':m,'value':v,'unit':u} for i,m,v,u in [('a','revenue',100,'KRW'),('b','net_income',10,'KRW'),('c','net_margin',.2,'ratio')]]
+    issue=numeric_issues(fs)[0]
+    assert issue['code']=='margin_arithmetic_conflict';assert issue['input_fact_ids']==['a','b','c']

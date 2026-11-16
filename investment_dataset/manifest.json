@@ -1,6 +1,6 @@
 {
   "dataset_version": "0.1.0+pilot",
-  "generated_at": "2026-11-16T15:41:25.596582+00:00",
+  "generated_at": "2026-11-16T15:58:42.838532+00:00",
   "timezone": "Asia/Seoul",
   "source": "http://starskku.com/board/board_list?code=research",
   "data_as_of": "2026-11-16T15:41:25.583053+00:00",
@@ -59,13 +59,26 @@
       "재배포"
     ],
     "contact_reference": "사이트에 표시된 학회 연락처; 본 작업에서는 연락하지 않음",
-    "pilot_exception_scope": "사용자가 지목한 예스티 오류 재검증 1건. 파일 해시·날짜·목표주가의 최소 사실 감사기록만 제공. 학습 허가가 아님."
+    "pilot_exception_scope": "사용자가 지목한 예스티 오류 재검증 1건. 파일 해시·날짜·목표주가의 최소 사실 감사기록만 제공. 학습 허가가 아님.",
+    "agreement_text_sha256": "970bb68daf3a414381e54fa1011078757b050d1a1f72c294699f8a62a79a947a"
   },
   "deployment": {
     "status": "not_deployed",
     "version_suffix": "pilot"
   },
   "files": [
+    {
+      "path": "CODEX_HANDOFF.md",
+      "bytes": 8646,
+      "rows": null,
+      "sha256": "2112376cda6da7a67f61b946dd613b5a7c8f8c8b9df0cae3ef2d6415c3fb63d9"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3468,
+      "rows": null,
+      "sha256": "8783e92a82a70f03c8a9d218c45a6a95ae90956d30388999bc49ee3840022790"
+    },
     {
       "path": "data/events.jsonl",
       "bytes": 0,
@@ -115,10 +128,40 @@
       "sha256": "4c57c5993fa70a0f30f227e429260dc4a237d9c56e2aed9478bef11166dd61f9"
     },
     {
+      "path": "data_dictionary.csv",
+      "bytes": 20805,
+      "rows": 114,
+      "sha256": "a88b7e9c9bb30da164b8a3129c9ce82aca5a0143b6ce83333a10b13e707693bf"
+    },
+    {
+      "path": "evaluation/evaluation_methodology.md",
+      "bytes": 2438,
+      "rows": null,
+      "sha256": "37c454cff673566c2c54e15de30226211baa99c6d899838c811f485ccf69d5a7"
+    },
+    {
+      "path": "evaluation/evaluation_report.md",
+      "bytes": 289,
+      "rows": null,
+      "sha256": "e1410d40c94070c36d107f937297af583ad022dcf4876973b6a04a3bbf29eff3"
+    },
+    {
       "path": "evaluation/metrics.json",
       "bytes": 334,
       "rows": null,
-      "sha256": "f181cf2acfb71d99fc68b3a368436fb1f1fdf04f490dbfb446d1d0b569f8dead"
+      "sha256": "c9318a7834c5e7db7ee67c595f1aac1ce1c64825d54007b51bbf68c8aecc7310"
+    },
+    {
+      "path": "models/README.md",
+      "bytes": 623,
+      "rows": null,
+      "sha256": "c47c07c473819bf3b86e1b731bcce3d16786663f706e1bbe7f0eff137919bfcd"
+    },
+    {
+      "path": "operations/RUNBOOK.md",
+      "bytes": 4079,
+      "rows": null,
+      "sha256": "4eb59df87f24c234a5220429217530d84c62d310f5ffe234a6595f4ac6d3b582"
     },
     {
       "path": "operations/checkpoint_summary.json",
@@ -139,16 +182,40 @@
       "sha256": "95a20da7236faae30d6747b01330aae210c7f8248621694fb3759181815fc202"
     },
     {
+      "path": "operations/source_review_receipts.json",
+      "bytes": 1341,
+      "rows": null,
+      "sha256": "e0bf3503fb87b3e562a629ea1e896ad898cd8816e70fd90e29a1934694aa3f37"
+    },
+    {
+      "path": "operations/test_results.txt",
+      "bytes": 99,
+      "rows": null,
+      "sha256": "15ba7f21aa55cce5d73880a0453bda497733a575b29ba667a5993a845e0cbec0"
+    },
+    {
       "path": "pipeline/Dockerfile",
       "bytes": 521,
       "rows": null,
       "sha256": "ddf8774f91eb412bf499674c3947fff8b687a9280b6ae087fdb98648cf6b9be8"
     },
     {
-      "path": "pipeline/requirements.lock.txt",
-      "bytes": 1232,
+      "path": "pipeline/cloud/star-pipeline.yml",
+      "bytes": 3947,
       "rows": null,
-      "sha256": "c392070f810803d8c5e795cdf26e4403ef92692cb000cb8f1ffe066584b2001d"
+      "sha256": "8b043475603d9ace9d368b265b263fee7b100537caf9d92f6cae95de306b00a9"
+    },
+    {
+      "path": "pipeline/external_data_contracts.json",
+      "bytes": 1994,
+      "rows": null,
+      "sha256": "8fbeaf90b0579530173df2fc8eafd2e9f7c6e52eb3886ff335dfb0d65ee58023"
+    },
+    {
+      "path": "pipeline/requirements.lock.txt",
+      "bytes": 519,
+      "rows": null,
+      "sha256": "e3263f0748ce81c5f52ce1424e18363e85b0ebf8dbf530e53012b9309ca1e8f0"
     },
     {
       "path": "pipeline/requirements.txt",
@@ -158,9 +225,9 @@
     },
     {
       "path": "pipeline/source_policy.json",
-      "bytes": 1313,
+      "bytes": 1563,
       "rows": null,
-      "sha256": "8c42c0ec1e82424d9b0148b7511eae8d4e90e3d911a44a37a9e937e3fa613f8a"
+      "sha256": "5267ca4932707b23429bab7dc7c26dbef4fe11e8bc80af665ddc445fcaa67350"
     },
     {
       "path": "pipeline/star_pipeline/__init__.py",
@@ -170,21 +237,21 @@
     },
     {
       "path": "pipeline/star_pipeline/__main__.py",
-      "bytes": 2808,
+      "bytes": 3471,
       "rows": null,
-      "sha256": "90c9809d4b60a24bbe791c43eb450d0deeb1540254e0aaf8086f54d6f506eb02"
+      "sha256": "67274ea05cc0c7bb3d9ca789404421662a9a2754035e48fb50bd2039a0172ef7"
     },
     {
       "path": "pipeline/star_pipeline/collect.py",
-      "bytes": 10057,
+      "bytes": 10341,
       "rows": null,
-      "sha256": "0babd24918fdbe4576144a5eaecd2f097a74750b52895744be4d08bedc387aff"
+      "sha256": "1cab5c3bb75be17c8730fc2834b2007cf2205b75456db5bd8aad5f891766a6b9"
     },
     {
       "path": "pipeline/star_pipeline/core.py",
-      "bytes": 3457,
+      "bytes": 3996,
       "rows": null,
-      "sha256": "4bcbce2c0e3152b6518fe71740e213d0dad05fe26d6189e7400259c002fc64c6"
+      "sha256": "9e79f2165babfef65a10f31bec578fcaaf6279a4700a70949d59db4df5b4ff93"
     },
     {
       "path": "pipeline/star_pipeline/dart.py",
@@ -194,9 +261,15 @@
     },
     {
       "path": "pipeline/star_pipeline/extract.py",
-      "bytes": 7201,
+      "bytes": 7277,
       "rows": null,
-      "sha256": "d5cc4c069e281c5649593dd9922f4c604fea85b5234499be576febbe1e084a33"
+      "sha256": "09a4de165b09b3b55448205fa32b540767d31057eded0e7bf33562156f8dbc13"
+    },
+    {
+      "path": "pipeline/star_pipeline/features.py",
+      "bytes": 1941,
+      "rows": null,
+      "sha256": "f390da0e284719e047cf98d1660cfc21b7f612aee47729175d0573cc5247b7ad"
     },
     {
       "path": "pipeline/star_pipeline/market.py",
@@ -206,15 +279,39 @@
     },
     {
       "path": "pipeline/star_pipeline/package.py",
-      "bytes": 8110,
+      "bytes": 8609,
       "rows": null,
-      "sha256": "a1cb36ab08c77703f1ac1a173f30002d566c7462606053c7e7757f65fe0cb8a4"
+      "sha256": "35d303324050c39c42cccccbe69d7cb59af804549d958454aa71d6c8dbea800f"
+    },
+    {
+      "path": "pipeline/star_pipeline/quality.py",
+      "bytes": 2779,
+      "rows": null,
+      "sha256": "e628bcda0c2812aed9975a38376c19028742ba9e50a07cdae8fcf3b743c799ee"
     },
     {
       "path": "pipeline/star_pipeline/train.py",
-      "bytes": 7564,
+      "bytes": 8343,
       "rows": null,
-      "sha256": "20716325ffb31fefb3eb2aa9491fbe8c64268669a3ef16e11d9d3ad62d5c1c64"
+      "sha256": "e2e74fc479ceac968944f21e55fcb920060a422f73f0e275cf2d31366c6859c6"
+    },
+    {
+      "path": "pipeline/star_pipeline/validate.py",
+      "bytes": 2798,
+      "rows": null,
+      "sha256": "8905bb022f0a665be2c9cdad8b4a4533233b881b22b459c455944fd75404018b"
+    },
+    {
+      "path": "pipeline/tests/test_collection.py",
+      "bytes": 2827,
+      "rows": null,
+      "sha256": "93965efc577f79b7f357ca6fff6bf31b628324ccfb29b3a084860984d15dd468"
+    },
+    {
+      "path": "pipeline/tests/test_safety.py",
+      "bytes": 7311,
+      "rows": null,
+      "sha256": "dd4e185efb2be6a5c40fedd4a5610062e50eb53ea6b7bd4dc89f71480ec8e890"
     },
     {
       "path": "pipeline/training_config.json",
@@ -229,10 +326,22 @@
       "sha256": "010bc34c030eb7c298b38b89466d10b243960a9352c4f8c6a4a7b58ea61661a3"
     },
     {
-      "path": "quality/yesti_audit.json",
-      "bytes": 2705,
+      "path": "quality/validation_report.md",
+      "bytes": 1875,
       "rows": null,
-      "sha256": "c498bf69ece9039872e6e29952da1688ba7188f77b3537717a88ced17b50b5e5"
+      "sha256": "4da63a77d1f3aa4536bb0201e4e6195d76927228f86300b9907ada97869e671b"
+    },
+    {
+      "path": "quality/yesti_audit.json",
+      "bytes": 2934,
+      "rows": null,
+      "sha256": "5532103a66d2d977aa843f362e2321182b4fd8927e42e8a8bbbe7658d101fd3e"
+    },
+    {
+      "path": "schema.json",
+      "bytes": 24134,
+      "rows": null,
+      "sha256": "33a3d5465428ec7b989f594227d1c2a34db030b5f1c34cb4a2c97c5d3a4c0db1"
     }
   ],
   "self_hash_policy": "manifest excluded from its own file hashes; zip hash in delivery receipt"

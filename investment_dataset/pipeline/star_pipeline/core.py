@@ -74,4 +74,7 @@ def require_permission(policy, action):
     if not (grant.get('allowed') is True and grant.get('evidence')):
         raise PermissionError('source_permission_missing:' + action)
     expiry = grant.get('valid_until')
-    if expiry and now() > expiry: raise PermissionError('source_permission_expired:' + action)
+    if expiry:
+        expires = datetime.fromisoformat(expiry.replace('Z', '+00:00'))
+        if expires.tzinfo is None: raise ValueError('permission_expiry_timezone_required')
+        if datetime.now(timezone.utc) > expires: raise PermissionError('source_permission_expired:' + action)

@@ -1,0 +1,42 @@
+[
+  {
+    "url": "http://starskku.com/robots.txt",
+    "bytes": 23,
+    "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95",
+    "status": 200,
+    "scope": "initial_access_and_rights_review",
+    "raw_in_deliverable": false
+  },
+  {
+    "url": "http://starskku.com/service/agreement",
+    "bytes": 29078,
+    "sha256": "f2811161a971eb6112a325257371464db2ed4c4c0647a6c9685f4fb8aa6780b2",
+    "status": 200,
+    "scope": "initial_access_and_rights_review",
+    "raw_in_deliverable": false
+  },
+  {
+    "url": "http://starskku.com/service/usepolicy",
+    "bytes": 27197,
+    "sha256": "0c8c3aceef88023cc035eff73f7a87e957bcf113881e06df78d1732bd669f853",
+    "status": 200,
+    "scope": "initial_access_and_rights_review",
+    "raw_in_deliverable": false
+  },
+  {
+    "url": "http://starskku.com/board/board_list?code=research",
+    "bytes": 29074,
+    "sha256": "21d8fe6bc75816d7a4152cc9e443313d7c9fe57251a2c94c80df696335f6739c",
+    "status": 200,
+    "scope": "initial_access_and_rights_review",
+    "raw_in_deliverable": false
+  },
+  {
+    "url": "http://starskku.com/board/board_view?code=research&no=340",
+    "bytes": 26182,
+    "sha256": "efd9dc3e64053e843ba04fecf0fe30a420a8db2754a4295c6cf64f3a7c1c5c3d",
+    "status": 200,
+    "scope": "initial_access_and_rights_review",
+    "raw_in_deliverable": false
+  }
+]

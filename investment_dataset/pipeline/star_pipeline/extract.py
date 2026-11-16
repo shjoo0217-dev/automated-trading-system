@@ -116,6 +116,8 @@ def licensed_extract(path, report, policy, ocr=False):
     values = target_candidates(pages, report['report_id'], sha)
     facts, issues = financial_candidates(pages, report['report_id'], sha, report['publication_date'])
     issues += target_conflicts(values, report['publication_date'])
+    from .quality import numeric_issues
+    issues += numeric_issues(facts)
     # Events and industry metrics require evidence-backed manual annotation of candidates;
     # a broad regex is not allowed to invent subjects, event dates or period semantics.
     return {'file_sha256': sha, 'pages': len(pages), 'valuations': values, 'financials': facts,
