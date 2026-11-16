@@ -4,7 +4,7 @@
   "repository": "https://github.com/shjoo0217-dev/automated-trading-system",
   "drive_folder": "https://drive.google.com/drive/folders/13xLRnBXHPmgfycWwFQFBr2YDTkAk_rt7",
   "persistent_checkpoint_branch": "star-state",
-  "persistent_results": "GitHub Releases and Google Drive version folder",
+  "persistent_results": "Code and data in GitHub repository; final ZIP in Google Drive; GitHub Release links to Drive",
   "scheduler": {
     "service": "GitHub Actions",
     "state": "disabled_manually",
@@ -66,5 +66,7 @@
   },
   "secret_management": "GitHub Actions ephemeral GITHUB_TOKEN; no external API secrets configured; direct public metadata run needs no API key",
   "independent_execution_requirement": "withdrawn by user; no promise of persistence for direct process after environment ends",
-  "checked_at": "2026-11-16T16:26:22.840570+00:00"
+  "checked_at": "2026-11-16T16:26:22.840570+00:00",
+  "final_zip_drive_url": "https://drive.google.com/file/d/1CpByLJM_4V0DIbx4QHsPs_eFvE2TJwiA/view?usp=drivesdk",
+  "github_direct_asset_upload": "not_completed: uploads.github.com returned HTTP 401; no repeated Actions run used"
 }
