@@ -1,0 +1,10 @@
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+*.pdf
+*.html
+.env
+*.pem
+*.key
+investment_dataset.zip

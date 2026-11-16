@@ -1,0 +1,14 @@
+{
+  "status": "not_run",
+  "trained": false,
+  "reasons": [
+    "source_training_permission_missing",
+    "insufficient_labeled_samples",
+    "insufficient_ticker_diversity",
+    "time_boundaries_unconfigured"
+  ],
+  "eligible_samples": 0,
+  "input_records": 1,
+  "metrics": null,
+  "checked_at": "2026-11-16T15:41:25.592790+00:00"
+}

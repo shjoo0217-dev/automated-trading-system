@@ -1,0 +1,46 @@
+{
+  "source": "S.T.A.R",
+  "reviewed_at": "2026-11-16T15:31:04+00:00",
+  "robots_url": "http://starskku.com/robots.txt",
+  "terms_url": "http://starskku.com/service/agreement",
+  "document_terms": {
+    "report_id": "star-340",
+    "page": 28,
+    "quote": "본 자료는 학회의 동의 없이 어떠한 경우에도 변형, 복제, 배포, 전송, 대여할 수 없습니다."
+  },
+  "permissions": {
+    "metadata": {
+      "allowed": true,
+      "evidence": "Public board factual metadata; robots Allow: /; no report content reproduction. This is a limited collection decision, not a copyright licence."
+    },
+    "pdf_processing": {
+      "allowed": false,
+      "evidence": null
+    },
+    "raw_storage": {
+      "allowed": false,
+      "evidence": null
+    },
+    "derived_storage": {
+      "allowed": false,
+      "evidence": null
+    },
+    "model_training": {
+      "allowed": false,
+      "evidence": null
+    },
+    "redistribution": {
+      "allowed": false,
+      "evidence": null
+    }
+  },
+  "permission_needed": [
+    "원문 PDF 영구 저장",
+    "보고서 전문·표·정성 서술의 가공 및 저장",
+    "학습 이용",
+    "재배포"
+  ],
+  "contact_reference": "사이트에 표시된 학회 연락처; 본 작업에서는 연락하지 않음",
+  "pilot_exception_scope": "사용자가 지목한 예스티 오류 재검증 1건. 파일 해시·날짜·목표주가의 최소 사실 감사기록만 제공. 학습 허가가 아님.",
+  "agreement_text_sha256": "970bb68daf3a414381e54fa1011078757b050d1a1f72c294699f8a62a79a947a"
+}

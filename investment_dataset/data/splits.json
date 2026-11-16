@@ -1,0 +1,10 @@
+{
+  "status": "not_created",
+  "reasons": [
+    "source_training_permission_missing",
+    "insufficient_labeled_samples",
+    "insufficient_ticker_diversity",
+    "time_boundaries_unconfigured"
+  ],
+  "assignments": {}
+}

@@ -1,0 +1,75 @@
+{
+  "report_id": "star-340",
+  "ticker": "122640",
+  "market": "KOSDAQ",
+  "publication_date": "2026-08-14",
+  "posted_date": "2026-09-09",
+  "observed_at": "2026-11-16T15:31:03.873491+00:00",
+  "file_sha256": "b43c279639e6250847b7891b0647f1c170bc86924b56838527c04c3a3fe94113",
+  "page_count": 28,
+  "byte_size": 4752407,
+  "attachment_url": "http://starskku.com/fileRequest/download?file=%2Fboard%2Fresearch%2F20260909001023_4375.pdf&save=STAR_%EC%98%88%EC%8A%A4%ED%8B%B0.pdf",
+  "post_url": "http://starskku.com/board/board_view?code=research&no=340",
+  "valuations": [
+    {
+      "field": "target_price",
+      "raw_value": "42,800",
+      "value": 42800.0,
+      "raw_unit": "원",
+      "unit": "KRW",
+      "page": 1,
+      "role": "cover",
+      "effective_date": null,
+      "report_id": "star-340",
+      "file_sha256": "b43c279639e6250847b7891b0647f1c170bc86924b56838527c04c3a3fe94113",
+      "evidence_id": "f31a65a4f808f89d31b30e7ea70005aef000b05de585af76f1d38e70fd8f91b2",
+      "quality_status": "quarantined_conflict_and_rights",
+      "training_eligible": false,
+      "ticker": "122640",
+      "source_url": "http://starskku.com/fileRequest/download?file=%2Fboard%2Fresearch%2F20260909001023_4375.pdf&save=STAR_%EC%98%88%EC%8A%A4%ED%8B%B0.pdf",
+      "observed_at": "2026-11-16T15:31:03.873491+00:00"
+    },
+    {
+      "field": "target_price",
+      "raw_value": "40,800",
+      "value": 40800.0,
+      "raw_unit": "원",
+      "unit": "KRW",
+      "page": 28,
+      "role": "target_history",
+      "effective_date": "2026-08-14",
+      "opinion_raw": "BUY",
+      "report_id": "star-340",
+      "file_sha256": "b43c279639e6250847b7891b0647f1c170bc86924b56838527c04c3a3fe94113",
+      "evidence_id": "f6550c85315607f9353f9cc4196fc4f40e037c0634cd0c499f4952e88d57bf65",
+      "quality_status": "quarantined_conflict_and_rights",
+      "training_eligible": false,
+      "ticker": "122640",
+      "source_url": "http://starskku.com/fileRequest/download?file=%2Fboard%2Fresearch%2F20260909001023_4375.pdf&save=STAR_%EC%98%88%EC%8A%A4%ED%8B%B0.pdf",
+      "observed_at": "2026-11-16T15:31:03.873491+00:00"
+    }
+  ],
+  "conflicts": [
+    {
+      "code": "target_price_conflict",
+      "values": [
+        40800.0,
+        42800.0
+      ],
+      "evidence_ids": [
+        "f31a65a4f808f89d31b30e7ea70005aef000b05de585af76f1d38e70fd8f91b2",
+        "f6550c85315607f9353f9cc4196fc4f40e037c0634cd0c499f4952e88d57bf65"
+      ]
+    }
+  ],
+  "extraction_summary": {
+    "text_pages": 28,
+    "ocr_pages": 0,
+    "pages_requiring_ocr": 0,
+    "detected_tables": 40
+  },
+  "rights_note_page": 28,
+  "raw_pdf_included": false,
+  "training_eligible": false,
+  "scope": "minimal_factual_quality_audit"
+}

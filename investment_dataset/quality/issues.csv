@@ -1,0 +1,7 @@
+﻿code,detail,issue_id,pages,report_id,severity,training_action
+publication_posting_gap,2026-08-14 발간 / 2026-09-09 게시: 26일 차이. 날짜 오류로 단정하지 않음.,STAR340-DATE,1;website,star-340,info,do_not_backdate
+target_price_conflict,"42,800 KRW (1쪽) / 40,800 KRW (28쪽, 동일 발간일). 자동 선택 금지.",STAR340-TP,1;28,star-340,error,exclude
+permission_required,28쪽 무단 변형·복제·배포·전송 금지. 원문·전문·학습 허가 미확보.,STAR340-RIGHTS,28,star-340,blocker,exclude
+merged_table_cell,1쪽 재무표 2025년 열에 여러 행이 하나의 셀로 추출됨. 금액을 임의 배분하지 않음.,STAR340-TABLE,1,star-340,error,manual_review
+historical_version_not_proven,현재 PDF 버전의 과거 공개 증거 없음. 최초 관측 이전 사용 금지. 거래일 달력 미연결.,STAR340-PIT,1;28,star-340,blocker,exclude
+market_labels_missing,검증된 가격·거래일·배당·분할·상장폐지·지수 데이터 미연결. 미래 수익률 null.,DATA-LABELS,,*,blocker,exclude

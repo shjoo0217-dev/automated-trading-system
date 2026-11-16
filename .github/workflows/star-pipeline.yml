@@ -1,0 +1,80 @@
+name: STAR research metadata and quality pipeline
+on:
+  schedule:
+    - cron: '17 15 * * *' # 00:17 Asia/Seoul every day; GitHub schedule may be delayed.
+  workflow_dispatch:
+    inputs:
+      mode:
+        type: choice
+        description: Metadata collection or gated model training
+        options: [collect, train]
+        default: collect
+  push:
+    branches: [main]
+    paths: ['.github/workflows/star-pipeline.yml', 'investment_dataset/pipeline/**']
+permissions:
+  contents: write
+concurrency:
+  group: star-research-production
+  cancel-in-progress: false
+jobs:
+  pipeline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      PYTHONPATH: investment_dataset/pipeline
+      GH_TOKEN: ${{ github.token }}
+      TZ: Asia/Seoul
+      OMP_NUM_THREADS: '2'
+      OPENBLAS_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: investment_dataset/pipeline/requirements.lock.txt
+      - name: Install exact dependency versions
+        run: python -m pip install -r investment_dataset/pipeline/requirements.lock.txt
+      - name: Run quality and leakage tests
+        run: python -m pytest investment_dataset/pipeline/tests -q
+      - name: Initialize persistent checkpoint branch
+        run: |
+          if ! gh api "repos/$GITHUB_REPOSITORY/git/ref/heads/star-state" >/dev/null 2>&1; then
+            gh api --method POST "repos/$GITHUB_REPOSITORY/git/refs" -f ref=refs/heads/star-state -f sha="$GITHUB_SHA" >/dev/null
+          fi
+      - name: Collect metadata or run gated training
+        env:
+          REQUESTED_MODE: ${{ inputs.mode }}
+        run: |
+          set -o pipefail
+          mode="${REQUESTED_MODE:-collect}"
+          if [ "$mode" = train ]; then
+            python -m star_pipeline train 2>&1 | tee /tmp/star-run.log
+          elif [ "$GITHUB_EVENT_NAME" = push ]; then
+            python -m star_pipeline collect --github-state --max-posts 10 --max-pages 1 --max-requests 20 2>&1 | tee /tmp/star-run.log
+          else
+            python -m star_pipeline collect --github-state --max-posts 350 --max-pages 40 --max-requests 450 2>&1 | tee /tmp/star-run.log
+          fi
+      - name: Save run log and versioned bundle
+        if: always()
+        run: |
+          if [ -f /tmp/star-run.log ]; then cp /tmp/star-run.log investment_dataset/operations/run.log; fi
+          python -m star_pipeline package
+      - name: Publish permanent versioned release assets
+        if: always()
+        run: |
+          tag="star-data-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          printf 'STAR research pipeline output. Source rights gates apply. See operations and evaluation files for actual completion status.\n' > /tmp/star-release-notes.txt
+          gh release create "$tag" investment_dataset.zip --target "$GITHUB_SHA" --title "$tag" --notes-file /tmp/star-release-notes.txt --latest=false
+      - name: Verify collection completion status
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('investment_dataset/operations/collection_run.json')
+          r=json.loads(p.read_text())
+          if r.get('failures',0): raise SystemExit('Collection has failures; checkpoint retained, inspect release and rerun.')
+          PY

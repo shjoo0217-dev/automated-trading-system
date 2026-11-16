@@ -1,0 +1,239 @@
+{
+  "dataset_version": "0.1.0+pilot",
+  "generated_at": "2026-11-16T15:41:25.596582+00:00",
+  "timezone": "Asia/Seoul",
+  "source": "http://starskku.com/board/board_list?code=research",
+  "data_as_of": "2026-11-16T15:41:25.583053+00:00",
+  "collection": {
+    "kind": "metadata",
+    "successes": 10,
+    "failures": 0,
+    "source_requests": 12,
+    "source_bytes": 291059,
+    "pending": 0,
+    "listed_total": 316
+  },
+  "pdf_inspected": 1,
+  "pdf_included": 0,
+  "eligible_training_samples": 0,
+  "rights": {
+    "source": "S.T.A.R",
+    "reviewed_at": "2026-11-16T15:31:04+00:00",
+    "robots_url": "http://starskku.com/robots.txt",
+    "terms_url": "http://starskku.com/service/agreement",
+    "document_terms": {
+      "report_id": "star-340",
+      "page": 28,
+      "quote": "본 자료는 학회의 동의 없이 어떠한 경우에도 변형, 복제, 배포, 전송, 대여할 수 없습니다."
+    },
+    "permissions": {
+      "metadata": {
+        "allowed": true,
+        "evidence": "Public board factual metadata; robots Allow: /; no report content reproduction. This is a limited collection decision, not a copyright licence."
+      },
+      "pdf_processing": {
+        "allowed": false,
+        "evidence": null
+      },
+      "raw_storage": {
+        "allowed": false,
+        "evidence": null
+      },
+      "derived_storage": {
+        "allowed": false,
+        "evidence": null
+      },
+      "model_training": {
+        "allowed": false,
+        "evidence": null
+      },
+      "redistribution": {
+        "allowed": false,
+        "evidence": null
+      }
+    },
+    "permission_needed": [
+      "원문 PDF 영구 저장",
+      "보고서 전문·표·정성 서술의 가공 및 저장",
+      "학습 이용",
+      "재배포"
+    ],
+    "contact_reference": "사이트에 표시된 학회 연락처; 본 작업에서는 연락하지 않음",
+    "pilot_exception_scope": "사용자가 지목한 예스티 오류 재검증 1건. 파일 해시·날짜·목표주가의 최소 사실 감사기록만 제공. 학습 허가가 아님."
+  },
+  "deployment": {
+    "status": "not_deployed",
+    "version_suffix": "pilot"
+  },
+  "files": [
+    {
+      "path": "data/events.jsonl",
+      "bytes": 0,
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/financials.parquet",
+      "bytes": 3506,
+      "rows": 0,
+      "sha256": "c96411dda110b936186917f12317ca6589b51b431164727db65bf119f6982246"
+    },
+    {
+      "path": "data/report_versions.jsonl",
+      "bytes": 0,
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/reports.csv",
+      "bytes": 8712,
+      "rows": 10,
+      "sha256": "8f1ab9343de04ce356493c3e9d6414587c9f22b97407527df6ccdd306e1df9a6"
+    },
+    {
+      "path": "data/splits.json",
+      "bytes": 221,
+      "rows": null,
+      "sha256": "3cda2ddb1d2d410fd691d444db882f3d2cc9c17b939588ca9429d724738b3b6f"
+    },
+    {
+      "path": "data/tombstones.jsonl",
+      "bytes": 0,
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "data/training_samples.jsonl",
+      "bytes": 1105,
+      "rows": 1,
+      "sha256": "e9fc62bb5c454d7794d142719f5b1f3b8b16a07c50da9951b5e7f6f292f8df81"
+    },
+    {
+      "path": "data/valuations.parquet",
+      "bytes": 6138,
+      "rows": 2,
+      "sha256": "4c57c5993fa70a0f30f227e429260dc4a237d9c56e2aed9478bef11166dd61f9"
+    },
+    {
+      "path": "evaluation/metrics.json",
+      "bytes": 334,
+      "rows": null,
+      "sha256": "f181cf2acfb71d99fc68b3a368436fb1f1fdf04f490dbfb446d1d0b569f8dead"
+    },
+    {
+      "path": "operations/checkpoint_summary.json",
+      "bytes": 204,
+      "rows": null,
+      "sha256": "4666c9df624bf766eeaf7dfdff00f2c53bbe039f069d48e9009681c74babd379"
+    },
+    {
+      "path": "operations/collection_run.json",
+      "bytes": 3600,
+      "rows": null,
+      "sha256": "54c7782b50620b70dd0e6c7f19e9213ea2ecd299564d92f4b23107ce5c1fd026"
+    },
+    {
+      "path": "operations/deployment_status.json",
+      "bytes": 60,
+      "rows": null,
+      "sha256": "95a20da7236faae30d6747b01330aae210c7f8248621694fb3759181815fc202"
+    },
+    {
+      "path": "pipeline/Dockerfile",
+      "bytes": 521,
+      "rows": null,
+      "sha256": "ddf8774f91eb412bf499674c3947fff8b687a9280b6ae087fdb98648cf6b9be8"
+    },
+    {
+      "path": "pipeline/requirements.lock.txt",
+      "bytes": 1232,
+      "rows": null,
+      "sha256": "c392070f810803d8c5e795cdf26e4403ef92692cb000cb8f1ffe066584b2001d"
+    },
+    {
+      "path": "pipeline/requirements.txt",
+      "bytes": 153,
+      "rows": null,
+      "sha256": "837b393df7f20348ed37c781b4ac690e6c99980d9e1cdf7610f4a290a11fa2ec"
+    },
+    {
+      "path": "pipeline/source_policy.json",
+      "bytes": 1313,
+      "rows": null,
+      "sha256": "8c42c0ec1e82424d9b0148b7511eae8d4e90e3d911a44a37a9e937e3fa613f8a"
+    },
+    {
+      "path": "pipeline/star_pipeline/__init__.py",
+      "bytes": 111,
+      "rows": null,
+      "sha256": "0de6e4f02f64e6c5e561856ceebdbb898af1185c5092a570223d366bed10b958"
+    },
+    {
+      "path": "pipeline/star_pipeline/__main__.py",
+      "bytes": 2808,
+      "rows": null,
+      "sha256": "90c9809d4b60a24bbe791c43eb450d0deeb1540254e0aaf8086f54d6f506eb02"
+    },
+    {
+      "path": "pipeline/star_pipeline/collect.py",
+      "bytes": 10057,
+      "rows": null,
+      "sha256": "0babd24918fdbe4576144a5eaecd2f097a74750b52895744be4d08bedc387aff"
+    },
+    {
+      "path": "pipeline/star_pipeline/core.py",
+      "bytes": 3457,
+      "rows": null,
+      "sha256": "4bcbce2c0e3152b6518fe71740e213d0dad05fe26d6189e7400259c002fc64c6"
+    },
+    {
+      "path": "pipeline/star_pipeline/dart.py",
+      "bytes": 1209,
+      "rows": null,
+      "sha256": "4cd65cd9a43f3ebfb06c3c862d1b207b8362647e8292c3546478fb922ebfb870"
+    },
+    {
+      "path": "pipeline/star_pipeline/extract.py",
+      "bytes": 7201,
+      "rows": null,
+      "sha256": "d5cc4c069e281c5649593dd9922f4c604fea85b5234499be576febbe1e084a33"
+    },
+    {
+      "path": "pipeline/star_pipeline/market.py",
+      "bytes": 4036,
+      "rows": null,
+      "sha256": "3f38b26949e184e6cfb763430bdfeae139eb4c067ec3fc8ff3f0a01494f87472"
+    },
+    {
+      "path": "pipeline/star_pipeline/package.py",
+      "bytes": 8110,
+      "rows": null,
+      "sha256": "a1cb36ab08c77703f1ac1a173f30002d566c7462606053c7e7757f65fe0cb8a4"
+    },
+    {
+      "path": "pipeline/star_pipeline/train.py",
+      "bytes": 7564,
+      "rows": null,
+      "sha256": "20716325ffb31fefb3eb2aa9491fbe8c64268669a3ef16e11d9d3ad62d5c1c64"
+    },
+    {
+      "path": "pipeline/training_config.json",
+      "bytes": 310,
+      "rows": null,
+      "sha256": "f4bf574b03a10d0fea93a75d6572d918458c3c263aeec0286048d31234ec847c"
+    },
+    {
+      "path": "quality/issues.csv",
+      "bytes": 1061,
+      "rows": 6,
+      "sha256": "010bc34c030eb7c298b38b89466d10b243960a9352c4f8c6a4a7b58ea61661a3"
+    },
+    {
+      "path": "quality/yesti_audit.json",
+      "bytes": 2705,
+      "rows": null,
+      "sha256": "c498bf69ece9039872e6e29952da1688ba7188f77b3537717a88ced17b50b5e5"
+    }
+  ],
+  "self_hash_policy": "manifest excluded from its own file hashes; zip hash in delivery receipt"
+}

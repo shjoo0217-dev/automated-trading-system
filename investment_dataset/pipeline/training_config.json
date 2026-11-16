@@ -1,0 +1,1 @@
+{"seed": 42, "min_samples": 100, "min_tickers": 20, "min_per_split":{"train":40,"validation":20,"test":20}, "validation_start":null,"test_start":null,"roundtrip_bps":30,"label_horizon_sessions":20,"benchmark_mapping":{"KOSPI":"KOSPI_TOTAL_RETURN","KOSDAQ":"KOSDAQ_TOTAL_RETURN"},"promote_automatically":false}
