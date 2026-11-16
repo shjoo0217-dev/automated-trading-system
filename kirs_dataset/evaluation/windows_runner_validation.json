@@ -1,0 +1,45 @@
+{
+  "run_key": "2026-11-16T16:24:35.283401+00:00",
+  "execution_host": "workspace_manual",
+  "started_at": "2026-11-16T16:24:35.283413+00:00",
+  "finished_at": "2026-11-16T16:24:35.524201+00:00",
+  "mode": "train",
+  "status": "completed",
+  "quality": {
+    "status": "passed_with_limitations",
+    "reports": 6,
+    "companies": 3,
+    "facts": 539,
+    "null_facts": 13,
+    "parser_agreement_facts": 539,
+    "unknown_statement_scope_facts": 500,
+    "dart_reconciled_facts": 0
+  },
+  "training": {
+    "status": "deferred",
+    "actually_trained": false,
+    "evaluated_at": "2026-11-16T16:24:35.361878+00:00",
+    "target": "20_exchange_session_open_to_open_price_return",
+    "metrics": null,
+    "cost_assumptions": {
+      "trading_backtest_performed": false,
+      "fees": null,
+      "tax": null,
+      "slippage": null,
+      "liquidity_filter": null
+    },
+    "resume_conditions": {
+      "min_samples": 500,
+      "min_companies": 50,
+      "min_months": 24,
+      "min_new_samples": 100,
+      "min_split_samples": 30,
+      "horizon_exchange_sessions": 20,
+      "decision_lag_seconds": 60
+    },
+    "reason": "Licensed prices/labels not available; no fabricated labels or evaluation"
+  },
+  "windows_task_scheduler_executed": false,
+  "runner_entrypoint": "windows/run_job.py",
+  "validation_environment": "Linux workspace; user Windows not accessed"
+}

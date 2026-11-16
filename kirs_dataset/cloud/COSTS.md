@@ -1,5 +1,7 @@
 # 비용 상한 US$0
 
+**최종 상태: 사용자 요청에 따라 클라우드 반복 예약을 해제했습니다.** 다음 클라우드 예약은 없습니다. 아래 수치는 재활성화 시의 설계 추산입니다. Windows 실행에는 별도 클라우드 사용료가 없으며 기존 전기·인터넷 비용은 포함하지 않습니다.
+
 사용자 조건: 월 추가 비용 상한 US$0. 사용자가 2026-11-17 KST에 GitHub 계정의 결제수단 미등록 상태를 확인했다. 외부 도구로 청구 설정을 직접 읽지는 못했다.
 
 [GitHub 공식 Actions 과금 문서](https://docs.github.com/en/billing/concepts/product-billing/github-actions)를 실제 확인했다. 현재 문서는 GitHub Free의 월 포함 compute 사용량을 **US$12 상당**, artifact storage를 500MB로 안내한다. Linux 2-core 표준 runner의 현재 예시 단가는 $0.006/분이다. 과거 관행인 '항상 2,000분 고정'을 보편 규칙으로 쓰지 않고 플랜/현행 가격을 다시 확인해야 한다.

@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-import fcntl
 import json
 from contextlib import contextmanager
 from pathlib import Path
+from filelock import FileLock, Timeout
 
 from .common import dump_json, now, stable_id
 
@@ -11,7 +11,7 @@ from .common import dump_json, now, stable_id
 class State:
     """Checkpoint after every completed URL; remote persistence is separate.
 
-    A POSIX lock protects one machine. GitHub concurrency protects cloud jobs,
+    A native Windows/POSIX file lock protects one machine. GitHub concurrency protects cloud jobs,
     and the state branch update uses a non-force git push for remote CAS.
     """
     def __init__(self, directory: Path):
@@ -23,17 +23,17 @@ class State:
 
     @contextmanager
     def lock(self):
-        with (self.directory / ".lock").open("w") as f:
-            try:
-                fcntl.flock(f, fcntl.LOCK_EX | fcntl.LOCK_NB)
-            except BlockingIOError:
-                raise RuntimeError("Already running") from None
-            try:
-                if self.path.exists():
-                    self.data = json.loads(self.path.read_text())
-                yield self
-            finally:
-                fcntl.flock(f, fcntl.LOCK_UN)
+        lock = FileLock(str(self.directory / ".lock"))
+        try:
+            lock.acquire(timeout=0)
+        except Timeout:
+            raise RuntimeError("Already running") from None
+        try:
+            if self.path.exists():
+                self.data = json.loads(self.path.read_text(encoding="utf-8"))
+            yield self
+        finally:
+            lock.release()
 
     def save(self):
         dump_json(self.path, self.data)

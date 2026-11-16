@@ -1,1 +1,48 @@
-{"status":"prepared_not_yet_deployed","verified_at":null,"provider":"github_actions","repository":"shjoo0217-dev/automated-trading-system","code_directory":"kirs_dataset","workflow":"investment-pipeline.yml","paid_resources_created":false,"monthly_cash_budget_usd":0,"payment_method_absent":"user_confirmed","automatic_drive_sync":"not_connected","scheduled_run_verified":false,"next_scheduled_run":null}
+{
+  "status": "paused_per_user_request",
+  "verified_at": "2026-11-16T16:22:50.408729+00:00",
+  "provider": "github_actions",
+  "repository": "shjoo0217-dev/automated-trading-system",
+  "code_directory": "kirs_dataset",
+  "workflow": "investment-pipeline.yml",
+  "initial_deployment_commit": "40dad36bfc069aeebd99a02fb3b5a3e4f49c81ce",
+  "pause_commit": "47fcea7b786a4acb28a48a34f6ef4aeab8aa6232",
+  "historical_successful_runs": [
+    {
+      "id": 43902830881,
+      "event": "push",
+      "conclusion": "success",
+      "url": "https://github.com/shjoo0217-dev/automated-trading-system/actions/runs/43902830881"
+    },
+    {
+      "id": 43904399797,
+      "event": "push",
+      "conclusion": "success",
+      "url": "https://github.com/shjoo0217-dev/automated-trading-system/actions/runs/43904399797"
+    }
+  ],
+  "last_verified_run_status": "completed_with_source_errors; 2 issuer listings checked, 3 KIRS sources unavailable; data validation passed_with_limitations",
+  "schedule_trigger_present": false,
+  "push_trigger_present": false,
+  "manual_job_requires_variable": "KIRS_CLOUD_ENABLED=true",
+  "scheduled_run_verified": false,
+  "schedule_verification_reason": "No schedule event observed; user removed independent-cloud requirement and automatic triggers were removed.",
+  "next_scheduled_run": null,
+  "paid_resources_created": false,
+  "monthly_cash_budget_usd": 0,
+  "payment_method_absent": "user_confirmed",
+  "automatic_drive_sync": "not_connected",
+  "persistent_store": "kirs-data-state/runtime",
+  "current_target": "windows_laptop",
+  "windows_tasks_installed": false,
+  "windows_actual_execution_verified": false,
+  "windows_next_run": null,
+  "windows_task_plan_kst": {
+    "collect": [
+      "09:17",
+      "18:17"
+    ],
+    "train": "Monday 03:17"
+  },
+  "note": "Windows instructions and scripts prepared. No access to user laptop. Historical GitHub state preserved; existing STAR workflow untouched."
+}

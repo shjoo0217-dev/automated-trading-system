@@ -75,6 +75,9 @@ def create_database(root: Path, reports, financials, forecasts, business):
 
 
 def validate_directory(root: Path):
+    for name in ["reports.jsonl", "financials.parquet", "forecasts.parquet", "features.parquet", "facts_seed.jsonl"]:
+        if not (root / "data" / name).is_file():
+            raise ValueError("Required dataset component missing: " + name)
     reports = read_jsonl(root / "data/reports.jsonl")
     facts = []
     for name in ["financials", "forecasts"]:
@@ -82,6 +85,13 @@ def validate_directory(root: Path):
         if p.exists():
             import pyarrow.parquet as pq
             facts.extend(pq.read_table(p).to_pylist())
+    if not reports or not facts:
+        raise ValueError("Empty required corpus cannot be promoted as a validated dataset")
+    if len({r['report_id'] for r in reports}) != len(reports):
+        raise ValueError("Duplicate report identifiers")
+    seed = read_jsonl(root / "data/facts_seed.jsonl")
+    if {f['fact_id'] for f in seed} != {f['fact_id'] for f in facts}:
+        raise ValueError("Canonical fact inventory differs from Parquet facts")
     result = assess(reports, facts)
     dump_json(root / "evaluation/quality_checks.json", result)
     if result["errors"]:

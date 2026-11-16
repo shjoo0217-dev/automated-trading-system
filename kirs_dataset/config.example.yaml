@@ -1,5 +1,9 @@
 schema_version: 1
 timezone: Asia/Seoul
+execution:
+  preferred_environment: windows_laptop
+  cloud_schedules_enabled: false
+  windows_tasks_installed: false
 max_monthly_out_of_pocket_usd: 0
 cost_control:
   provider: github_actions_standard_linux

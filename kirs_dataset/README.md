@@ -4,6 +4,8 @@
 
 실제 자금 주문, 증권사 로그인, 매수·매도 실행 기능은 없습니다.
 
+**현재 운영 선택: Windows 노트북.** 사용자의 최신 요청에 따라 GitHub 반복 예약은 해제했습니다. 클라우드 push 배치 2회 성공 기록과 영구 자료는 보존했습니다. Windows 실행·예약 등록 파일은 준비했으며 사용자 노트북에 설치한 상태는 아닙니다. 먼저 `windows/README.md`를 읽으십시오.
+
 ## 현재 산출물
 
 | 파일 | 내용/상태 |
@@ -21,13 +23,16 @@
 | `raw/document_metadata.jsonl` | 원문 URL, SHA-256, 페이지 수, 수집시각. 원문 PDF 미포함 |
 | `manifest.json` | 버전, 기간, 파일별 행 수·체크섬·검증 상태, 미생성 사유 |
 | `evaluation/` | 품질 검사, 모델 보류 사유, 한계, 접근·이용조건 조사 |
-| `cloud/` | 실제 배포 상태, 스케줄 생성, 영구 체크포인트, 비용·중지 안내 |
+| `cloud/` | 배포·중지 상태, 보존된 클라우드 운영 구성 |
+| `windows/` | Windows 설치·수동 실행·예약 등록 및 해제 |
 
 `labels.parquet`, 모델 가중치, 영문 보고서, DART 대조 데이터는 생성하지 않았습니다. 각각 `*.NOT_GENERATED.json` 또는 `models/TRAINING_DEFERRED.json`에 사유가 있습니다. 빈 Parquet를 정상 데이터처럼 만들지 않았습니다. `review_queue.jsonl`의 0행은 539개 표 셀의 두 파서 결과가 일치했다는 뜻이며, 데이터의 경제적 정확성·학습 이용권한을 인증하는 뜻은 아닙니다.
 
 ## 빠른 실행
 
 Python 3.12 권장. ZIP을 풀어 생긴 `investment_dataset` 디렉터리에서 실행합니다.
+
+Windows에서는 명령 프롬프트에서 `windows\setup_windows.cmd` → `windows\run_collect.cmd` 순으로 실행합니다. `windows\run_train.cmd`는 학습 조건을 확인합니다. 아래 POSIX 가상환경 활성화 명령은 Linux/macOS용입니다.
 
 ```bash
 python -m venv .venv
@@ -43,7 +48,7 @@ investment train --root .
 investment package --root . --output dist --version v0.1.1
 ```
 
-수집 실행은 5개 출처 목록의 **메타데이터 발견/가용성 검사**, 기존 파일 검증, 체크포인트 저장을 수행합니다. Telegram 본문은 호출하지 않습니다. 신규 보고서 PDF의 자동 대량 추출과 원문 저장은 이용권한 검토가 끝날 때까지 비활성입니다. 신규 발견 링크는 체크포인트의 `discovered_not_downloaded_rights_review` 상태에 쌓입니다. 실패한 출처 때문에 이전 검증 ZIP의 최신 포인터를 변경하지 않습니다.
+수집 실행은 5개 출처 목록의 **메타데이터 발견/가용성 검사**, 기존 파일 검증, 체크포인트 저장을 수행합니다. Telegram 본문은 호출하지 않습니다. 신규 보고서 PDF의 자동 대량 추출과 원문 저장은 이용권한 검토가 끝날 때까지 비활성입니다. 신규 발견 링크는 체크포인트의 `discovered_not_downloaded_rights_review` 상태에 쌓입니다. 실패한 응답은 새 투자자료로 반영하지 않으며 데이터 검증 실패 시 이전 검증 ZIP의 최신 포인터를 보존합니다.
 
 PDF 수치 추출기는 `src/investment/extract.py`의 `extract(spec, pdf_bytes, observed)`입니다. `config/pilot_sources.json`은 실제 읽은 문서 명세입니다. 원문을 다시 확보할 권한이 있을 때 URL의 SHA-256을 먼저 확인하고 추출하십시오. 현재 입력 PDF를 ZIP에 재배포하지 않았으므로 **원문 없이 파서 자체를 같은 PDF에 재실행할 수는 없습니다**. 정형 자료 재생성은 `facts_seed.jsonl` 및 `cloud/rebuild_seed.py`로 가능합니다.
 
@@ -74,11 +79,11 @@ CSV에서는 `pd.read_csv(path, dtype={'stock_code':'string'})`를 사용하십�
 
 전용 유료 클라우드를 만들지 않습니다. 연결된 비공개 GitHub 저장소의 **`kirs_dataset/`** 경로와 **`kirs-data-state`** 체크포인트 브랜치를 사용합니다. 같은 저장소의 기존 STAR 프로젝트와 경로·상태를 분리했습니다. 원래 `investment_dataset/` 경로는 다른 작업이 이미 사용 중이어서 변경하지 않습니다.
 
-표준 Linux GitHub Actions를 매일 09:17·18:17 KST에, 재학습 조건 확인을 월요일 03:17 KST에 예약합니다. 실행 지연/누락 가능성이 있어 SLA는 없습니다. 최신 실제 실행 여부는 `cloud/deployment_status.json` 및 GitHub Actions를 확인하십시오. `cloud/OPERATIONS.md`에 중지·복구·다음 실행 계산 방법이 있습니다.
+실제 GitHub push 배치를 검증한 뒤 사용자 요청에 따라 **모든 schedule/push 트리거를 제거했습니다**. 남은 수동 workflow도 `KIRS_CLOUD_ENABLED=true`를 명시하기 전에는 실행되지 않습니다. 예약 발화 성공 증거는 없으며 다음 클라우드 예정 실행도 없습니다. 실제 이력은 `cloud/deployment_status.json`에 있습니다. 매일 09:17·18:17, 월요일 03:17 KST는 Windows 예약 작업을 설치했을 때의 기본 주기입니다.
 
 **사용자가 GitHub 결제수단 미등록 상태를 확인했습니다.** GitHub 공식 문서상 이 상태에서는 무료 할당량 소진 후 실행이 막힙니다. 이것이 $0 조건입니다. 예산 알림만으로 비용이 차단된다고 가정하지 않습니다. 결제수단을 나중에 추가하면 작업을 먼저 중지하고 유료 사용 차단을 재검증해야 합니다. 동일 계정의 다른 워크플로가 무료 한도를 함께 사용합니다.
 
-초기 ZIP과 설명서는 지정한 Google Drive 새 폴더에 보관합니다. 이후 자동 실행의 체크포인트·로그·새 검증 ZIP은 비공개 GitHub 브랜치에 영구 보관됩니다. **Actions→Drive 자동 업로드는 아직 미연결**입니다. ChatGPT 커넥터 인증은 Actions로 자동 이전되지 않습니다. 선택적인 별도 Google OAuth 오프라인 권한을 부여하면 `cloud/drive_sync.py`를 사용합니다.
+초기 ZIP과 설명서는 지정한 Google Drive 새 폴더에 보관합니다. 과거 클라우드 기록·ZIP은 비공개 GitHub 브랜치에 남아 있고, 앞으로 Windows에서 실행한 체크포인트·로그·ZIP은 `.runtime`에 보관됩니다. **지속 Drive 자동 업로드는 미연결**입니다. ChatGPT 커넥터 인증은 노트북 프로그램이나 Actions로 자동 이전되지 않습니다. 선택적인 별도 Google OAuth 오프라인 권한을 부여하면 `cloud/drive_sync.py`를 사용합니다.
 
 ## 이용 범위
 

@@ -26,7 +26,7 @@ def run(root: Path, state_dir: Path, mode="collect", run_key=None):
     run_key = run_key or os.getenv("GITHUB_RUN_ID") or now()
     started = now()
     record = {"run_key": run_key, "started_at": started, "mode": mode,
-              "execution_host": "github_actions" if os.getenv("GITHUB_ACTIONS") else "workspace_manual",
+              "execution_host": "github_actions" if os.getenv("GITHUB_ACTIONS") else ("windows_laptop" if os.name == "nt" else "workspace_manual"),
               "trigger": os.getenv("GITHUB_EVENT_NAME", "manual"), "sources": [],
               "status": "running", "orders_enabled": False}
     with state.lock():

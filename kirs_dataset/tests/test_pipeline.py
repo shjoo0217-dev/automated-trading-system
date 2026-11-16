@@ -162,3 +162,11 @@ def test_deferred_retraining_preserves_previous_successful_evaluation(tmp_path):
     assert result["status"]=="deferred"
     assert json.loads((out/"model_evaluation.json").read_text())["actually_trained"] is True
     assert json.loads((out/"last_training_attempt.json").read_text())["actually_trained"] is False
+
+
+def test_missing_component_is_not_a_valid_empty_dataset(tmp_path):
+    from investment.quality import validate_directory
+    (tmp_path/"data").mkdir()
+    (tmp_path/"data/reports.jsonl").write_text('')
+    with pytest.raises(ValueError,match="Required dataset component missing"):
+        validate_directory(tmp_path)

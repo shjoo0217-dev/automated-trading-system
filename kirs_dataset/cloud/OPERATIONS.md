@@ -1,5 +1,7 @@
 # 독립 클라우드 운영
 
+**현재 중지 상태입니다.** Windows 노트북 실행으로 범위를 변경하여 `schedule`과 `push` 트리거를 제거했습니다. 수동 실행도 `KIRS_CLOUD_ENABLED=true` 명시 전에는 실행되지 않습니다. 다음 클라우드 예약은 없습니다. 아래는 보존된 구성과 재활성화 시 운영 지침입니다. Windows 실행은 `windows/README.md`를 따릅니다.
+
 ## 구성과 권한
 
 - 클라우드 스케줄러: GitHub Actions `schedule` (UTC cron, 설정의 Asia/Seoul과 대응 검사).
@@ -34,11 +36,11 @@
 
 ## 실패·중복·버전
 
-한 workflow 전체를 concurrency group으로 직렬화하고 cancel-in-progress=false로 실행 중 체크포인트를 보호한다. 동일 머신 POSIX 비차단 락, 동일 run_key 완료 여부, 동일 URL+SHA의 상태를 검사한다. 중간 URL 처리마다 원자적 JSON 저장, 마지막 단계는 always()로 원격 체크포인트를 커밋한다. 원격 저장은 force 없는 push이므로 다른 작성자의 변경을 덮어쓰지 않는다. 단, runner 강제 종료가 always 단계 이전에 발생하면 마지막 원격 체크포인트 이후 일부 작업을 다시 처리한다. 네트워크 읽기는 멱등이고 별도 데이터 버전은 불변 이름이다.
+한 workflow 전체를 concurrency group으로 직렬화하고 cancel-in-progress=false로 실행 중 체크포인트를 보호한다. 동일 머신 Windows/POSIX 비차단 파일 잠금, 동일 run_key 완료 여부, 동일 URL+SHA의 상태를 검사한다. 중간 URL 처리마다 원자적 JSON 저장, 마지막 단계는 always()로 원격 체크포인트를 커밋한다. 원격 저장은 force 없는 push이므로 다른 작성자의 변경을 덮어쓰지 않는다. 단, runner 강제 종료가 always 단계 이전에 발생하면 마지막 원격 체크포인트 이후 일부 작업을 다시 처리한다. 네트워크 읽기는 멱등이고 별도 데이터 버전은 불변 이름이다.
 
 HTTP 요청 간격 최소 10초, robots Crawl-delay가 더 길면 그 값을 사용한다. 401/403·challenge·Telegram·robots 불명확은 우회하지 않는다. 429/5xx는 최대 2회 재시도하고 Retry-After가 실행 예산을 넘으면 다음 실행으로 넘긴다. 최대 30요청/작업·20MB/응답. 일부 출처 실패는 completed_with_source_errors로 기록하며 수집 성공으로 포장하지 않는다.
 
-새 검증 ZIP은 source fact/report 해시가 달라질 때만 생성한다. 스키마/산술/시점 검증 실패는 승격 전에 발생해야 하며 `latest_validated.json`은 그대로 둔다. 최초 파일럿은 passed_with_limitations이며 **공시대조/학습승인까지 끝난 운영 데이터셋을 의미하지 않는다**. 같은 버전 이름을 덮어쓰지 않는다. 체크섬 검증은 ZIP 밖 sha256 및 내부 manifest로 한다.
+새 검증 ZIP은 데이터·코드·설명서·배포 상태의 내용 해시가 달라질 때 생성한다. 생성 시각을 포함한 manifest 자체는 변경 감지에서 제외하므로 내용이 같은 정기 점검은 새 ZIP을 만들지 않는다. 스키마/산술/시점 검증 실패는 승격 전에 발생해야 하며 `latest_validated.json`은 그대로 둔다. 최초 파일럿은 passed_with_limitations이며 **공시대조/학습승인까지 끝난 운영 데이터셋을 의미하지 않는다**. 같은 버전 이름을 덮어쓰지 않는다. 체크섬 검증은 ZIP 밖 sha256 및 내부 manifest로 한다.
 
 아카이브 합계 100MB, 전체 상태 110MB를 넘으면 발행을 중단한다. Git 이력의 실제 저장량은 작업 이력 때문에 더 커질 수 있으므로 이 한도는 Git 저장소 전체 하드쿼터가 아니다. 원문 PDF/대용량 학습 모델을 여기에 무제한 보관하지 않는다. 이전 버전 삭제는 자동으로 하지 않는다.
 

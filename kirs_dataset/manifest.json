@@ -1,7 +1,7 @@
 {
-  "dataset_version": "v0.1.0-preflight",
+  "dataset_version": "v0.1.0-20261117",
   "schema_version": "1.0",
-  "generated_at": "2026-11-16T15:56:52.858033+00:00",
+  "generated_at": "2026-11-16T16:25:58.458088+00:00",
   "timezone": "Asia/Seoul",
   "validation_status": "passed_with_limitations",
   "validation_scope": "Schema, numeric extraction agreement, arithmetic and PIT rules; NOT DART verification or training-rights clearance",
@@ -27,9 +27,9 @@
   "files": [
     {
       "path": ".github/workflows/investment-pipeline.yml",
-      "bytes": 2451,
+      "bytes": 2226,
       "rows": null,
-      "sha256": "f54d3d978f58cf4bab5fe401dc9424414f2ab13e676ee810677468a72a9f7b6f",
+      "sha256": "99b8c18b53cb8f3aa003efa158b1e83b04ddb7decc563c970326b3bdbc5b6fab",
       "status": "generated"
     },
     {
@@ -41,23 +41,23 @@
     },
     {
       "path": "CODEX_HANDOFF.md",
-      "bytes": 8745,
+      "bytes": 9313,
       "rows": null,
-      "sha256": "0626fc55e65385d80f20f2428d3654cd899da2a170862a558b7bc946882ceaa9",
+      "sha256": "fd62957bee8e4943b2147e044f693070695699922ac81a5fc55b946a893e502a",
       "status": "generated"
     },
     {
       "path": "DATA_DICTIONARY.md",
-      "bytes": 14061,
+      "bytes": 14539,
       "rows": null,
-      "sha256": "b3f01c31928e6845c201146ee9a47b9e75964256e7c9a23e22e772435929c1e4",
+      "sha256": "58b6f5da31d512aa18a24eb70a2a2cd11a4c87bd42e033a5fb3d97b26fb49eb1",
       "status": "generated"
     },
     {
       "path": "README.md",
-      "bytes": 7937,
+      "bytes": 8870,
       "rows": null,
-      "sha256": "1d6acc23a45081af9f1c63ef443463f98bce302107a007495295267581751959",
+      "sha256": "3944b0a764d49152027ef6dbd4a3e34a35438fe585910973e9f692b75ba089da",
       "status": "generated"
     },
     {
@@ -69,23 +69,23 @@
     },
     {
       "path": "cloud/COSTS.md",
-      "bytes": 2450,
+      "bytes": 2778,
       "rows": null,
-      "sha256": "ed027e18121db88e066b3d2fcecb81804ebdeb175c0c964ba5cc8b953e1d9ecb",
+      "sha256": "d75dfa947affda03139a8a353aa68c4dc62783ea1fb7ea7aa724bb62bb461238",
       "status": "generated"
     },
     {
       "path": "cloud/OPERATIONS.md",
-      "bytes": 7482,
+      "bytes": 8081,
       "rows": null,
-      "sha256": "a3cc1769e1964658c3f2a3a39ee83b15c1d53cb9aa6d0f013922d67179817f76",
+      "sha256": "4338e8ca025c844c9fb0e7d83742e9c6f4101d4a216f091d20433d8f52424865",
       "status": "generated"
     },
     {
       "path": "cloud/deployment_status.json",
-      "bytes": 405,
+      "bytes": 1934,
       "rows": null,
-      "sha256": "9f591613687017e19a5b7b79290c016b4fe18367e2e88514820c551dbd5c590c",
+      "sha256": "c5a1bd845f6f0fd294fd4e11a0ed4581feae6c9f54e41c206a0c961cfbc7a6f7",
       "status": "generated"
     },
     {
@@ -97,9 +97,9 @@
     },
     {
       "path": "cloud/generate_workflow.py",
-      "bytes": 1429,
+      "bytes": 1903,
       "rows": null,
-      "sha256": "7d6a9d1c7f7588384ae3fae505d1e180f62c7c81022a012fc7c3c3852e69bf3e",
+      "sha256": "1fbe144efa7b6d6eff5eca0e170f73c10cb1ea4a1ab5b00b1fb8cdda21ade44b",
       "status": "generated"
     },
     {
@@ -107,6 +107,20 @@
       "bytes": 3344,
       "rows": null,
       "sha256": "d0fffec16a809cd4c0d8eb089a7a46ec1f7d28443986f0d970ea15171ae96d2c",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/initial_cloud_archive.json",
+      "bytes": 255,
+      "rows": null,
+      "sha256": "c9239cc09a8da98a5e2fdf9d1b3fa4a8717f138c32c5241977985d9c4c16a5ee",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/initial_cloud_run.json",
+      "bytes": 2257,
+      "rows": null,
+      "sha256": "c775151519f1a3aedfbc056a05e42c96cd8d8201700e910f31603f46fb634125",
       "status": "generated"
     },
     {
@@ -146,9 +160,9 @@
     },
     {
       "path": "config.example.yaml",
-      "bytes": 1920,
+      "bytes": 2037,
       "rows": null,
-      "sha256": "61d564bf2332c85249782b067122582ea2636832135bf03d17d28ceb2cd86960",
+      "sha256": "fc18bebba89424fa88925e53977191f6a8e4afa34936deaf585bfa76bf3e139c",
       "status": "generated"
     },
     {
@@ -242,9 +256,9 @@
     },
     {
       "path": "data/research_examples.jsonl",
-      "bytes": 28107,
+      "bytes": 34515,
       "rows": 30,
-      "sha256": "3d4b088f084da8e69991f3de72ceb2494471ea50f3f0febc7eabeb5b54ca6891",
+      "sha256": "9e59f9d0b26dfa69860e8d3b24918cd10b13b1067ee50d3532f266d04d59ba30",
       "status": "generated"
     },
     {
@@ -290,6 +304,13 @@
       "status": "generated"
     },
     {
+      "path": "evaluation/completion_report.md",
+      "bytes": 5767,
+      "rows": null,
+      "sha256": "967a42549491201bf4013a3e63b4cbefba8a0509e86f98eaedb0c2f46a65d7eb",
+      "status": "generated"
+    },
+    {
       "path": "evaluation/coverage.json",
       "bytes": 304,
       "rows": null,
@@ -305,9 +326,9 @@
     },
     {
       "path": "evaluation/limitations.md",
-      "bytes": 4148,
+      "bytes": 4346,
       "rows": null,
-      "sha256": "24b36301b1dd7dd33f0eca0025f4f175f51df7bd52b3a70ce38c73323b8945b3",
+      "sha256": "29670432903635dfd3bc93c14382b54bb481017250e7bfac99a831d21692c43b",
       "status": "generated"
     },
     {
@@ -335,7 +356,14 @@
       "path": "evaluation/test_results.txt",
       "bytes": 798,
       "rows": null,
-      "sha256": "cc3743a4c826024430b44fdca9f30774d5688a4fcef9b429dbd3e6594703894f",
+      "sha256": "169d9ec613432f5e45f561a042daa3644802b0bdc45222112cf5908cf717707c",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/windows_runner_validation.json",
+      "bytes": 1372,
+      "rows": null,
+      "sha256": "ce23b389d2ed2b45896c2da88a347ff058a8a45b76eaf636cd877efbdcfa6081",
       "status": "generated"
     },
     {
@@ -389,9 +417,9 @@
     },
     {
       "path": "requirements.txt",
-      "bytes": 169,
+      "bytes": 201,
       "rows": null,
-      "sha256": "cea8c3a32777b2b46ad926e18d115ef58323a418743d20b38d0b74b5bfc34b69",
+      "sha256": "f8b292dc6026f40219a5eb53ebafd616e6f05d8539204989c45b14ed3a86d4ae",
       "status": "generated"
     },
     {
@@ -424,9 +452,9 @@
     },
     {
       "path": "src/investment/examples.py",
-      "bytes": 4574,
+      "bytes": 5176,
       "rows": null,
-      "sha256": "634a11da861e896b42dd1379369c666b7b26ccbe7b247ffa503e4fa3f3574ffd",
+      "sha256": "5e42c1be085b908d4a6cd3ab6a16ec801caf0d65625606e2891193dd02fb6e64",
       "status": "generated"
     },
     {
@@ -438,9 +466,9 @@
     },
     {
       "path": "src/investment/features.py",
-      "bytes": 8162,
+      "bytes": 8836,
       "rows": null,
-      "sha256": "c3e02cae1d721713b7fda8dd34ec97c8d9d1eff483cd8e7d160656d44361f677",
+      "sha256": "a9b13134b07adc03803b88969e4d754efd40164643930960c45a6473fc030e6e",
       "status": "generated"
     },
     {
@@ -459,23 +487,23 @@
     },
     {
       "path": "src/investment/package.py",
-      "bytes": 6064,
+      "bytes": 6126,
       "rows": null,
-      "sha256": "d7d3cf9ebc6771e3938e3d62d94b00f68cc45f7f0c90aade17dff7f47eb27d7d",
+      "sha256": "2bcb7c755757e706bcb10ba739092497cd0b8d0aa852ff12491ebec357a226b5",
       "status": "generated"
     },
     {
       "path": "src/investment/pipeline.py",
-      "bytes": 5746,
+      "bytes": 6757,
       "rows": null,
-      "sha256": "4b1c568306c1983d38968ee43f5bc36e0eef890bc50a82caf78b3d7d621c9461",
+      "sha256": "79e8eb6a4cf0b48dd09b83826123b0867a64496875ef1f06a1703af0fa1aa18a",
       "status": "generated"
     },
     {
       "path": "src/investment/quality.py",
-      "bytes": 4751,
+      "bytes": 5443,
       "rows": null,
-      "sha256": "4ee9b7d17e1e3e6a31d0853371a8a890fb1047aad9928139a5448c1427ea784c",
+      "sha256": "ee7ab82ceff61f022dd909112bb91c7220257e8ca0e31bae2f9d39082cc08d8c",
       "status": "generated"
     },
     {
@@ -494,23 +522,79 @@
     },
     {
       "path": "src/investment/state.py",
-      "bytes": 2259,
+      "bytes": 2235,
       "rows": null,
-      "sha256": "682ec7f5a9b68d9eb37c8f9fd70c1d434fdc02e67546618860caae343e523fe6",
+      "sha256": "ad8f9a6d745bb6a61e8818167af81ba866a34b7535f4e18829bb7c574f33a635",
       "status": "generated"
     },
     {
       "path": "src/investment/train.py",
-      "bytes": 5755,
+      "bytes": 6053,
       "rows": null,
-      "sha256": "1d73d443da270b39ce6f3c4f6d47ee932524c1de24b9c69acbf241339811ec0b",
+      "sha256": "145b77e422624d80c0cd480587dd2b905f6e693e00d8f3373421d63dfe53dd21",
       "status": "generated"
     },
     {
       "path": "tests/test_pipeline.py",
-      "bytes": 6641,
+      "bytes": 8117,
       "rows": null,
-      "sha256": "7ac9988388dec6b7b9da23536090c5590c3ae641869637f0310400d16609e971",
+      "sha256": "0cd134cfa4495e79c9155d02c29e74578b8a265a31f9d9a9bb6e77e2abf61099",
+      "status": "generated"
+    },
+    {
+      "path": "windows/README.md",
+      "bytes": 4583,
+      "rows": null,
+      "sha256": "3ef1aff5da7ce175aadcf883c6924cfed8f1a0c28226db318232abaf7dbe03fb",
+      "status": "generated"
+    },
+    {
+      "path": "windows/install_tasks.ps1",
+      "bytes": 2240,
+      "rows": null,
+      "sha256": "88da446a37179ef2350ff54b45500c82a97aae670967fdf3557bd5f842f54070",
+      "status": "generated"
+    },
+    {
+      "path": "windows/run_collect.cmd",
+      "bytes": 151,
+      "rows": null,
+      "sha256": "d4666e37931c3a2f92df2eb6352363b2565d7425d11535d5ade95ec12faf7d5c",
+      "status": "generated"
+    },
+    {
+      "path": "windows/run_job.py",
+      "bytes": 1349,
+      "rows": null,
+      "sha256": "46943f4aba5313dcef47788d6a9d4b8d1df5f82f054dfdf70e1780ee4057e318",
+      "status": "generated"
+    },
+    {
+      "path": "windows/run_train.cmd",
+      "bytes": 149,
+      "rows": null,
+      "sha256": "88467e070cd31f972aca18f939a1392110125f058c01ea127ea8e5bd017bab16",
+      "status": "generated"
+    },
+    {
+      "path": "windows/schedule_plan.py",
+      "bytes": 1485,
+      "rows": null,
+      "sha256": "7f288637676981d6579e76c68ed0ad5b50ab05bedb29f635e9244b8ba0bbe361",
+      "status": "generated"
+    },
+    {
+      "path": "windows/setup_windows.cmd",
+      "bytes": 503,
+      "rows": null,
+      "sha256": "0291e88443e4bf9e1d5d66822b11112634ba3aaa7024aa87be5c430089a8e279",
+      "status": "generated"
+    },
+    {
+      "path": "windows/uninstall_tasks.ps1",
+      "bytes": 442,
+      "rows": null,
+      "sha256": "1bd04c3f5d6651de85555eb91b05836bd585cbf448a1dc9f8a39deaf5e9275d2",
       "status": "generated"
     }
   ],

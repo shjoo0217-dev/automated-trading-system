@@ -8,3 +8,5 @@ PyYAML==6.0.3
 scikit-learn==1.8.0
 joblib==1.5.3
 croniter==7.0.0
+tzdata==2025.2
+filelock==3.20.0

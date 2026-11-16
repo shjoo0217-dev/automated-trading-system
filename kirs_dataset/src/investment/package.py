@@ -11,7 +11,7 @@ import pyarrow.parquet as pq
 from .common import digest, dump_json, now, read_jsonl
 from .quality import validate_directory
 
-ALLOWED_DIRS = {"src", "data", "raw", "models", "evaluation", "cloud", "config", "tests", ".github"}
+ALLOWED_DIRS = {"src", "data", "raw", "models", "evaluation", "cloud", "config", "tests", ".github", "windows"}
 ALLOWED_FILES = {"README.md", "CODEX_HANDOFF.md", "DATA_DICTIONARY.md", "manifest.json", "requirements.txt",
                  "requirements-dev.txt", "pyproject.toml", "config.example.yaml", ".gitignore", "VERSION", "LICENSE"}
 
@@ -19,7 +19,7 @@ ALLOWED_FILES = {"README.md", "CODEX_HANDOFF.md", "DATA_DICTIONARY.md", "manifes
 def included(root):
     for p in sorted(root.rglob("*")):
         rel = p.relative_to(root)
-        if not p.is_file() or p.is_symlink() or "__pycache__" in rel.parts:
+        if not p.is_file() or p.is_symlink() or "__pycache__" in rel.parts or any(x.endswith(".egg-info") for x in rel.parts):
             continue
         if rel.parts[0] not in ALLOWED_DIRS and str(rel) not in ALLOWED_FILES:
             continue
