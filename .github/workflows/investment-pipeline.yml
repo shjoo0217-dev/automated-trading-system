@@ -1,22 +1,11 @@
 name: Investment data pipeline
 on:
-  schedule:
-    - cron: '12 16 * * *' # temporary deployment scheduler verification
-    - cron: '17 0,9 * * *'
-    - cron: '17 18 * * 0'
   workflow_dispatch:
     inputs:
       mode:
         type: choice
         options: [collect, train, health]
         default: collect
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/investment-pipeline.yml'
-      - 'kirs_dataset/src/**'
-      - 'kirs_dataset/cloud/**'
-      - 'kirs_dataset/config.example.yaml'
 permissions:
   contents: write
 concurrency:
@@ -24,7 +13,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   batch:
-    if: ${{ vars.PIPELINE_DISABLED != 'true' }}
+    if: ${{ vars.KIRS_CLOUD_ENABLED == 'true' && vars.PIPELINE_DISABLED != 'true' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     defaults:
