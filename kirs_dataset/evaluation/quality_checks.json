@@ -1,0 +1,37 @@
+{
+  "status": "passed_with_limitations",
+  "errors": [],
+  "warnings": [
+    {
+      "fact_id": "95876caeaf8ac040b1816585",
+      "warning": "zero_valuation_preserved_as_printed; do_not_use_as_cheap_signal"
+    },
+    {
+      "fact_id": "08e8093a2f2f1537704560eb",
+      "warning": "zero_valuation_preserved_as_printed; do_not_use_as_cheap_signal"
+    },
+    {
+      "fact_id": "fb682436d2f851310efe96ae",
+      "warning": "zero_valuation_preserved_as_printed; do_not_use_as_cheap_signal"
+    },
+    {
+      "fact_id": "e2f4e2913cb6bfa153fe9363",
+      "warning": "zero_valuation_preserved_as_printed; do_not_use_as_cheap_signal"
+    },
+    {
+      "fact_id": "4e25e3db7d26a5ef468a8f03",
+      "warning": "zero_valuation_preserved_as_printed; do_not_use_as_cheap_signal"
+    },
+    {
+      "fact_id": "960306a3c921be945e269284",
+      "warning": "zero_valuation_preserved_as_printed; do_not_use_as_cheap_signal"
+    }
+  ],
+  "reports": 6,
+  "companies": 3,
+  "facts": 539,
+  "null_facts": 13,
+  "parser_agreement_facts": 539,
+  "unknown_statement_scope_facts": 500,
+  "dart_reconciled_facts": 0
+}

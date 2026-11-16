@@ -1,0 +1,50 @@
+schema_version: 1
+timezone: Asia/Seoul
+max_monthly_out_of_pocket_usd: 0
+cost_control:
+  provider: github_actions_standard_linux
+  payment_method_absent_user_confirmed: true
+  confirmed_date_kst: '2026-11-17'
+  warning: Adding a payment method invalidates the zero-cash condition; disable workflows first.
+schedules:
+  collect_cron_kst: '17 9,18 * * *'
+  train_cron_kst: '17 3 * * 1'
+  collect_cron_utc: '17 0,9 * * *'
+  train_cron_utc: '17 18 * * 0'
+limits:
+  timeout_minutes: 10
+  requests_per_run: 30
+  request_interval_seconds: 10
+  retries: 2
+  maximum_response_bytes: 20000000
+  maximum_archive_store_bytes: 100000000
+collection:
+  # Only public listing metadata is collected continuously at launch.
+  # This does NOT assert permission to bulk harvest or train on copyrighted reports.
+  mode: metadata_only_until_rights_clearance
+  telegram_enabled: false
+  raw_pdf_archive_enabled: false
+  allowed_hosts:
+    - www.kirs.or.kr
+    - w4.kirs.or.kr
+    - www.t3.co.kr
+    - www.redcap.co.kr
+  sources:
+    - {id: kirs_english, url: 'https://www.kirs.or.kr/research/research_eng.html', robots_required: true}
+    - {id: kirs_company, url: 'https://www.kirs.or.kr/research/research22_1.html', robots_required: true}
+    - {id: kirs_outsourcing, url: 'https://www.kirs.or.kr/research/research.html', robots_required: true}
+    - {id: issuer_t3, url: 'https://www.t3.co.kr/kr/ir/ir.php', robots_required: true}
+    - {id: issuer_redcap, url: 'https://www.redcap.co.kr/sub/ir/ir_data02.php', robots_required: true}
+training:
+  min_samples: 500
+  min_companies: 50
+  min_months: 24
+  min_new_samples: 100
+  min_split_samples: 30
+  horizon_exchange_sessions: 20
+  decision_lag_seconds: 60
+storage:
+  state_branch: kirs-data-state
+  drive_folder_id: 1y0rKp0qxbvf5ADAhmeNY6YmtxPtBWHB9
+  automatic_drive_sync: false
+  reason: GitHub runner has no delegated Google OAuth refresh credential; initial upload uses connected Drive.

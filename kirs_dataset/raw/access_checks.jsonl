@@ -1,0 +1,28 @@
+{"name": "kirs_robots", "url": "https://www.kirs.or.kr/robots.txt", "error": "HTTP Error 503: Service Unavailable", "checked_at": "2026-11-16T15:22:33.078097+00:00"}
+{"name": "kirs_eng", "url": "https://www.kirs.or.kr/research/research_eng.html", "error": "HTTP Error 503: Service Unavailable", "checked_at": "2026-11-16T15:22:36.174151+00:00"}
+{"name": "kirs_company", "url": "https://www.kirs.or.kr/research/research22_1.html", "error": "HTTP Error 503: Service Unavailable", "checked_at": "2026-11-16T15:22:39.264705+00:00"}
+{"name": "kirs_outsourcing", "url": "https://www.kirs.or.kr/research/research.html", "error": "HTTP Error 503: Service Unavailable", "checked_at": "2026-11-16T15:22:42.153253+00:00"}
+{"name": "telegram", "url": "https://t.me/s/kirsofficial", "status": 200, "final_url": "https://t.me/s/kirsofficial", "bytes": 120922, "content_type": null, "checked_at": "2026-11-16T15:22:45.087400+00:00"}
+{"name": "dart", "url": "https://opendart.fss.or.kr/", "status": 200, "final_url": "https://opendart.fss.or.kr/", "bytes": 37893, "content_type": null, "checked_at": "2026-11-16T15:22:50.231379+00:00"}
+{"name": "krx", "url": "https://data.krx.co.kr/", "status": 200, "final_url": "https://data.krx.co.kr/", "bytes": 474, "content_type": null, "checked_at": "2026-11-16T15:22:53.053942+00:00"}
+{"name": "w4_robots", "url": "https://w4.kirs.or.kr/robots.txt", "status": 503, "bytes": 98, "final_url": "https://w4.kirs.or.kr/robots.txt", "content_type": "text/plain"}
+{"name": "first_pdf", "url": "https://w4.kirs.or.kr/download/research/%E2%98%85261104_%ED%8C%8C%EB%A7%88%EB%A6%AC%EC%84%9C%EC%B9%98_Final.pdf", "status": 503, "bytes": 98, "final_url": "https://w4.kirs.or.kr/download/research/%E2%98%85261104_%ED%8C%8C%EB%A7%88%EB%A6%AC%EC%84%9C%EC%B9%98_Final.pdf", "content_type": "text/plain"}
+{"name": "dart_terms", "url": "https://opendart.fss.or.kr/intro/terms.do", "status": 200, "bytes": 40545, "final_url": "https://opendart.fss.or.kr/intro/terms.do", "content_type": "text/html; charset=UTF-8"}
+{"name": "dart_guide", "url": "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS003", "status": 200, "bytes": 25060, "final_url": "https://opendart.fss.or.kr/guide/main.do?apiGrpCd=DS003", "content_type": "text/html; charset=UTF-8"}
+{"name": "telegram_terms", "url": "https://telegram.org/tos", "status": 200, "bytes": 25192, "final_url": "https://telegram.org/tos", "content_type": "text/html; charset=utf-8"}
+{"name": "krx_main", "url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd", "status": 200, "bytes": 556602, "final_url": "https://data.krx.co.kr/contents/MDC/MAIN/main/index.cmd", "content_type": "text/html; charset=utf-8"}
+{"name": "tg_license", "url": "https://telegram.org/tos/content-licensing", "final_url": "https://telegram.org/tos/content-licensing", "status": 200, "bytes": 8333}
+{"name": "krx_terms", "url": "https://data.krx.co.kr/contents/MDC/INFO/informationController/MDCINFO003.cmd", "final_url": "https://data.krx.co.kr/contents/MDC/INFO/informationController/MDCINFO003.cmd", "status": 403, "bytes": 2421}
+{"name": "krx_openapi", "url": "https://openapi.krx.co.kr/", "final_url": "https://openapi.krx.co.kr/", "status": 200, "bytes": 356}
+{"name": "dart_detail", "url": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS003&apiId=2019020", "final_url": "https://opendart.fss.or.kr/guide/detail.do?apiGrpCd=DS003&apiId=2019020", "status": 200, "bytes": 41236}
+{"name": "short_report", "url": "https://vo.la/t7GJZvK", "final_url": "https://w4.kirs.or.kr/download/research/261112_%EC%86%8C%EC%9E%AC_%ED%95%9C%EA%B5%AD%EC%88%98%EC%B6%9C%ED%8F%AC%EC%9E%A5(002200)_%EC%9B%90%EC%A7%80%EB%B6%80%ED%84%B0%20%EC%99%84%EC%A0%9C%ED%92%88%EA%B9%8C%EC%A7%80%20%EC%9D%BC%EA%B4%80%EC%83%9D%EC%82%B0%EC%B2%B4%EA%B3%84%EC%99%80%20%EC%A0%84%EA%B5%AD%20%EC%83%9D%EC%82%B0%EA%B1%B0%EC%A0%90%EC%9D%84%20%EA%B0%96%EC%B6%98%20%EA%B3%A8%ED%8C%90%EC%A7%80%20%ED%8F%AC%EC%9E%A5%EC%9E%AC%20%EC%A0%84%EB%AC%B8%EA%B8%B0%EC%97%85_%EC%84%9C%EC%9A%B8%ED%8F%89%EA%B0%80%EC%A0%95%EB%B3%B4(%EC%A3%BC).pdf", "status": 503, "bytes": 98}
+{"name": "gh_billing", "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions", "final_url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions", "status": 200, "bytes": 233690}
+{"name": "krx_kirs", "url": "https://data.krx.co.kr/contents/MDC/HARD/hardController/MDCHARD003.cmd", "status": 403, "bytes": 2421, "final_url": "https://data.krx.co.kr/contents/MDC/HARD/hardController/MDCHARD003.cmd"}
+{"name": "krx_legal", "url": "https://info.krx.co.kr/contents/KRX/06/06070200/KRX06070200.jsp", "status": 200, "bytes": 89572, "final_url": "https://info.krx.co.kr/contents/KRX/06/06070200/KRX06070200.jsp"}
+{"name": "alteogen_2026", "url": "https://alteogen.com/kr/sub/ir/information.php?bid=2&idx=476&mode=view&page=1", "status": 200, "bytes": 816}
+{"name": "alteogen_2025", "url": "https://www.alteogen.com/kr/sub/ir/information.php?bid=2&idx=110&mode=view", "status": 200, "bytes": 813}
+{"name": "emro", "url": "https://www.emro.co.kr/investment-info/ir", "status": 503, "bytes": 91}
+{"name": "opasnet", "url": "https://opasnet.co.kr/sub/sub01_05.php?boardid=notice&category=&goPage=&idx=247&mode=view&offset=&sk=&sw=", "status": 503, "bytes": 98}
+{"name": "t3", "url": "https://www.t3.co.kr/kr/ir/ir.php", "status": 200, "bytes": 33864}
+{"name": "hum edix", "url": "https://humedix.com/web/home.php?field=&go=Emenu_04&go_pds=pds_text_list&mode=&num=1981&pds_num=81&s_memo_2=&s_que=&start=80", "status": 503, "bytes": 98}
+{"name": "jtc", "url": "https://www.groupjtc.com/korean/ad_news/index.php?page=Mg%3D%3D", "status": 200, "bytes": 8549}

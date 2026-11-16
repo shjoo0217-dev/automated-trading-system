@@ -1,0 +1,10 @@
+{
+  "status": "no_model_trained",
+  "reasons": [
+    "3 companies and 6 report observations only",
+    "No licensed market prices or matured future return labels",
+    "All current samples first observed in one collection session",
+    "Training rights not cleared; actuals not DART reconciled"
+  ],
+  "resume_config": "config.example.yaml:training"
+}

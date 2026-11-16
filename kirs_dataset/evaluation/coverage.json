@@ -1,0 +1,15 @@
+{
+  "reports": 6,
+  "companies": 3,
+  "financial_fact_rows": 439,
+  "forecast_fact_rows": 100,
+  "company_snapshots": 29,
+  "examples": 30,
+  "business_risks": 12,
+  "features": 6,
+  "labels": 0,
+  "events": 1,
+  "event_company_identity_unknown": 1,
+  "english_reports": 0,
+  "actually_trained": false
+}

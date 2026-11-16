@@ -1,0 +1,547 @@
+{
+  "dataset_version": "v0.1.0-preflight",
+  "schema_version": "1.0",
+  "generated_at": "2026-11-16T15:56:52.858033+00:00",
+  "timezone": "Asia/Seoul",
+  "validation_status": "passed_with_limitations",
+  "validation_scope": "Schema, numeric extraction agreement, arithmetic and PIT rules; NOT DART verification or training-rights clearance",
+  "report_publication_period": {
+    "start": "2023-11-17",
+    "end": "2026-10-28"
+  },
+  "collection_period": {
+    "start": "2026-11-16T15:28:51.994923+00:00",
+    "end": "2026-11-16T15:31:47.502689+00:00"
+  },
+  "company_count": 3,
+  "report_count": 6,
+  "sources": [
+    "https://www.groupjtc.com/assets/editor/files/241230_______IR__________JTC.pdf",
+    "https://www.redcap.co.kr/uploaded/board/report/605c1133d242f0ce40c20e30ebd51df20.pdf",
+    "https://www.redcap.co.kr/uploaded/board/report/61002aa0ed9bbc1f44e3d9258506c9250.pdf",
+    "https://www.redcap.co.kr/uploaded/board/report/8dd3e53529fc28bb9667c7a7aab472be0.pdf",
+    "https://www.t3.co.kr/bbs/bbs_download.php?idx=49&download=1",
+    "https://www.t3.co.kr/bbs/bbs_download.php?idx=97&download=1"
+  ],
+  "source_registry": "data/sources.csv",
+  "files": [
+    {
+      "path": ".github/workflows/investment-pipeline.yml",
+      "bytes": 2451,
+      "rows": null,
+      "sha256": "f54d3d978f58cf4bab5fe401dc9424414f2ab13e676ee810677468a72a9f7b6f",
+      "status": "generated"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 112,
+      "rows": null,
+      "sha256": "8e48642adaa820c8b9f2aa392917ca140eeefd46d78bad116e49f6742db843f0",
+      "status": "generated"
+    },
+    {
+      "path": "CODEX_HANDOFF.md",
+      "bytes": 8745,
+      "rows": null,
+      "sha256": "0626fc55e65385d80f20f2428d3654cd899da2a170862a558b7bc946882ceaa9",
+      "status": "generated"
+    },
+    {
+      "path": "DATA_DICTIONARY.md",
+      "bytes": 14061,
+      "rows": null,
+      "sha256": "b3f01c31928e6845c201146ee9a47b9e75964256e7c9a23e22e772435929c1e4",
+      "status": "generated"
+    },
+    {
+      "path": "README.md",
+      "bytes": 7937,
+      "rows": null,
+      "sha256": "1d6acc23a45081af9f1c63ef443463f98bce302107a007495295267581751959",
+      "status": "generated"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "rows": null,
+      "sha256": "e9dd8507f4bf0c6f42458e41aea833ad0bd3f6127272335eee9bf4d58541ed67",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/COSTS.md",
+      "bytes": 2450,
+      "rows": null,
+      "sha256": "ed027e18121db88e066b3d2fcecb81804ebdeb175c0c964ba5cc8b953e1d9ecb",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/OPERATIONS.md",
+      "bytes": 7482,
+      "rows": null,
+      "sha256": "a3cc1769e1964658c3f2a3a39ee83b15c1d53cb9aa6d0f013922d67179817f76",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/deployment_status.json",
+      "bytes": 405,
+      "rows": null,
+      "sha256": "9f591613687017e19a5b7b79290c016b4fe18367e2e88514820c551dbd5c590c",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/drive_sync.py",
+      "bytes": 2959,
+      "rows": null,
+      "sha256": "7ed0b8c02dc0d8e658cc3d888d25d40adde4afaf6eb597b11604f9307245dbf1",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/generate_workflow.py",
+      "bytes": 1429,
+      "rows": null,
+      "sha256": "7d6a9d1c7f7588384ae3fae505d1e180f62c7c81022a012fc7c3c3852e69bf3e",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/ingest_pdf.py",
+      "bytes": 3344,
+      "rows": null,
+      "sha256": "d0fffec16a809cd4c0d8eb089a7a46ec1f7d28443986f0d970ea15171ae96d2c",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/rebuild_seed.py",
+      "bytes": 974,
+      "rows": null,
+      "sha256": "81e833144b7db95027d694ee5a32796b986c356c6021464af0da20f0be571b76",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/state_branch.py",
+      "bytes": 2681,
+      "rows": null,
+      "sha256": "6888ff1e501ba6ef766d96f3fda547a818b30d2ac4b2b4eb3c296e3c9fdd0ecf",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/sync_latest_drive.py",
+      "bytes": 651,
+      "rows": null,
+      "sha256": "17468686d24166d1fe9d7e090bd4e2e10f25b32d1f2702ce0a061a34c8aafa69",
+      "status": "generated"
+    },
+    {
+      "path": "cloud/workflow.template.yml",
+      "bytes": 2470,
+      "rows": null,
+      "sha256": "e5538d594c3f96fe7dbc0449e43d587c7cf2e22b51971b1360e15649e30104f5",
+      "status": "generated"
+    },
+    {
+      "path": "config/pilot_sources.json",
+      "bytes": 2584,
+      "rows": null,
+      "sha256": "25ce7f857eb26d36a3335387ac3057a450c935a8b9d35e39dcb7865573f7bd98",
+      "status": "generated"
+    },
+    {
+      "path": "config.example.yaml",
+      "bytes": 1920,
+      "rows": null,
+      "sha256": "61d564bf2332c85249782b067122582ea2636832135bf03d17d28ceb2cd86960",
+      "status": "generated"
+    },
+    {
+      "path": "data/business_risks.jsonl",
+      "bytes": 8228,
+      "rows": 12,
+      "sha256": "fee93043644d3f996a7cc39a21fa8d2a1c97baf40c10189c861ea1dc36ea27b9",
+      "status": "generated"
+    },
+    {
+      "path": "data/company_snapshots.parquet",
+      "bytes": 16485,
+      "rows": 29,
+      "sha256": "769e8bee074bfbd13714d9ca55e4076771638c666890b0af41006302fde98ec1",
+      "status": "generated"
+    },
+    {
+      "path": "data/dart_verified.NOT_GENERATED.json",
+      "bytes": 133,
+      "rows": null,
+      "sha256": "9e5f097356ba6b14d256993e627577f4c66b725a6b4d147812040d3a1c8c7c95",
+      "status": "generated"
+    },
+    {
+      "path": "data/english_reports.NOT_GENERATED.json",
+      "bytes": 162,
+      "rows": null,
+      "sha256": "54e36eca9c0e9ccb694bd79578a555d08d1cd5fa3cb81721740a95df5cf368ef",
+      "status": "generated"
+    },
+    {
+      "path": "data/events.csv",
+      "bytes": 860,
+      "rows": 1,
+      "sha256": "ffc4ea59eea1072fae861a45242c5191f80fa5bae2e3b9bd93ae4c16a5d488f7",
+      "status": "generated"
+    },
+    {
+      "path": "data/facts_seed.jsonl",
+      "bytes": 843571,
+      "rows": 539,
+      "sha256": "f2eb90629adc9baa11a58598d77f1ff5029bd8a0ee6c4eb6f300dd442668de3a",
+      "status": "generated"
+    },
+    {
+      "path": "data/features.parquet",
+      "bytes": 21653,
+      "rows": 6,
+      "sha256": "838883d814a45047da0279de7da88fe0e3e4cd9fe36fed66f04a547f2d66ffef",
+      "status": "generated"
+    },
+    {
+      "path": "data/financials.parquet",
+      "bytes": 38579,
+      "rows": 439,
+      "sha256": "55d79a40a302f5e45ee2e024c57b5fa24c852146ac8d6af622c3b624372724e8",
+      "status": "generated"
+    },
+    {
+      "path": "data/forecasts.parquet",
+      "bytes": 23631,
+      "rows": 100,
+      "sha256": "500fe581b28a61fb19b801404ac60e0ca1f936d29f74f5905ce38ebcc57eed34",
+      "status": "generated"
+    },
+    {
+      "path": "data/investment.sqlite",
+      "bytes": 561152,
+      "rows": {
+        "reports": 6,
+        "financials": 439,
+        "forecasts": 100,
+        "business_risks": 12
+      },
+      "sha256": "59fda487c3481a69547d4d6b40d71d988a2ca851b8d18c57751268a8778dae7e",
+      "status": "generated"
+    },
+    {
+      "path": "data/labels.NOT_GENERATED.json",
+      "bytes": 206,
+      "rows": null,
+      "sha256": "998eb09efb02ce7439007e8b8cbad0625f580b1a133bec7f6c92fbf0998d9e36",
+      "status": "generated"
+    },
+    {
+      "path": "data/reports.jsonl",
+      "bytes": 12504,
+      "rows": 6,
+      "sha256": "bf2f989dc6ef856ecbb0242d5c750a9c99b68a7e86d2ed3341741a3a7d0993a2",
+      "status": "generated"
+    },
+    {
+      "path": "data/research_examples.jsonl",
+      "bytes": 28107,
+      "rows": 30,
+      "sha256": "3d4b088f084da8e69991f3de72ceb2494471ea50f3f0febc7eabeb5b54ca6891",
+      "status": "generated"
+    },
+    {
+      "path": "data/review_queue.jsonl",
+      "bytes": 0,
+      "rows": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "generated"
+    },
+    {
+      "path": "data/samples/company_snapshots_sample.csv",
+      "bytes": 13744,
+      "rows": 29,
+      "sha256": "8e44001cc54a89db2e060aa6458dfe0d31ff9ce2ea0cb1598145a33ccfa68da1",
+      "status": "generated"
+    },
+    {
+      "path": "data/samples/features_sample.csv",
+      "bytes": 4476,
+      "rows": 6,
+      "sha256": "c2ed83821725009df28543aa39c5342a724b3d867f4b5236d1d27b7d80f98dc4",
+      "status": "generated"
+    },
+    {
+      "path": "data/samples/financials_sample.csv",
+      "bytes": 16898,
+      "rows": 30,
+      "sha256": "fbaa950e6758231feacd39b5290d6419c633339d5502c3d136cfc73108bbd03b",
+      "status": "generated"
+    },
+    {
+      "path": "data/samples/forecasts_sample.csv",
+      "bytes": 17470,
+      "rows": 30,
+      "sha256": "eff9bbfbe246a18a783aaee9c9032e67660408e0a26ff73d6416b526f3d34201",
+      "status": "generated"
+    },
+    {
+      "path": "data/sources.csv",
+      "bytes": 2528,
+      "rows": 12,
+      "sha256": "f0359efabb27f7311bbf4094f5f24cf06f156351646b261ed4022f21c69351a6",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/coverage.json",
+      "bytes": 304,
+      "rows": null,
+      "sha256": "16f7ce175edf16a6c23740b2b88e22219cb4d96af80af7d6cfda3b3ecab04ce9",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/data_quality_report.md",
+      "bytes": 2585,
+      "rows": null,
+      "sha256": "81dfd63d0b718ed95b4cfac3e370f97eff7a0f6046dccf65f89679b07d115fed",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/limitations.md",
+      "bytes": 4148,
+      "rows": null,
+      "sha256": "24b36301b1dd7dd33f0eca0025f4f175f51df7bd52b3a70ce38c73323b8945b3",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/model_evaluation.json",
+      "bytes": 660,
+      "rows": null,
+      "sha256": "6921d4b6123b8b83e97d3fa72798066541647b35a9059cb5bc430714688e330d",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/quality_checks.json",
+      "bytes": 1097,
+      "rows": null,
+      "sha256": "6f3475771e755a8b411414603b7da61dfd1dd42088b28d7509b8bd406a25a0e6",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/source_terms.md",
+      "bytes": 3889,
+      "rows": null,
+      "sha256": "61f4ee1e2927f732f9b250a6697afd0db65ac072fa84bfcd63b0f5071ddbbb7a",
+      "status": "generated"
+    },
+    {
+      "path": "evaluation/test_results.txt",
+      "bytes": 798,
+      "rows": null,
+      "sha256": "cc3743a4c826024430b44fdca9f30774d5688a4fcef9b429dbd3e6594703894f",
+      "status": "generated"
+    },
+    {
+      "path": "models/README.md",
+      "bytes": 558,
+      "rows": null,
+      "sha256": "402b32e0d42c2e608e1f9fe7c65005d60b24800af3dde3d3ce1361df4e8f6f7b",
+      "status": "generated"
+    },
+    {
+      "path": "models/TRAINING_DEFERRED.json",
+      "bytes": 352,
+      "rows": null,
+      "sha256": "7a8f31506f6ffe220f10887e977e0a2766f404477a9710245916d426c0180ad1",
+      "status": "generated"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 531,
+      "rows": null,
+      "sha256": "a3dc1c035b2891e5ccebd2563ce03531680c6f71a256ddb2d609a3beed018bbb",
+      "status": "generated"
+    },
+    {
+      "path": "raw/README.md",
+      "bytes": 660,
+      "rows": null,
+      "sha256": "d423dd79842ab4d9b5932350b94728742aeeef4262ba1b35866c703a3f5801d5",
+      "status": "generated"
+    },
+    {
+      "path": "raw/access_checks.jsonl",
+      "bytes": 5662,
+      "rows": 28,
+      "sha256": "2253b6468819ac978a9bd872a5a59df70b5062270092b4e991ab4fc6d521e74b",
+      "status": "generated"
+    },
+    {
+      "path": "raw/document_metadata.jsonl",
+      "bytes": 4245,
+      "rows": 6,
+      "sha256": "e7e5e1c289b1a9d1eab0105c443e21d93eabc8caaddf2edd14786e186d34d6e1",
+      "status": "generated"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 34,
+      "rows": null,
+      "sha256": "11b0006f4e3d389726c8528c5b6797083f14aeaf1ea854cb961f975ad0ae3b39",
+      "status": "generated"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 169,
+      "rows": null,
+      "sha256": "cea8c3a32777b2b46ad926e18d115ef58323a418743d20b38d0b74b5bfc34b69",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/__init__.py",
+      "bytes": 97,
+      "rows": null,
+      "sha256": "b48af15b3b9c5e61138085a44749bb38ccc8667a0aa1910379e84544f56c8752",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/cli.py",
+      "bytes": 1567,
+      "rows": null,
+      "sha256": "726e810825d4e7376008eb2f19de70eb17e62742e63c29385572b9c36035e84c",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/common.py",
+      "bytes": 1722,
+      "rows": null,
+      "sha256": "b504e12ee41217c652f5b06df576822dbeee138e65aa7c10ce0a161845283c9e",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/dart.py",
+      "bytes": 2538,
+      "rows": null,
+      "sha256": "1907ff2b56f86bedeb6d1c5d32a3bf2c9631a36ef2c1656707de68ddf08bcc7e",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/examples.py",
+      "bytes": 4574,
+      "rows": null,
+      "sha256": "634a11da861e896b42dd1379369c666b7b26ccbe7b247ffa503e4fa3f3574ffd",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/extract.py",
+      "bytes": 15082,
+      "rows": null,
+      "sha256": "8224b0fdecca2effc3fff62cb2e7eed61fac324cd8ac39c46edaae9151f8e79b",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/features.py",
+      "bytes": 8162,
+      "rows": null,
+      "sha256": "c3e02cae1d721713b7fda8dd34ec97c8d9d1eff483cd8e7d160656d44361f677",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/http.py",
+      "bytes": 6560,
+      "rows": null,
+      "sha256": "4c12a29a4c48fd2e28fbec1483a4b800384faff5934e01a6a0e75eb73e9f5478",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/lineage.py",
+      "bytes": 1728,
+      "rows": null,
+      "sha256": "76ebafbbd0a50c4444db98ac47352c06d74674ea59489e2c50f319c861df6c2b",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/package.py",
+      "bytes": 6064,
+      "rows": null,
+      "sha256": "d7d3cf9ebc6771e3938e3d62d94b00f68cc45f7f0c90aade17dff7f47eb27d7d",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/pipeline.py",
+      "bytes": 5746,
+      "rows": null,
+      "sha256": "4b1c568306c1983d38968ee43f5bc36e0eef890bc50a82caf78b3d7d621c9461",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/quality.py",
+      "bytes": 4751,
+      "rows": null,
+      "sha256": "4ee9b7d17e1e3e6a31d0853371a8a890fb1047aad9928139a5448c1427ea784c",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/schema.py",
+      "bytes": 2567,
+      "rows": null,
+      "sha256": "9ea7cab157837c653c7353a0aca77b156772f9fc440efa416ea3979aeb3d1a20",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/snapshots.py",
+      "bytes": 2343,
+      "rows": null,
+      "sha256": "66786f5ccd23ed599d0e6fc5ed7707597c31b835bd2b489490e1838b5fdb0a62",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/state.py",
+      "bytes": 2259,
+      "rows": null,
+      "sha256": "682ec7f5a9b68d9eb37c8f9fd70c1d434fdc02e67546618860caae343e523fe6",
+      "status": "generated"
+    },
+    {
+      "path": "src/investment/train.py",
+      "bytes": 5755,
+      "rows": null,
+      "sha256": "1d73d443da270b39ce6f3c4f6d47ee932524c1de24b9c69acbf241339811ec0b",
+      "status": "generated"
+    },
+    {
+      "path": "tests/test_pipeline.py",
+      "bytes": 6641,
+      "rows": null,
+      "sha256": "7ac9988388dec6b7b9da23536090c5590c3ae641869637f0310400d16609e971",
+      "status": "generated"
+    }
+  ],
+  "unavailable": [
+    {
+      "path": "data/labels.parquet",
+      "status": "not_generated",
+      "reason": "No licensed price history; future 20-session horizon unobserved"
+    },
+    {
+      "path": "models/ridge_pipeline.joblib",
+      "status": "not_generated",
+      "reason": "No eligible labels; insufficient companies/time span; training rights unconfirmed"
+    },
+    {
+      "path": "raw/original_pdfs",
+      "status": "not_retained",
+      "reason": "Full-text redistribution permission not secured"
+    },
+    {
+      "path": "data/english_reports.jsonl",
+      "status": "not_generated",
+      "reason": "KIRS English source unavailable (HTTP 503)"
+    },
+    {
+      "path": "data/dart_verified.parquet",
+      "status": "not_generated",
+      "reason": "OpenDART API key absent"
+    }
+  ],
+  "contains_secrets": false,
+  "raw_document_policy": "metadata_only_in_distributed_bundle",
+  "current_cloud_status_file": "cloud/deployment_status.json"
+}

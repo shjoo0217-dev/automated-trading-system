@@ -1,0 +1,13 @@
+﻿source_id,url,publisher,observed_http_status,collection_status,use_policy,terms_location,notes
+kirs_english,https://www.kirs.or.kr/research/research_eng.html,KIRS,503,unavailable,not_verified,unknown,영문 보고서 0건; 공개 API 존재 미확인
+kirs_company,https://www.kirs.or.kr/research/research22_1.html,KIRS,503,unavailable,not_verified,unknown,본사이트 접근 실패; 검색 도구에서도 timeout
+kirs_outsourcing,https://www.kirs.or.kr/research/research.html,KIRS,503,unavailable,not_verified,unknown,본사이트 아웃소싱 목록 미수집
+kirs_pdf,https://w4.kirs.or.kr/,KIRS file host,503,unavailable,not_verified,unknown,실제 공식 링크의 PDF 다운로드 실패
+telegram,https://t.me/s/kirsofficial,KIRS announcement channel,200,excluded_from_corpus,no_ml_use_without_explicit_consent,https://telegram.org/tos/content-licensing,약관 조사 후 본문 저장·학습 데이터 사용·추가 수집 제외
+dart,https://opendart.fss.or.kr/,Financial Supervisory Service,200,authentication_required,official_key_required,https://opendart.fss.or.kr/intro/terms.do,fnlttSinglAcntAll.json API와 CFS/OFS 규격 확인; 인증키 없음
+krx,https://data.krx.co.kr/,KRX,200/403,restricted_subpages,api_key_or_license_unverified,https://data.krx.co.kr/contents/MDC/INFO/informationController/MDCINFO003.cmd,"메인 200, 약관·분석보고서 경로 403; 시세 수집 안 함"
+krx_openapi,https://openapi.krx.co.kr/,KRX,200/403,portal_exists_details_inaccessible,unverified,unknown,공식 메인에서 Open API 링크 확인; 상세는 403; 엔드포인트 가정 안 함
+issuer_t3,https://www.t3.co.kr/kr/ir/ir.php,T3 issuer IR,200,pilot_facts_collected,metadata_auto_only; no_full_pdf_redistribution,PDF compliance notice last page,2개 KIRS 보고서; robots allow
+issuer_jtc,https://www.groupjtc.com/korean/ad_news/index.php?page=Mg%3D%3D,JTC issuer IR,200,pilot_facts_collected,metadata_only; automation_disabled_robots_unconfirmed,PDF compliance notice page 19,1개 KIRS 보고서; robots 요청은 HTML 반환
+issuer_redcap,https://www.redcap.co.kr/sub/ir/ir_data02.php,Redcap issuer IR,200,pilot_facts_collected,metadata_auto_only; no_full_pdf_redistribution,PDF compliance notices,3개 보고서 중 1개 기술분석 아웃소싱; robots crawl-delay 10초 반영
+kind_event,https://kind.krx.co.kr/external/2025/09/11/000155/20250911000327/70050.htm,KRX KIND,200,event_metadata_only,no_bulk_license_assumed,unknown,단일 공개 행사 공시; 회사 식별 정보 미확인

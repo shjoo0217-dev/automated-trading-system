@@ -1,0 +1,24 @@
+{
+  "status": "deferred",
+  "actually_trained": false,
+  "evaluated_at": "2026-11-16T15:47:00.652226+00:00",
+  "target": "20_exchange_session_open_to_open_price_return",
+  "metrics": null,
+  "cost_assumptions": {
+    "trading_backtest_performed": false,
+    "fees": null,
+    "tax": null,
+    "slippage": null,
+    "liquidity_filter": null
+  },
+  "resume_conditions": {
+    "min_samples": 500,
+    "min_companies": 50,
+    "min_months": 24,
+    "min_new_samples": 100,
+    "min_split_samples": 30,
+    "horizon_exchange_sessions": 20,
+    "decision_lag_seconds": 60
+  },
+  "reason": "Licensed prices/labels not available; no fabricated labels or evaluation"
+}
