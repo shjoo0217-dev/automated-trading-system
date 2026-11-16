@@ -1,6 +1,6 @@
 {
-  "run_key": "43902830881",
-  "started_at": "2026-11-16T16:01:55.170263+00:00",
+  "run_key": "43904399797",
+  "started_at": "2026-11-16T16:10:17.044046+00:00",
   "mode": "collect",
   "execution_host": "github_actions",
   "trigger": "push",
@@ -8,37 +8,37 @@
     {
       "source_id": "kirs_english",
       "url": "https://www.kirs.or.kr/research/research_eng.html",
-      "checked_at": "2026-11-16T16:01:55.170549+00:00",
+      "checked_at": "2026-11-16T16:10:17.044752+00:00",
       "status": "blocked_or_unavailable",
       "error": "Robots permission unconfirmed or disallowed"
     },
     {
       "source_id": "kirs_company",
       "url": "https://www.kirs.or.kr/research/research22_1.html",
-      "checked_at": "2026-11-16T16:02:32.188177+00:00",
+      "checked_at": "2026-11-16T16:10:53.834334+00:00",
       "status": "blocked_or_unavailable",
       "error": "Robots permission unconfirmed or disallowed"
     },
     {
       "source_id": "kirs_outsourcing",
       "url": "https://www.kirs.or.kr/research/research.html",
-      "checked_at": "2026-11-16T16:02:32.188489+00:00",
+      "checked_at": "2026-11-16T16:10:53.834833+00:00",
       "status": "blocked_or_unavailable",
       "error": "Robots permission unconfirmed or disallowed"
     },
     {
       "source_id": "issuer_t3",
       "url": "https://www.t3.co.kr/kr/ir/ir.php",
-      "checked_at": "2026-11-16T16:02:32.188799+00:00",
+      "checked_at": "2026-11-16T16:10:53.835321+00:00",
       "status": "metadata_collected",
-      "changed": true,
+      "changed": false,
       "links_discovered": 1,
       "http_status": 200
     },
     {
       "source_id": "issuer_redcap",
       "url": "https://www.redcap.co.kr/sub/ir/ir_data02.php",
-      "checked_at": "2026-11-16T16:02:42.466067+00:00",
+      "checked_at": "2026-11-16T16:11:04.155186+00:00",
       "status": "metadata_collected",
       "changed": true,
       "links_discovered": 10,
@@ -60,6 +60,6 @@
     "unknown_statement_scope_facts": 500,
     "dart_reconciled_facts": 0
   },
-  "published_archive": "archive/versions/investment_dataset_v0.1.0-cloud-20261116T160155.zip",
-  "finished_at": "2026-11-16T16:02:54.938292+00:00"
+  "published_archive": "archive/versions/investment_dataset_v0.1.0-cloud-20261116T161017.zip",
+  "finished_at": "2026-11-16T16:11:15.282572+00:00"
 }

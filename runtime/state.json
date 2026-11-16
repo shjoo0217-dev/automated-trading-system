@@ -20,7 +20,7 @@
           "content_archived": false
         }
       ],
-      "last_checked_at": "2026-11-16T16:02:42.464870+00:00"
+      "last_checked_at": "2026-11-16T16:11:04.153376+00:00"
     },
     "ce0f3de1276638a180bd28b7": {
       "url": "https://www.redcap.co.kr/sub/ir/ir_data02.php",
@@ -84,9 +84,68 @@
             }
           ],
           "content_archived": false
+        },
+        {
+          "sha256": "f70319997ff87b3d3985e64fa9e7087d4c377e181304c5014da9cadcf9a40927",
+          "first_seen_at": "2026-11-16T16:11:15.057140+00:00",
+          "collected_at": "2026-11-16T16:11:15.057142+00:00",
+          "status": "metadata_only",
+          "discovered_links": [
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/61002aa0ed9bbc1f44e3d9258506c9250.pdf",
+              "title": "2026.10.28_안정적인 실적과 적극적인 주주환원(한국IR협의회).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/f55f2869c609866ed5a7dcdb1a36a7a50.pdf",
+              "title": "2025.06.12_영업환경 개선 중(하나증권).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/ddea2a074edd96bbb598ca85e0dedd6e0.pdf",
+              "title": "2025.01.24_슬슬 배당 생각할 때(하나증권).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/16909f4291cf3469f1efefcc06b146c40.pdf",
+              "title": "2024.11.13_3Q24 NDR 후기 배당을 기다리며(하나증권).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/a0fbdef95755b31b007d9e4f019529270.pdf",
+              "title": "2024.09.02_제고된 수익성 기반 주주환원 확대 기대(하나증권).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/605c1133d242f0ce40c20e30ebd51df20.pdf",
+              "title": "2024.08.30_B2B 중심의 렌터카 및 여행 사업에서 B2G로의 영역 확장_한국기술신용평가(주).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/8c494761b152dfc48e787f0fd176f3db0.pdf",
+              "title": "2024.07.03-꾸준함이 강점, 주주 친화적 행보 지속(SK증권).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/7850aec9b904e3384c95c5f06132007e0.pdf",
+              "title": "2024.02.22_렌터카는 순항 중, 여행 부문 회복세 주목!(KB증권).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/79eb07210aa67275be94bca449ff65d20.pdf",
+              "title": "2023.11.17_렌터카와 여행 모두 기대되는 내년(하나증권).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            },
+            {
+              "url": "https://www.redcap.co.kr/uploaded/board/report/8dd3e53529fc28bb9667c7a7aab472be0.pdf",
+              "title": "2023.11.17_B2B 장기렌터카 사업 중심으로 수익성 높은 기업(한국IR협의회).pdf",
+              "status": "discovered_not_downloaded_rights_review"
+            }
+          ],
+          "content_archived": false
         }
       ],
-      "last_checked_at": "2026-11-16T16:02:54.799462+00:00"
+      "last_checked_at": "2026-11-16T16:11:15.057133+00:00"
     }
   },
   "runs": {
@@ -154,9 +213,74 @@
       },
       "published_archive": "archive/versions/investment_dataset_v0.1.0-cloud-20261116T160155.zip",
       "finished_at": "2026-11-16T16:02:54.938292+00:00"
+    },
+    "43904399797": {
+      "run_key": "43904399797",
+      "started_at": "2026-11-16T16:10:17.044046+00:00",
+      "mode": "collect",
+      "execution_host": "github_actions",
+      "trigger": "push",
+      "sources": [
+        {
+          "source_id": "kirs_english",
+          "url": "https://www.kirs.or.kr/research/research_eng.html",
+          "checked_at": "2026-11-16T16:10:17.044752+00:00",
+          "status": "blocked_or_unavailable",
+          "error": "Robots permission unconfirmed or disallowed"
+        },
+        {
+          "source_id": "kirs_company",
+          "url": "https://www.kirs.or.kr/research/research22_1.html",
+          "checked_at": "2026-11-16T16:10:53.834334+00:00",
+          "status": "blocked_or_unavailable",
+          "error": "Robots permission unconfirmed or disallowed"
+        },
+        {
+          "source_id": "kirs_outsourcing",
+          "url": "https://www.kirs.or.kr/research/research.html",
+          "checked_at": "2026-11-16T16:10:53.834833+00:00",
+          "status": "blocked_or_unavailable",
+          "error": "Robots permission unconfirmed or disallowed"
+        },
+        {
+          "source_id": "issuer_t3",
+          "url": "https://www.t3.co.kr/kr/ir/ir.php",
+          "checked_at": "2026-11-16T16:10:53.835321+00:00",
+          "status": "metadata_collected",
+          "changed": false,
+          "links_discovered": 1,
+          "http_status": 200
+        },
+        {
+          "source_id": "issuer_redcap",
+          "url": "https://www.redcap.co.kr/sub/ir/ir_data02.php",
+          "checked_at": "2026-11-16T16:11:04.155186+00:00",
+          "status": "metadata_collected",
+          "changed": true,
+          "links_discovered": 10,
+          "http_status": 200
+        }
+      ],
+      "status": "completed_with_source_errors",
+      "orders_enabled": false,
+      "collection_mode": "metadata_only_until_rights_clearance",
+      "new_full_reports": 0,
+      "explanation": "Metadata discovery runs automatically; new full-report extraction requires rights/layout review. Existing pilot facts are revalidated.",
+      "quality": {
+        "status": "passed_with_limitations",
+        "reports": 6,
+        "companies": 3,
+        "facts": 539,
+        "null_facts": 13,
+        "parser_agreement_facts": 539,
+        "unknown_statement_scope_facts": 500,
+        "dart_reconciled_facts": 0
+      },
+      "published_archive": "archive/versions/investment_dataset_v0.1.0-cloud-20261116T161017.zip",
+      "finished_at": "2026-11-16T16:11:15.282572+00:00"
     }
   },
   "seen_hashes": {},
   "disabled": false,
-  "last_validated_input_hash": "21ab5af6eba64cff503c74f6"
+  "last_validated_input_hash": "b902a2c295ed598f38a57cc5"
 }
