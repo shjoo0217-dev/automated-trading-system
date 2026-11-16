@@ -1,0 +1,30 @@
+{
+  "reports": 316,
+  "publication_range": [
+    "2021-05-01",
+    "2026-08-14"
+  ],
+  "publication_date_missing": 10,
+  "posting_range": [
+    "2022-03-15",
+    "2026-09-09"
+  ],
+  "pdf_audit_count": 1,
+  "pdf_in_package": 0,
+  "financial_facts": 0,
+  "valuation_audit_rows": 2,
+  "events": 0,
+  "quarantined_training_records": 1,
+  "eligible_training_records": 0,
+  "issue_counts": {
+    "publication_posting_gap": 306,
+    "target_price_conflict": 1,
+    "permission_required": 1,
+    "merged_table_cell": 1,
+    "historical_version_not_proven": 1,
+    "market_labels_missing": 1,
+    "posting_time_missing": 316
+  },
+  "training_excluded_reports": 316,
+  "note": "publication_date is mostly the date stated in the post title; only the YESTI PDF was independently inspected."
+}

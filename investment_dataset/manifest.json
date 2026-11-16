@@ -1,16 +1,16 @@
 {
-  "dataset_version": "0.1.0+pilot",
-  "generated_at": "2026-11-16T16:06:55.646672+00:00",
+  "dataset_version": "0.1.0+20261117.direct",
+  "generated_at": "2026-11-16T16:26:23.217970+00:00",
   "timezone": "Asia/Seoul",
   "source": "http://starskku.com/board/board_list?code=research",
-  "data_as_of": "2026-11-16T15:41:25.583053+00:00",
+  "data_as_of": "2026-11-16T16:21:35.994295+00:00",
   "collection": {
     "kind": "metadata",
-    "coverage_status": null,
-    "successes": 10,
+    "coverage_status": "scan_complete",
+    "successes": 156,
     "failures": 0,
-    "source_requests": 12,
-    "source_bytes": 291059,
+    "source_requests": 165,
+    "source_bytes": 50486051,
     "pending": 0,
     "listed_total": 316
   },
@@ -64,21 +64,93 @@
     "agreement_text_sha256": "970bb68daf3a414381e54fa1011078757b050d1a1f72c294699f8a62a79a947a"
   },
   "deployment": {
-    "status": "not_deployed",
-    "version_suffix": "pilot"
+    "status": "direct_collection_complete_github_scheduler_paused",
+    "version_suffix": "20261117.direct",
+    "repository": "https://github.com/shjoo0217-dev/automated-trading-system",
+    "drive_folder": "https://drive.google.com/drive/folders/13xLRnBXHPmgfycWwFQFBr2YDTkAk_rt7",
+    "persistent_checkpoint_branch": "star-state",
+    "persistent_results": "GitHub Releases and Google Drive version folder",
+    "scheduler": {
+      "service": "GitHub Actions",
+      "state": "disabled_manually",
+      "configured_cron": "17 15 * * *",
+      "configured_timezone": "UTC",
+      "display_timezone": "Asia/Seoul",
+      "next_execution": null
+    },
+    "executed_remote_runs": [
+      {
+        "id": 43899789485,
+        "status": "success",
+        "scope": "initial 10 post pilot"
+      },
+      {
+        "id": 43900548113,
+        "status": "failure",
+        "scope": "backfill stopped at 140 persisted records; inline image and CSV size bug"
+      },
+      {
+        "id": 43902564196,
+        "status": "failure",
+        "scope": "old response-size limit"
+      },
+      {
+        "id": 43903881060,
+        "status": "failure",
+        "scope": "old code dispatch before concurrent repository changes were integrated"
+      },
+      {
+        "id": 43904185878,
+        "status": "success",
+        "scope": "fixed collector resumed 10 posts; 27 tests passed; Release published"
+      },
+      {
+        "id": 43904186874,
+        "status": "cancelled",
+        "scope": "user requested alternative execution; 160 records checkpointed"
+      }
+    ],
+    "validation_only_run": {
+      "id": 43905872703,
+      "observed_status": "queued",
+      "job_records_observed": 0,
+      "status_not_verified_complete": true,
+      "cancel_response": "cannot cancel completed run; GET still reports queued; no success claim"
+    },
+    "direct_execution": {
+      "id": "direct-2026-11-16T161321.229897_0000-f6a021",
+      "status": "completed",
+      "started_at": "2026-11-16T16:13:21.229897+00:00",
+      "completed_at": "2026-11-16T16:21:35.994295+00:00",
+      "successes": 156,
+      "failures": 0,
+      "requests": 165,
+      "response_bytes": 50486051,
+      "pending": 0,
+      "log": "operations/direct_execution.log"
+    },
+    "secret_management": "GitHub Actions ephemeral GITHUB_TOKEN; no external API secrets configured; direct public metadata run needs no API key",
+    "independent_execution_requirement": "withdrawn by user; no promise of persistence for direct process after environment ends",
+    "checked_at": "2026-11-16T16:26:22.840570+00:00"
   },
   "files": [
     {
       "path": "CODEX_HANDOFF.md",
-      "bytes": 8903,
+      "bytes": 9958,
       "rows": null,
-      "sha256": "e4a57866f2a93e7ad5e71be5783c823f95e26ec5eeab0ff729c3df68ea474503"
+      "sha256": "72920ebf0b9f8f8d765a6afaa364e4c7897dc21e1091959d8a72b71b4d668aaa"
     },
     {
       "path": "README.md",
-      "bytes": 3468,
+      "bytes": 4019,
       "rows": null,
-      "sha256": "8783e92a82a70f03c8a9d218c45a6a95ae90956d30388999bc49ee3840022790"
+      "sha256": "664d93a20e9cc63518ff23e57f000649687bdce26af46128982b2e9b0a952b6a"
+    },
+    {
+      "path": "data/checkpoint.json",
+      "bytes": 581621,
+      "rows": null,
+      "sha256": "ce6d3a81e70f821241cc496da947302888658d3c7b7e31a0e903ec30a89c1ac6"
     },
     {
       "path": "data/events.jsonl",
@@ -90,7 +162,7 @@
       "path": "data/financials.parquet",
       "bytes": 3506,
       "rows": 0,
-      "sha256": "c96411dda110b936186917f12317ca6589b51b431164727db65bf119f6982246"
+      "sha256": "591691cc3a2423d32c8110c0f9661f46d8e8fd129f3ee3d806f6962ea43ebad9"
     },
     {
       "path": "data/report_versions.jsonl",
@@ -100,9 +172,9 @@
     },
     {
       "path": "data/reports.csv",
-      "bytes": 8712,
-      "rows": 10,
-      "sha256": "8f1ab9343de04ce356493c3e9d6414587c9f22b97407527df6ccdd306e1df9a6"
+      "bytes": 263705,
+      "rows": 316,
+      "sha256": "1bbe7daff6fc866c194e1be819c30f65d1b4d1ab20d777271f3169ceff1a5658"
     },
     {
       "path": "data/splits.json",
@@ -126,13 +198,13 @@
       "path": "data/valuations.parquet",
       "bytes": 6138,
       "rows": 2,
-      "sha256": "4c57c5993fa70a0f30f227e429260dc4a237d9c56e2aed9478bef11166dd61f9"
+      "sha256": "3f7e830ec598bb3b2b1eaf172273257a8bfea857fbb7c3a85adb2360fb21cdc3"
     },
     {
       "path": "data_dictionary.csv",
-      "bytes": 20805,
-      "rows": 114,
-      "sha256": "a88b7e9c9bb30da164b8a3129c9ce82aca5a0143b6ce83333a10b13e707693bf"
+      "bytes": 21188,
+      "rows": 116,
+      "sha256": "e1c963dc92f2b63d17cc1c4b9b061611a77ca9a34497ed570162460f12b181e4"
     },
     {
       "path": "evaluation/evaluation_methodology.md",
@@ -150,7 +222,7 @@
       "path": "evaluation/metrics.json",
       "bytes": 334,
       "rows": null,
-      "sha256": "c9318a7834c5e7db7ee67c595f1aac1ce1c64825d54007b51bbf68c8aecc7310"
+      "sha256": "9add8bb23be5ea135d90bb4d834627d8c57c72b118633c05257b007ad3cbac6a"
     },
     {
       "path": "models/README.md",
@@ -160,33 +232,69 @@
     },
     {
       "path": "operations/INCIDENTS.md",
-      "bytes": 1875,
+      "bytes": 2212,
       "rows": null,
-      "sha256": "60be19eaf5afc7688a865a81c43d151511f83c97b395b0cce3453ec8d242592b"
+      "sha256": "22c552145af25098624e7ceabf835e76e974342d87bcf7d8d57c14b93093c1d0"
     },
     {
       "path": "operations/RUNBOOK.md",
-      "bytes": 4406,
+      "bytes": 5022,
       "rows": null,
-      "sha256": "01416e0a95012220dbf09b333a72e84f23a0088779bd82149d125a8934e3c193"
+      "sha256": "fa749ca7fb346ccfc5ffc71aef6182121a1a6c925a46bfef0ae6d2ae3ffd58a2"
+    },
+    {
+      "path": "operations/bundle_validation.json",
+      "bytes": 237,
+      "rows": null,
+      "sha256": "82b0294647d409f0f737626d784685d87016f1fb2b9c566645fead48454fadce"
     },
     {
       "path": "operations/checkpoint_summary.json",
-      "bytes": 204,
+      "bytes": 205,
       "rows": null,
-      "sha256": "4666c9df624bf766eeaf7dfdff00f2c53bbe039f069d48e9009681c74babd379"
+      "sha256": "1934855a6082fed4595bd7b248a9243243187034c7af49b4c1c7efdaf7e6d33e"
     },
     {
       "path": "operations/collection_run.json",
-      "bytes": 3600,
+      "bytes": 508,
       "rows": null,
-      "sha256": "54c7782b50620b70dd0e6c7f19e9213ea2ecd299564d92f4b23107ce5c1fd026"
+      "sha256": "6ef61b8520fe95d120e0a39f65fca0a2aba0fe71afc9f689ae2aa60348d78072"
+    },
+    {
+      "path": "operations/dataset_summary.json",
+      "bytes": 781,
+      "rows": null,
+      "sha256": "c17b8587aa1de78c5628fb38cf61c2b0805aeef407dbe6e9517c950640ee2d14"
     },
     {
       "path": "operations/deployment_status.json",
-      "bytes": 60,
+      "bytes": 2440,
       "rows": null,
-      "sha256": "95a20da7236faae30d6747b01330aae210c7f8248621694fb3759181815fc202"
+      "sha256": "dedf413dbe25cfcc20b51a65764ceb115ca350b1cfffde43b848bde0bfb10da4"
+    },
+    {
+      "path": "operations/direct_execution.log",
+      "bytes": 17948,
+      "rows": null,
+      "sha256": "8d8c4ffa85e1097540f3a685656bf81a9693d9414784d7293727a7c8e18d05a1"
+    },
+    {
+      "path": "operations/direct_runs.json",
+      "bytes": 49767,
+      "rows": null,
+      "sha256": "02381d1a02fb16a7e68adfb4f319c08ff71d08bac6904adb509ba5c4aa572b75"
+    },
+    {
+      "path": "operations/github_collection_workflow.json",
+      "bytes": 260,
+      "rows": null,
+      "sha256": "a8c1e51e331d354788e3694689d7c2004fe89e46c348c5a4a3ae65413fc58fa4"
+    },
+    {
+      "path": "operations/github_runs.json",
+      "bytes": 2513,
+      "rows": null,
+      "sha256": "f0a8089976005443ebb5ca7a27d40d692b44f0b32d4c6bc128a6acf1ebb171fc"
     },
     {
       "path": "operations/source_review_receipts.json",
@@ -198,7 +306,7 @@
       "path": "operations/test_results.txt",
       "bytes": 99,
       "rows": null,
-      "sha256": "88fb557394be724cba8032ceaedd3490b404e8b3bfa5c383435e5580bd842434"
+      "sha256": "609e873a54e310da075b840068dc737b63f0ac34aa18b8bb38f68ae9419f8f2d"
     },
     {
       "path": "pipeline/Dockerfile",
@@ -211,6 +319,12 @@
       "bytes": 3947,
       "rows": null,
       "sha256": "8b043475603d9ace9d368b265b263fee7b100537caf9d92f6cae95de306b00a9"
+    },
+    {
+      "path": "pipeline/cloud/star-validate.yml",
+      "bytes": 738,
+      "rows": null,
+      "sha256": "790947e79b5215a41df3887529424b2f4db9b579beea3ad6eeeedc012e107a97"
     },
     {
       "path": "pipeline/external_data_contracts.json",
@@ -229,6 +343,24 @@
       "bytes": 153,
       "rows": null,
       "sha256": "837b393df7f20348ed37c781b4ac690e6c99980d9e1cdf7610f4a290a11fa2ec"
+    },
+    {
+      "path": "pipeline/run_direct.ps1",
+      "bytes": 674,
+      "rows": null,
+      "sha256": "b2fa61d9cf7a2ad9b50f263c48afc906796682ade13f70195e354cbc432f8ca3"
+    },
+    {
+      "path": "pipeline/run_direct.py",
+      "bytes": 2879,
+      "rows": null,
+      "sha256": "0cab39f835313ed4525b5f63f86d36fcd3085a39e6ee6279bda152090a1a25ba"
+    },
+    {
+      "path": "pipeline/run_direct.sh",
+      "bytes": 443,
+      "rows": null,
+      "sha256": "a975daeaf7f0b0a13cb60d3c8d8ba502fa9da524cb1466dfe033d38672cf8f94"
     },
     {
       "path": "pipeline/source_policy.json",
@@ -328,15 +460,15 @@
     },
     {
       "path": "quality/issues.csv",
-      "bytes": 1061,
-      "rows": 6,
-      "sha256": "010bc34c030eb7c298b38b89466d10b243960a9352c4f8c6a4a7b58ea61661a3"
+      "bytes": 98353,
+      "rows": 627,
+      "sha256": "1d36f8e3bc955e42f4a1699745e8deae6d458e9518d367a1b01e827cee920318"
     },
     {
       "path": "quality/validation_report.md",
-      "bytes": 1875,
+      "bytes": 2640,
       "rows": null,
-      "sha256": "4da63a77d1f3aa4536bb0201e4e6195d76927228f86300b9907ada97869e671b"
+      "sha256": "a1eabafd0889172eb4012f1e4e3f4c93bc5daccc8fb116676b802be9489f703a"
     },
     {
       "path": "quality/yesti_audit.json",
@@ -346,9 +478,15 @@
     },
     {
       "path": "schema.json",
-      "bytes": 24134,
+      "bytes": 24591,
       "rows": null,
-      "sha256": "33a3d5465428ec7b989f594227d1c2a34db030b5f1c34cb4a2c97c5d3a4c0db1"
+      "sha256": "837890debbf18a7907cc44ff84cff4654fa1e089f9475dc9e122bb2725f83da8"
+    },
+    {
+      "path": "완료보고.md",
+      "bytes": 5950,
+      "rows": null,
+      "sha256": "f0a1a8ac6cea3af48ad3781a710f4dfd249b2fda9f082594b2b72e7c45a8e23a"
     }
   ],
   "self_hash_policy": "manifest excluded from its own file hashes; zip hash in delivery receipt"

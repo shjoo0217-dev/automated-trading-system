@@ -1,4 +1,70 @@
 {
-  "status": "not_deployed",
-  "version_suffix": "pilot"
+  "status": "direct_collection_complete_github_scheduler_paused",
+  "version_suffix": "20261117.direct",
+  "repository": "https://github.com/shjoo0217-dev/automated-trading-system",
+  "drive_folder": "https://drive.google.com/drive/folders/13xLRnBXHPmgfycWwFQFBr2YDTkAk_rt7",
+  "persistent_checkpoint_branch": "star-state",
+  "persistent_results": "GitHub Releases and Google Drive version folder",
+  "scheduler": {
+    "service": "GitHub Actions",
+    "state": "disabled_manually",
+    "configured_cron": "17 15 * * *",
+    "configured_timezone": "UTC",
+    "display_timezone": "Asia/Seoul",
+    "next_execution": null
+  },
+  "executed_remote_runs": [
+    {
+      "id": 43899789485,
+      "status": "success",
+      "scope": "initial 10 post pilot"
+    },
+    {
+      "id": 43900548113,
+      "status": "failure",
+      "scope": "backfill stopped at 140 persisted records; inline image and CSV size bug"
+    },
+    {
+      "id": 43902564196,
+      "status": "failure",
+      "scope": "old response-size limit"
+    },
+    {
+      "id": 43903881060,
+      "status": "failure",
+      "scope": "old code dispatch before concurrent repository changes were integrated"
+    },
+    {
+      "id": 43904185878,
+      "status": "success",
+      "scope": "fixed collector resumed 10 posts; 27 tests passed; Release published"
+    },
+    {
+      "id": 43904186874,
+      "status": "cancelled",
+      "scope": "user requested alternative execution; 160 records checkpointed"
+    }
+  ],
+  "validation_only_run": {
+    "id": 43905872703,
+    "observed_status": "queued",
+    "job_records_observed": 0,
+    "status_not_verified_complete": true,
+    "cancel_response": "cannot cancel completed run; GET still reports queued; no success claim"
+  },
+  "direct_execution": {
+    "id": "direct-2026-11-16T161321.229897_0000-f6a021",
+    "status": "completed",
+    "started_at": "2026-11-16T16:13:21.229897+00:00",
+    "completed_at": "2026-11-16T16:21:35.994295+00:00",
+    "successes": 156,
+    "failures": 0,
+    "requests": 165,
+    "response_bytes": 50486051,
+    "pending": 0,
+    "log": "operations/direct_execution.log"
+  },
+  "secret_management": "GitHub Actions ephemeral GITHUB_TOKEN; no external API secrets configured; direct public metadata run needs no API key",
+  "independent_execution_requirement": "withdrawn by user; no promise of persistence for direct process after environment ends",
+  "checked_at": "2026-11-16T16:26:22.840570+00:00"
 }

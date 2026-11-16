@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "schema_rows": {
+    "data/training_samples.jsonl": 1,
+    "data/events.jsonl": 0,
+    "data/valuations.parquet": 2,
+    "data/financials.parquet": 0,
+    "data/reports.csv": 316
+  },
+  "training_eligible": 0
+}

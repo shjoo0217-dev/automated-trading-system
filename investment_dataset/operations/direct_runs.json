@@ -1,0 +1,1230 @@
+{
+  "execution_id": "direct-2026-11-16T161321.229897_0000-f6a021",
+  "started_at": "2026-11-16T16:13:21.229931+00:00",
+  "runs": [
+    {
+      "kind": "metadata",
+      "successes": 60,
+      "changed": 60,
+      "failures": 0,
+      "coverage_status": "partial",
+      "source_requests": 63,
+      "source_bytes": 42900436,
+      "pending": 96,
+      "listed_total": 316,
+      "listing_pages": 32,
+      "robots": {
+        "url": "http://starskku.com/robots.txt",
+        "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95",
+        "text": "User-agent: *\nAllow: /\n",
+        "checked_at": "2026-11-16T16:13:21.816569+00:00"
+      },
+      "receipts": [
+        {
+          "url": "http://starskku.com/robots.txt",
+          "status": 200,
+          "at": "2026-11-16T16:13:21.816303+00:00",
+          "bytes": 23,
+          "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+        },
+        {
+          "url": "http://starskku.com/service/agreement",
+          "status": 200,
+          "at": "2026-11-16T16:13:25.048099+00:00",
+          "bytes": 29078,
+          "sha256": "0cdcf5b50f78643c02fcefd345537e7c75fc4c2044fabe31eb37f4c96294ce42"
+        },
+        {
+          "url": "http://starskku.com/board/board_list?code=research",
+          "status": 200,
+          "at": "2026-11-16T16:13:28.568874+00:00",
+          "bytes": 29074,
+          "sha256": "46c8030e9a95c5c89185cbed3dd713b4ec3a7da3fbe4e7499125e31e34dab3d4"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=168",
+          "status": 200,
+          "at": "2026-11-16T16:13:32.765512+00:00",
+          "bytes": 860270,
+          "sha256": "ffde197e6cf0051c1530fd9f880b98e37732561feefbe386acbfa9b821f7ee71"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=167",
+          "status": 200,
+          "at": "2026-11-16T16:13:35.064036+00:00",
+          "bytes": 1043207,
+          "sha256": "68f6ece7aa895568436e51c24255fc5e3f53159bcc932b5bdf11240b838eeaaa"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=166",
+          "status": 200,
+          "at": "2026-11-16T16:13:38.930103+00:00",
+          "bytes": 843005,
+          "sha256": "2ab5c963e63488b639d71e78be9f91ee2e63c8177c2572191d2dc1e7cacb4303"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=165",
+          "status": 200,
+          "at": "2026-11-16T16:13:41.326791+00:00",
+          "bytes": 1001463,
+          "sha256": "3d3e97ae17d80795e08c4cf94ed213d7c80af3cefc837264e66af4acfecc246f"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=164",
+          "status": 200,
+          "at": "2026-11-16T16:13:44.222118+00:00",
+          "bytes": 704829,
+          "sha256": "7e1b0aceae47e9383673f00fd79e5b58179fa2bdeb0e6c0039332ecb3b6ac4c7"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=163",
+          "status": 200,
+          "at": "2026-11-16T16:13:47.598943+00:00",
+          "bytes": 979617,
+          "sha256": "907ecc1d61388733c40c8500aa49b982da486ee448106bfce0ece563392d4770"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=162",
+          "status": 200,
+          "at": "2026-11-16T16:13:50.599133+00:00",
+          "bytes": 943353,
+          "sha256": "873278131a176461e9278e8c15c2b87f7862dbc772b9412c2ca0f0dfc63ebd7b"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=161",
+          "status": 200,
+          "at": "2026-11-16T16:13:53.422811+00:00",
+          "bytes": 869013,
+          "sha256": "e31b230cd0ca9171b3f4ea1fce280e7d10a625ab80935556868b69c354c8fb33"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=160",
+          "status": 200,
+          "at": "2026-11-16T16:13:56.583381+00:00",
+          "bytes": 940632,
+          "sha256": "0f86a7513f6f6b40e03475ac655fc330229970e77cb85d1bc1d128dcbe24905a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=159",
+          "status": 200,
+          "at": "2026-11-16T16:13:59.231136+00:00",
+          "bytes": 628940,
+          "sha256": "2aceae8bde0659da68b327ab73a50e7c41549a751f0dfe3d9158f35c8fcbceac"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=158",
+          "status": 200,
+          "at": "2026-11-16T16:14:02.915510+00:00",
+          "bytes": 1007265,
+          "sha256": "11243ef221fd1e12b61ecea53613f2dce7b7254d66519f3f9bd1ee98b1b4dce8"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=157",
+          "status": 200,
+          "at": "2026-11-16T16:14:04.879624+00:00",
+          "bytes": 931301,
+          "sha256": "842deba012a561b59b202ea7da698ca8ecb48a0538396983a57374ecccba5367"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=156",
+          "status": 200,
+          "at": "2026-11-16T16:14:08.916645+00:00",
+          "bytes": 1037471,
+          "sha256": "3ab26508efa44bbe96a4c8ca4eb9e179e9ad88d835b50ec8cd9988eccfa2f70a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=155",
+          "status": 200,
+          "at": "2026-11-16T16:14:11.211914+00:00",
+          "bytes": 1016402,
+          "sha256": "343fd6aa0d6d9a79cd75a8d7e1dc3fad3b5acc55398de305d67befb84452bae7"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=154",
+          "status": 200,
+          "at": "2026-11-16T16:14:14.947202+00:00",
+          "bytes": 861479,
+          "sha256": "c91a6f09391978250dc6f2d6d0ca4cb058de6c2c0dcb963f3f0a8ff4a64c4bfe"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=153",
+          "status": 200,
+          "at": "2026-11-16T16:14:17.963532+00:00",
+          "bytes": 847860,
+          "sha256": "2cb295aad7b0275be27a1570f2e074f6707bbb1c14e9ef84016e690512e58726"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=152",
+          "status": 200,
+          "at": "2026-11-16T16:14:19.744946+00:00",
+          "bytes": 592152,
+          "sha256": "9001c073a41d6a33902deccd40811b64123840a2a870a5a42e5d02c55c718012"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=151",
+          "status": 200,
+          "at": "2026-11-16T16:14:24.424319+00:00",
+          "bytes": 1788287,
+          "sha256": "af2d0e7d2f4312efbd206d2db62ccd670edda357c9b8635ddc7f2abaab52d81a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=150",
+          "status": 200,
+          "at": "2026-11-16T16:14:25.606027+00:00",
+          "bytes": 1070829,
+          "sha256": "5fedbc66cf6dc478f43a59c17696c80a9b1cbd3ef2bf66409947102d0d165cee"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=149",
+          "status": 200,
+          "at": "2026-11-16T16:14:29.607999+00:00",
+          "bytes": 1006190,
+          "sha256": "c1094c7fc8b5126c4c27aa3374cd003515adf4cf457c192e5a75b7d4a0a0318e"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=148",
+          "status": 200,
+          "at": "2026-11-16T16:14:32.076044+00:00",
+          "bytes": 607149,
+          "sha256": "670f9f9ecde7babc29080f368e4a52abb747af231aa4f9ea52c7246c77bfc800"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=147",
+          "status": 200,
+          "at": "2026-11-16T16:14:35.586033+00:00",
+          "bytes": 644543,
+          "sha256": "3c87766fc6ced0f5e28a0cdb13b8235a7feb373d5781799f13c0091bac6dc208"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=146",
+          "status": 200,
+          "at": "2026-11-16T16:14:38.411401+00:00",
+          "bytes": 519131,
+          "sha256": "7ccfd82d97312051f1dc53ff477332e76e359bab63b1fc7fe121e8097a2e94d8"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=145",
+          "status": 200,
+          "at": "2026-11-16T16:14:41.572652+00:00",
+          "bytes": 693925,
+          "sha256": "ccb16c0e30661633819a7a32d72a23e4aad7e1cdcd29942959b974cd9ea74ac2"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=144",
+          "status": 200,
+          "at": "2026-11-16T16:14:43.926854+00:00",
+          "bytes": 404396,
+          "sha256": "0169cffe8958b4e2b266e0934743d48c07413c4602d06794b4fb51a75705c255"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=143",
+          "status": 200,
+          "at": "2026-11-16T16:14:47.256893+00:00",
+          "bytes": 382678,
+          "sha256": "c1fe0b0d514e5445f881bba0f5b7f66c5d423bfe95884f067ee0528954886b08"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=142",
+          "status": 200,
+          "at": "2026-11-16T16:14:50.610794+00:00",
+          "bytes": 561523,
+          "sha256": "ac061447a146e562715d44d0cfbedba13de3ad36cabf903b2a067b95252dca6d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=141",
+          "status": 200,
+          "at": "2026-11-16T16:14:53.572133+00:00",
+          "bytes": 522144,
+          "sha256": "e7c62ece557eb5e8b99fe145f6bf132d50090530f71f281f8bd46077604969ab"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=140",
+          "status": 200,
+          "at": "2026-11-16T16:14:56.765291+00:00",
+          "bytes": 893261,
+          "sha256": "fa47a3a172bcf35d11ff60a71689a120df713122e6b72744085a6582c4fd7549"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=139",
+          "status": 200,
+          "at": "2026-11-16T16:14:59.584493+00:00",
+          "bytes": 881832,
+          "sha256": "5b6604c9d200a6f64b3444de51ece6d29629c9599c14f9eb577d4a60299104c2"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=138",
+          "status": 200,
+          "at": "2026-11-16T16:15:02.591858+00:00",
+          "bytes": 966703,
+          "sha256": "a3b0f8881dcdf90d0456f7bb1e151d3ecafb7ec14db8ca5d8dec085b745a0384"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=137",
+          "status": 200,
+          "at": "2026-11-16T16:15:05.254088+00:00",
+          "bytes": 764646,
+          "sha256": "f5334f86eca36f38915cb96190d1650dd0f512f2ebe31f6f31cc707e9b072e7a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=136",
+          "status": 200,
+          "at": "2026-11-16T16:15:08.638313+00:00",
+          "bytes": 775203,
+          "sha256": "a05a21f00c1161a08f522a15423e93caa85de43fb3faf320751203208df7e69b"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=134",
+          "status": 200,
+          "at": "2026-11-16T16:15:11.458721+00:00",
+          "bytes": 752137,
+          "sha256": "fb6e45ed796cd611fd2d99aef3866bf458ba8f8ed6f560adaeadb65d202615ad"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=133",
+          "status": 200,
+          "at": "2026-11-16T16:15:14.248317+00:00",
+          "bytes": 745598,
+          "sha256": "60d2d26029de082223a733140ee2b7ff0acc4ccf77df43386953933557eb7cb6"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=132",
+          "status": 200,
+          "at": "2026-11-16T16:15:18.132637+00:00",
+          "bytes": 992547,
+          "sha256": "4dc341d3deecef6e0593f89a59f3361820bc64a075a7478a4939231193df6eda"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=131",
+          "status": 200,
+          "at": "2026-11-16T16:15:19.636098+00:00",
+          "bytes": 838607,
+          "sha256": "99d2324e0c169bbe0efb12e15a9c879a67bb31b311a3941abf0839afa4378081"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=130",
+          "status": 200,
+          "at": "2026-11-16T16:15:23.586890+00:00",
+          "bytes": 793397,
+          "sha256": "58622d45402a626d6cf558ee788a115cf80e8294c43c5511cb9555e5e925301e"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=129",
+          "status": 200,
+          "at": "2026-11-16T16:15:26.284928+00:00",
+          "bytes": 795891,
+          "sha256": "9c8d9461d141557f9e22f93a54be15bc31c88469a360a607f7423c518ceb959d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=128",
+          "status": 200,
+          "at": "2026-11-16T16:15:28.906682+00:00",
+          "bytes": 497912,
+          "sha256": "3008d6e21c4c416441f00e131c34fcc4b3223f7e496d2d144ad270a295bd4dc2"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=127",
+          "status": 200,
+          "at": "2026-11-16T16:15:32.744439+00:00",
+          "bytes": 778991,
+          "sha256": "ab795f03c4dc62a417e857f5127fe5317577442ac8e88efb547bb002e2f9eed5"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=126",
+          "status": 200,
+          "at": "2026-11-16T16:15:35.143973+00:00",
+          "bytes": 827965,
+          "sha256": "ac5b2e341b8d81166fd240fca9bc9d11c854ffcfd0f2191123e983a9fc6e99f7"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=125",
+          "status": 200,
+          "at": "2026-11-16T16:15:38.639914+00:00",
+          "bytes": 781885,
+          "sha256": "6fead62ddfaa1524dccfa16935284bbce45d08527420db1887c70030ad5a6788"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=124",
+          "status": 200,
+          "at": "2026-11-16T16:15:40.896129+00:00",
+          "bytes": 772205,
+          "sha256": "4d3231bcfed8353bb8bef6088c869a724caf49736436947622cc5e9cc532fd06"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=123",
+          "status": 200,
+          "at": "2026-11-16T16:15:44.449459+00:00",
+          "bytes": 786547,
+          "sha256": "9a885cac532c19efff62a9fe0681ed8785726eead7f333059557aceeae4464c7"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=122",
+          "status": 200,
+          "at": "2026-11-16T16:15:47.076397+00:00",
+          "bytes": 572557,
+          "sha256": "392ad37609ccd2208a8b8a1654bdeeb0325bc38610bc5099c34e7f2bc6b0f6d0"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=121",
+          "status": 200,
+          "at": "2026-11-16T16:15:50.746091+00:00",
+          "bytes": 625646,
+          "sha256": "91072caff2bc71c4267f11284e983eea389e3c26b5505d390659de61772f6e9f"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=120",
+          "status": 200,
+          "at": "2026-11-16T16:15:53.574949+00:00",
+          "bytes": 649942,
+          "sha256": "29b31dab6d7ec0197a2fe347600217c074e9cd2925faa385d304a6583aa3be55"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=119",
+          "status": 200,
+          "at": "2026-11-16T16:15:56.805290+00:00",
+          "bytes": 744341,
+          "sha256": "8ca62ea7241fe1bba0162d84ca1171b1f00b7d9a7edcf7ef7eb9c40024de80ac"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=118",
+          "status": 200,
+          "at": "2026-11-16T16:15:59.593661+00:00",
+          "bytes": 754032,
+          "sha256": "e542bd317abaf153be204eba6a42048f5b3db888805362b9425d7c224458ea3a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=115",
+          "status": 200,
+          "at": "2026-11-16T16:16:02.601510+00:00",
+          "bytes": 642745,
+          "sha256": "14de610f58b2ee79a3a3b7dd62b5551b3a055090a942637a0d9143052bef37b9"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=114",
+          "status": 200,
+          "at": "2026-11-16T16:16:05.796882+00:00",
+          "bytes": 707081,
+          "sha256": "971992c1b4b84ccc039844369d3b5a88a9dda92e7378272b4e2e78ebe66d62cb"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=111",
+          "status": 200,
+          "at": "2026-11-16T16:16:08.933562+00:00",
+          "bytes": 1008093,
+          "sha256": "792949781bb5bc1e9c3774d68c3796d26d49be520d80fde0137b4105f7e2192b"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=110",
+          "status": 200,
+          "at": "2026-11-16T16:16:09.913582+00:00",
+          "bytes": 26174,
+          "sha256": "1ad6b3d7da0c2f0f2501cead2b8cb8630c9dfe770ae42d7ca13e7e2f069a0281"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=109",
+          "status": 200,
+          "at": "2026-11-16T16:16:12.896278+00:00",
+          "bytes": 26223,
+          "sha256": "5ef88889455a08d28699f3438c05f02062a42bd4c9350996980cf4c2c125b2fe"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=108",
+          "status": 200,
+          "at": "2026-11-16T16:16:15.903701+00:00",
+          "bytes": 26226,
+          "sha256": "e654ddffac672829ebe47f222124c18f393d409520b466247248afdd10efc20d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=107",
+          "status": 200,
+          "at": "2026-11-16T16:16:18.921061+00:00",
+          "bytes": 26176,
+          "sha256": "2a74c1ff0533cadc2c04dd438025ced35ccd4b6d5a7b8145fc82493ed46e9348"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=106",
+          "status": 200,
+          "at": "2026-11-16T16:16:21.897520+00:00",
+          "bytes": 26289,
+          "sha256": "ba72dd1326ca089ba58c5956e507ecc8a0c4801d51016c3f96cc9881321d1e0f"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=105",
+          "status": 200,
+          "at": "2026-11-16T16:16:24.894911+00:00",
+          "bytes": 26193,
+          "sha256": "1937f4bec24ae48fc1781f49a052e0f18c2820b6f4b88d0ebb8eec0555da6c80"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=104",
+          "status": 200,
+          "at": "2026-11-16T16:16:27.886229+00:00",
+          "bytes": 26162,
+          "sha256": "7b1afa066ac1d1d1547668d509e5c65d7f4c3243df14a64d611fe86dc2e3732d"
+        }
+      ],
+      "completed_at": "2026-11-16T16:16:27.909428+00:00",
+      "execution_id": "direct-2026-11-16T161321.229897_0000-f6a021",
+      "cycle": 1
+    },
+    {
+      "kind": "metadata",
+      "successes": 60,
+      "changed": 60,
+      "failures": 0,
+      "coverage_status": "partial",
+      "source_requests": 63,
+      "source_bytes": 1633216,
+      "pending": 36,
+      "listed_total": 316,
+      "listing_pages": 32,
+      "robots": {
+        "url": "http://starskku.com/robots.txt",
+        "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95",
+        "text": "User-agent: *\nAllow: /\n",
+        "checked_at": "2026-11-16T16:16:31.200952+00:00"
+      },
+      "receipts": [
+        {
+          "url": "http://starskku.com/robots.txt",
+          "status": 200,
+          "at": "2026-11-16T16:16:31.200854+00:00",
+          "bytes": 23,
+          "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+        },
+        {
+          "url": "http://starskku.com/service/agreement",
+          "status": 200,
+          "at": "2026-11-16T16:16:34.445267+00:00",
+          "bytes": 29078,
+          "sha256": "dbfb4dc49ce9caeeb0ae19126a30c1b93471f3713a366dfcbd1b9a97222a6d78"
+        },
+        {
+          "url": "http://starskku.com/board/board_list?code=research",
+          "status": 200,
+          "at": "2026-11-16T16:16:37.937566+00:00",
+          "bytes": 29074,
+          "sha256": "4443baafcce8e79d47d6df9835c3db15a0814518fadf1301bc2cec41a8477d5d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=103",
+          "status": 200,
+          "at": "2026-11-16T16:16:40.445292+00:00",
+          "bytes": 26162,
+          "sha256": "b84f1af11e9ec70efa521a39ddb28f1d668b8c1d3a90d01543abf5009f3adf26"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=102",
+          "status": 200,
+          "at": "2026-11-16T16:16:43.446472+00:00",
+          "bytes": 26237,
+          "sha256": "afe4660b4a612d4d10ee8f53160e4140ea64bf38f7052653a571493453de32ef"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=101",
+          "status": 200,
+          "at": "2026-11-16T16:16:46.445346+00:00",
+          "bytes": 26205,
+          "sha256": "5e65de7cf09f9e5427d10bfe70df55b320d6f1b910f319fa8e3fb76b931796ac"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=100",
+          "status": 200,
+          "at": "2026-11-16T16:16:49.456970+00:00",
+          "bytes": 26229,
+          "sha256": "671eee0d0e74abcd2850f6d313734602a4928fb0d54a4dc5d7f9297bc9d5d3ca"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=99",
+          "status": 200,
+          "at": "2026-11-16T16:16:52.445357+00:00",
+          "bytes": 26173,
+          "sha256": "f4ccd4e109fb27dc0f976d43f473312b3b5f502a43618ca3dadb9cb9c3aeaef6"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=98",
+          "status": 200,
+          "at": "2026-11-16T16:16:55.445536+00:00",
+          "bytes": 26239,
+          "sha256": "12ff3d7d33cc91fdb099c7da124103af9e5965fd228f9ef3fd5a9aaa1102c81f"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=97",
+          "status": 200,
+          "at": "2026-11-16T16:16:58.442510+00:00",
+          "bytes": 26217,
+          "sha256": "ca9d2037f9c3abdca3d939ab6478f97a5d25ccdccf8177e23008fc04869a36c7"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=96",
+          "status": 200,
+          "at": "2026-11-16T16:17:01.465889+00:00",
+          "bytes": 26214,
+          "sha256": "272b2287d78ec7a941800da1e6926cbfb1fc12acb77d232e9850488c82d69a0e"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=95",
+          "status": 200,
+          "at": "2026-11-16T16:17:04.457943+00:00",
+          "bytes": 26201,
+          "sha256": "d7e39b49fcef17b1e568ab9f00049926e6caab31cb7314e19bcc22dbb3913868"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=94",
+          "status": 200,
+          "at": "2026-11-16T16:17:07.447830+00:00",
+          "bytes": 26190,
+          "sha256": "0adbffc3c21f801dc015788543661fcd6e4ad3fe07e67ea2cad38568f8ed0e44"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=93",
+          "status": 200,
+          "at": "2026-11-16T16:17:10.492642+00:00",
+          "bytes": 26225,
+          "sha256": "c5c30c919d8b50cc5a28ced7540996f3ba84d509586fc1a8f408affe70b81ca2"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=92",
+          "status": 200,
+          "at": "2026-11-16T16:17:13.445363+00:00",
+          "bytes": 26192,
+          "sha256": "b4e1e1e5830111d83f524697f3236d9391b924ef666a79ea76b8ff90546e42d7"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=91",
+          "status": 200,
+          "at": "2026-11-16T16:17:16.454935+00:00",
+          "bytes": 26251,
+          "sha256": "576ebdba518fd340f90eec51b23a19164df0c7ff5301082a2c41f455dff20319"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=90",
+          "status": 200,
+          "at": "2026-11-16T16:17:19.447066+00:00",
+          "bytes": 26258,
+          "sha256": "8e43d7d8c3e164128353f32e428192a743de39f1a14fe84c5612c32a7d4f8c64"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=89",
+          "status": 200,
+          "at": "2026-11-16T16:17:22.459773+00:00",
+          "bytes": 26206,
+          "sha256": "738f29f76a75d77f54348b6a30f4d9fba587fd1ef6a258a105303344405353be"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=88",
+          "status": 200,
+          "at": "2026-11-16T16:17:25.467365+00:00",
+          "bytes": 26177,
+          "sha256": "26b11f6b2ef5e6824052944d14d140a8fa9c18776f4b59f74e8327e1c3755885"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=87",
+          "status": 200,
+          "at": "2026-11-16T16:17:28.453047+00:00",
+          "bytes": 26251,
+          "sha256": "7b8727cbd80ac23246f3b6ab75cc054c0e56e1b2dc84920e0f380f0b5ace8834"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=86",
+          "status": 200,
+          "at": "2026-11-16T16:17:31.445689+00:00",
+          "bytes": 26242,
+          "sha256": "472a727e31fb4469a79156172afdada3b128e8b8bc16bec976cbfc873a201a28"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=85",
+          "status": 200,
+          "at": "2026-11-16T16:17:34.461501+00:00",
+          "bytes": 26192,
+          "sha256": "7ae53be137368d61ed3542fe7d30722d34b0fb260f958074c7288e476f8a88c5"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=84",
+          "status": 200,
+          "at": "2026-11-16T16:17:37.438228+00:00",
+          "bytes": 26221,
+          "sha256": "9932c3aa372de55a983486fe4c108090b20be67c9329ebbe5ffe6ade4e91cebb"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=83",
+          "status": 200,
+          "at": "2026-11-16T16:17:40.464277+00:00",
+          "bytes": 26162,
+          "sha256": "abd59f3f4987ebfa5d915dceaecf7d65411cc1e02d260f2d388774d20935201c"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=82",
+          "status": 200,
+          "at": "2026-11-16T16:17:43.473674+00:00",
+          "bytes": 26157,
+          "sha256": "c097a3dbca9a1e475667f62c04fdbcce45d2ac87286c0ad02a79730e185d64c4"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=81",
+          "status": 200,
+          "at": "2026-11-16T16:17:46.436038+00:00",
+          "bytes": 26241,
+          "sha256": "6ebff861df6c3b4a9365ed29eaa7b5804277680971d14ca50abbe368efe6586a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=80",
+          "status": 200,
+          "at": "2026-11-16T16:17:49.668646+00:00",
+          "bytes": 26226,
+          "sha256": "0d6b7f53391da9df823d8cf02e8c7599c2d551d4be4c10ab720ea4366cf40bd4"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=79",
+          "status": 200,
+          "at": "2026-11-16T16:17:52.610180+00:00",
+          "bytes": 26260,
+          "sha256": "214269ced71a5693ce7351a5fd65c76808c60d27bbc17eca822ff085b3c98f5a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=78",
+          "status": 200,
+          "at": "2026-11-16T16:17:55.646853+00:00",
+          "bytes": 26191,
+          "sha256": "a9f431a5c719524016fa2fdcdb4add25e28cb7a59a0f0deef465c252c0d6ecd8"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=77",
+          "status": 200,
+          "at": "2026-11-16T16:17:58.616496+00:00",
+          "bytes": 26203,
+          "sha256": "b7fff604b975316abc18a6b3bacba93874b893fd384c0f83ca05f28397a14707"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=76",
+          "status": 200,
+          "at": "2026-11-16T16:18:01.655038+00:00",
+          "bytes": 26208,
+          "sha256": "4d1949bfa17f73c3764e61c140018f3106bbfc535169e54447ff84fb875ca1fc"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=75",
+          "status": 200,
+          "at": "2026-11-16T16:18:04.651916+00:00",
+          "bytes": 26213,
+          "sha256": "927bbd523e073243ff03db10bb8a0972bd997e188c9b23b75979e7bc772d0a19"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=74",
+          "status": 200,
+          "at": "2026-11-16T16:18:07.448640+00:00",
+          "bytes": 26212,
+          "sha256": "4746207f2ac9905bdee8588fd97db2a3954ba9ef54cbd05f0e90bfe4deee315a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=73",
+          "status": 200,
+          "at": "2026-11-16T16:18:10.675208+00:00",
+          "bytes": 26176,
+          "sha256": "5cbeb36175d4b20305956c4183d8fb2f66142cc071c45961d7665988b612988c"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=72",
+          "status": 200,
+          "at": "2026-11-16T16:18:13.635507+00:00",
+          "bytes": 26208,
+          "sha256": "483226b017935b7f7e0493c20bd6383f793b3f14aea06edeeb729022f8047611"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=71",
+          "status": 200,
+          "at": "2026-11-16T16:18:16.484088+00:00",
+          "bytes": 26251,
+          "sha256": "66c51e3d28745e3aea071618e48cc697d86ec553295e389bdcca8eb4346d3b6a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=70",
+          "status": 200,
+          "at": "2026-11-16T16:18:19.453632+00:00",
+          "bytes": 26357,
+          "sha256": "b09f975627fb4125462424a27a206a930f854895436f9ca03bb0f9e3dcefa4ea"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=69",
+          "status": 200,
+          "at": "2026-11-16T16:18:22.623713+00:00",
+          "bytes": 26212,
+          "sha256": "cf3a465c78c3157febc066e95cf90f0e886e15c15d57004053eb6dd6e3c674b9"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=68",
+          "status": 200,
+          "at": "2026-11-16T16:18:25.652687+00:00",
+          "bytes": 26425,
+          "sha256": "a2cb693af889c38fd6b3b124ea31c4bb78c8a360ecf66ecbcf4cebc4d8676e69"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=67",
+          "status": 200,
+          "at": "2026-11-16T16:18:28.672293+00:00",
+          "bytes": 26280,
+          "sha256": "22fd89acf81ee2414800de7dc4ddf801cbbb7704ad1e55ac65623c1a0ad2e0dd"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=66",
+          "status": 200,
+          "at": "2026-11-16T16:18:31.449094+00:00",
+          "bytes": 26284,
+          "sha256": "c9d96e37853964af14cb28a8c7ff5e1c8a482def6b8406ae1ad3eaaf45d59e63"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=65",
+          "status": 200,
+          "at": "2026-11-16T16:18:34.779133+00:00",
+          "bytes": 26266,
+          "sha256": "de3366fa0b005f51ed67cf3e818eaf08b850978d1b8fa58baf99ea56205ed634"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=64",
+          "status": 200,
+          "at": "2026-11-16T16:18:37.611272+00:00",
+          "bytes": 26313,
+          "sha256": "cfffb90fbe6212117b9b604b27443180fbabae1c562a8c3a12aed01924b9a3d5"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=63",
+          "status": 200,
+          "at": "2026-11-16T16:18:40.617647+00:00",
+          "bytes": 26288,
+          "sha256": "9827c092cb4a1c20d4fc68ba130491b0adb8b588810e3a456a9e350255fd08c9"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=62",
+          "status": 200,
+          "at": "2026-11-16T16:18:43.449870+00:00",
+          "bytes": 26347,
+          "sha256": "c0c936714df00ba0b750a3c590e5bf11399fffe6f9ca1ce45ca0651cbaf67e91"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=61",
+          "status": 200,
+          "at": "2026-11-16T16:18:46.617455+00:00",
+          "bytes": 26403,
+          "sha256": "60188c2be0343d3945bd76e11726e10e090b4b6e3a0d00925d9f064cf30c0fbb"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=59",
+          "status": 200,
+          "at": "2026-11-16T16:18:49.443974+00:00",
+          "bytes": 26196,
+          "sha256": "a2d1dbc30713628860e84c6ce37f4f6713e071244bab904723881811efc114a2"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=58",
+          "status": 200,
+          "at": "2026-11-16T16:18:52.479506+00:00",
+          "bytes": 26299,
+          "sha256": "15908cb1732268c82878ec7aa3e4c5bf594f0bca4827f4dc95344478f0ba7ac7"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=57",
+          "status": 200,
+          "at": "2026-11-16T16:18:55.453576+00:00",
+          "bytes": 26273,
+          "sha256": "06446d15b4473ffb9b009b7e1a79b54ff0e2703c64ad118347db3b10541464ac"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=56",
+          "status": 200,
+          "at": "2026-11-16T16:18:58.456567+00:00",
+          "bytes": 26311,
+          "sha256": "27f893dc2dbda36e1b84385a6ccc60a25be7393ba4ed8b7d09308fe33de32c82"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=55",
+          "status": 200,
+          "at": "2026-11-16T16:19:01.434254+00:00",
+          "bytes": 26242,
+          "sha256": "d61e2291c9696c4d4dd48c5c4a9054519442519639753c9ad94036dd09c17ba0"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=54",
+          "status": 200,
+          "at": "2026-11-16T16:19:04.658443+00:00",
+          "bytes": 26187,
+          "sha256": "c2c3b35fd629ce89f8b1bbf48bde0d3ca8360d3a758b3282432ae5df81861e92"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=53",
+          "status": 200,
+          "at": "2026-11-16T16:19:07.450140+00:00",
+          "bytes": 26273,
+          "sha256": "f33d32d96dcca6e0095fcebb2710ac9d26f5b31f76e580840dd241d03fcab052"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=52",
+          "status": 200,
+          "at": "2026-11-16T16:19:10.454278+00:00",
+          "bytes": 26318,
+          "sha256": "a39aac67f6614852ce66cd5d54c328d78a72b5abb1581c870dc6e3f1b6fe16d4"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=51",
+          "status": 200,
+          "at": "2026-11-16T16:19:13.457422+00:00",
+          "bytes": 26289,
+          "sha256": "b8485c7b19b72da85715e0e655cdbf6c241e697592e661b05a2f1b9b7f3bd844"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=50",
+          "status": 200,
+          "at": "2026-11-16T16:19:16.453339+00:00",
+          "bytes": 26502,
+          "sha256": "219fbf399a749086a4aa72130ec2855d2f8186605dc709be116e168beec2c0fb"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=49",
+          "status": 200,
+          "at": "2026-11-16T16:19:19.450582+00:00",
+          "bytes": 26269,
+          "sha256": "35d7419b0d98a2a50e5241a8d2c092e1c1a342746e8ab9d8b19271b53b59c6bf"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=48",
+          "status": 200,
+          "at": "2026-11-16T16:19:22.623979+00:00",
+          "bytes": 26325,
+          "sha256": "a980a7571dc8b06d24f3b8d1c26e653357e1684ca0bb85d251ac1f45eb91d224"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=47",
+          "status": 200,
+          "at": "2026-11-16T16:19:25.438360+00:00",
+          "bytes": 26226,
+          "sha256": "319c3930635109e8f169b0681a3ba9d752d5cf3baf531a52cfc0e752b4e130a1"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=46",
+          "status": 200,
+          "at": "2026-11-16T16:19:28.620618+00:00",
+          "bytes": 26342,
+          "sha256": "8f6a3a0a99b65c7d4c4bff5480474de745069127dbadc2b399e0c44388a66ac4"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=45",
+          "status": 200,
+          "at": "2026-11-16T16:19:31.436849+00:00",
+          "bytes": 26228,
+          "sha256": "e34fdb0fd43cf24e3e5ac4840a7132bdde47d2b1087124a9dda3ecf005b137f5"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=44",
+          "status": 200,
+          "at": "2026-11-16T16:19:34.677855+00:00",
+          "bytes": 26262,
+          "sha256": "c9c22d53dc117a36fd7c3718fe843b0408b1a3dbb4e71346faff5538cc8622dc"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=43",
+          "status": 200,
+          "at": "2026-11-16T16:19:37.459346+00:00",
+          "bytes": 26334,
+          "sha256": "59c5920e71a8165c60e00f0eed50653c19ad0c665df25fb3c0befda23120ea88"
+        }
+      ],
+      "completed_at": "2026-11-16T16:19:37.500235+00:00",
+      "execution_id": "direct-2026-11-16T161321.229897_0000-f6a021",
+      "cycle": 2
+    },
+    {
+      "kind": "metadata",
+      "successes": 36,
+      "changed": 36,
+      "failures": 0,
+      "coverage_status": "scan_complete",
+      "source_requests": 39,
+      "source_bytes": 5952399,
+      "pending": 0,
+      "listed_total": 316,
+      "listing_pages": 32,
+      "robots": {
+        "url": "http://starskku.com/robots.txt",
+        "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95",
+        "text": "User-agent: *\nAllow: /\n",
+        "checked_at": "2026-11-16T16:19:40.882151+00:00"
+      },
+      "receipts": [
+        {
+          "url": "http://starskku.com/robots.txt",
+          "status": 200,
+          "at": "2026-11-16T16:19:40.882044+00:00",
+          "bytes": 23,
+          "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+        },
+        {
+          "url": "http://starskku.com/service/agreement",
+          "status": 200,
+          "at": "2026-11-16T16:19:44.078248+00:00",
+          "bytes": 29078,
+          "sha256": "bedb87faec5e31d190a77598e5c3931395f46e15969e9ad9b72b554ada9cfccd"
+        },
+        {
+          "url": "http://starskku.com/board/board_list?code=research",
+          "status": 200,
+          "at": "2026-11-16T16:19:47.462050+00:00",
+          "bytes": 29074,
+          "sha256": "de9abd456ae926df985e98be091a97db3d774a683d60e3a8566553a6981ff3d0"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=42",
+          "status": 200,
+          "at": "2026-11-16T16:19:50.106800+00:00",
+          "bytes": 26700,
+          "sha256": "76b0ed97809c0bbae541dcdcb92f042b549426f7ede4a47e6188a1caf55ff3f0"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=40",
+          "status": 200,
+          "at": "2026-11-16T16:19:52.928135+00:00",
+          "bytes": 26758,
+          "sha256": "3db35ba3c6081b627717bfa0a50d7ff3decde295ffe67f9ccfbfead4b22007d9"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=38",
+          "status": 200,
+          "at": "2026-11-16T16:19:55.933360+00:00",
+          "bytes": 26378,
+          "sha256": "a22b5070f3d73596d2be508dbfb4be2e67f2771a51707e27eaf7bea2eaaa65eb"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=36",
+          "status": 200,
+          "at": "2026-11-16T16:19:58.975705+00:00",
+          "bytes": 26238,
+          "sha256": "5db22cd487e244e82cd09ac21896e0d02fb627e6f7d60bad7eb95c86e9b59f38"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=35",
+          "status": 200,
+          "at": "2026-11-16T16:20:01.935594+00:00",
+          "bytes": 26309,
+          "sha256": "7120f63d0ac89dc60afef425307368ab9d6b429d23713ce12d1be019705822b9"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=34",
+          "status": 200,
+          "at": "2026-11-16T16:20:04.930858+00:00",
+          "bytes": 26166,
+          "sha256": "a199d350cf0612e7dedaa53c405065a298410636512446d327be47b5e95a4dc2"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=33",
+          "status": 200,
+          "at": "2026-11-16T16:20:07.937686+00:00",
+          "bytes": 26262,
+          "sha256": "670599b564ffed0b2ae847bcc36d8fde246a6b4406073765fed7f1ee896c4c7b"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=32",
+          "status": 200,
+          "at": "2026-11-16T16:20:10.942447+00:00",
+          "bytes": 26365,
+          "sha256": "9b9d1c1837f279ba2178985e7ea543eb8e8cb2ce643096346b6df78e80d339ce"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=31",
+          "status": 200,
+          "at": "2026-11-16T16:20:13.953318+00:00",
+          "bytes": 26351,
+          "sha256": "8b7b709477ea1aebcbfb5ed469c76be17e4da1b2869af09911b69a99bc136124"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=30",
+          "status": 200,
+          "at": "2026-11-16T16:20:16.954611+00:00",
+          "bytes": 26335,
+          "sha256": "2fe0844d17aa42c9f047abe8d42719b6e5fb63040cf27a45a6bc792659b1a1eb"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=29",
+          "status": 200,
+          "at": "2026-11-16T16:20:19.945494+00:00",
+          "bytes": 26384,
+          "sha256": "28c34c0a8f09df08f3cc8f0746ec12530921ac4e35dc4b40cdc5a116cbe3af22"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=28",
+          "status": 200,
+          "at": "2026-11-16T16:20:22.943572+00:00",
+          "bytes": 26334,
+          "sha256": "4bae59130136ede1687ab5d6ce57f71e46254735ff74c587b207c41e6292a2ae"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=27",
+          "status": 200,
+          "at": "2026-11-16T16:20:26.125958+00:00",
+          "bytes": 26355,
+          "sha256": "01eb7f811b143ebcb683bd1b8d312d10c7b7abbeaaebe4d7308dd8f06c81bfb3"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=26",
+          "status": 200,
+          "at": "2026-11-16T16:20:28.954049+00:00",
+          "bytes": 26226,
+          "sha256": "c9d67b247bf1cd4221f126c47bef8f4d2ae9d1ad4928faf28936b12a8fb284dc"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=25",
+          "status": 200,
+          "at": "2026-11-16T16:20:31.960001+00:00",
+          "bytes": 26253,
+          "sha256": "039c18d8197f1f0694cceebb9b066553f9407b693cc1304792d5c104e01d728d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=24",
+          "status": 200,
+          "at": "2026-11-16T16:20:34.945445+00:00",
+          "bytes": 26354,
+          "sha256": "69e811130e00310e60b9c12f59fa8aed6367c2615b007c5c0b651dd7b80fd2af"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=23",
+          "status": 200,
+          "at": "2026-11-16T16:20:38.126380+00:00",
+          "bytes": 26301,
+          "sha256": "8bbcbe2f8e01cfc889e99f362133b3751cad164414a0476eda5ed29fd1930c7d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=22",
+          "status": 200,
+          "at": "2026-11-16T16:20:40.946019+00:00",
+          "bytes": 26290,
+          "sha256": "64649b43201ea07c98d4f327b3125c291cafd25cde03a63255bf138c2524ab6c"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=21",
+          "status": 200,
+          "at": "2026-11-16T16:20:43.949241+00:00",
+          "bytes": 26311,
+          "sha256": "b2aee089c45c73aac2d11ff4c72f57a23de4baa0f13cefe3d7f3c9c0d6381504"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=20",
+          "status": 200,
+          "at": "2026-11-16T16:20:46.947436+00:00",
+          "bytes": 26305,
+          "sha256": "7bf51feeaf20f5d452b0f0d20ad3a5ea5e1e7c5cdd83e35981ebf24dde8e8acb"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=19",
+          "status": 200,
+          "at": "2026-11-16T16:20:49.956414+00:00",
+          "bytes": 26265,
+          "sha256": "55fe1bac73d2f3866486c0b659cb3d9ecf8dedd28e30031150601f320f093e70"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=18",
+          "status": 200,
+          "at": "2026-11-16T16:20:52.954429+00:00",
+          "bytes": 26166,
+          "sha256": "898c953f4bcd45e91fe091f3bb9757b0832762c87adc36f91e39cff8ac33e57f"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=17",
+          "status": 200,
+          "at": "2026-11-16T16:20:56.940268+00:00",
+          "bytes": 325174,
+          "sha256": "a51a40a86c8c461dd69e0bea34499bc3b10235ab753116e4b92b3bd66be7f8e9"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=16",
+          "status": 200,
+          "at": "2026-11-16T16:20:59.943033+00:00",
+          "bytes": 351342,
+          "sha256": "d437eaea822568620f9b99604e162fa9e8633c7f825eb64acdce567f7fb192e1"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=15",
+          "status": 200,
+          "at": "2026-11-16T16:21:03.137749+00:00",
+          "bytes": 360529,
+          "sha256": "3109d5f6c4247f4dafbd7393d471ad90f31e03075117347bb53c76dae72e181b"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=14",
+          "status": 200,
+          "at": "2026-11-16T16:21:06.275256+00:00",
+          "bytes": 341813,
+          "sha256": "63cf199b31ae4f9501414120b227bc0dd79190aa0cdf97a44840d450f899986d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=13",
+          "status": 200,
+          "at": "2026-11-16T16:21:09.258362+00:00",
+          "bytes": 435169,
+          "sha256": "35c1fa3a59f8d6240019d6a7b2dc42ad6da9ef08194ac1da7907b9e6fc294e7a"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=12",
+          "status": 200,
+          "at": "2026-11-16T16:21:12.103918+00:00",
+          "bytes": 403925,
+          "sha256": "ad1dc70da508fc7765086280a8ca593d5d0126a4307f44a5ed4418050bb68a64"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=11",
+          "status": 200,
+          "at": "2026-11-16T16:21:15.109652+00:00",
+          "bytes": 431861,
+          "sha256": "e77e72b212681c262cb181fc23bf1d11f14de430a3f5d6aa7641223d3cb89397"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=10",
+          "status": 200,
+          "at": "2026-11-16T16:21:17.939424+00:00",
+          "bytes": 299175,
+          "sha256": "4b46fdc83b3e4fa52f8d03bc68ada16621fbc05faed25c59b7d5b7e38202df2e"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=9",
+          "status": 200,
+          "at": "2026-11-16T16:21:21.108674+00:00",
+          "bytes": 381089,
+          "sha256": "48cfb8eced03999f89c8ce2f34b76a8ef57e6e03c0d946d8167e13b52700e36d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=8",
+          "status": 200,
+          "at": "2026-11-16T16:21:24.304803+00:00",
+          "bytes": 452931,
+          "sha256": "6f7f880fab1ce12e3181b8baff9540db2b49e4398a8bd96223e11c4efde45f5d"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=7",
+          "status": 200,
+          "at": "2026-11-16T16:21:27.272728+00:00",
+          "bytes": 393426,
+          "sha256": "490c687a249766347cdd7eed5552cdae3b2f357f17d767dcdac8b0d05c7a3836"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=6",
+          "status": 200,
+          "at": "2026-11-16T16:21:30.136021+00:00",
+          "bytes": 418758,
+          "sha256": "075ee4f963186a2debbcfee2304ed167d9c04b745d0e6238038f17450f44da51"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=5",
+          "status": 200,
+          "at": "2026-11-16T16:21:33.112302+00:00",
+          "bytes": 400299,
+          "sha256": "72427d9a9e779f7aa5d212f0c1d1a0ada25492727444627f9d7c547a25bad550"
+        },
+        {
+          "url": "http://starskku.com/board/board_view?code=research&no=4",
+          "status": 200,
+          "at": "2026-11-16T16:21:35.942818+00:00",
+          "bytes": 319327,
+          "sha256": "9d2d70198af8af23e8ef6e1b3a8fa893ac38fa9f38ebedb1c23e5e232093da07"
+        }
+      ],
+      "completed_at": "2026-11-16T16:21:35.992765+00:00",
+      "execution_id": "direct-2026-11-16T161321.229897_0000-f6a021",
+      "cycle": 3
+    }
+  ]
+}
