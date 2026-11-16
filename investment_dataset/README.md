@@ -37,9 +37,13 @@ samples = [json.loads(x) for x in open('investment_dataset/data/training_samples
 게시물 제목의 기업명은 검색 표시용이며 종목 마스터와 연결하는 키로 사용하지 않습니다.
 CSV의 빈칸은 null, 숫자 0은 실제 영입니다. Parquet/JSON의 null도 동일한 의미입니다.
 
+## 현재 운영 방식
+
+사용자 요청으로 GitHub 자동 수집 예약은 일시중지했습니다. 현재 Codex 작업 환경에서 직접 수집을 재개했고, GitHub는 코드 검증과 결과 버전 보관에 사용합니다. 노트북 종료 이후 독립 지속 운영은 현재 완료 조건에서 제외됐습니다. 예약의 다음 실행 시각은 없습니다.
+
 ## 실행
 
-Python 3.12. 저장소 루트에서 다음 명령을 사용합니다. 사용자의 노트북 실행은 운영 방식이 아닙니다.
+Python 3.12. 저장소 루트에서 다음 명령을 사용합니다. 현재는 직접 실행 방식을 사용합니다. 노트북에서도 같은 코드로 실행할 수 있도록 Windows PowerShell과 macOS/Linux용 스크립트를 포함했습니다.
 
 ```bash
 python -m pip install -r investment_dataset/pipeline/requirements.lock.txt

@@ -1,7 +1,10 @@
 # 운영 절차
 
 대상 저장소: https://github.com/shjoo0217-dev/automated-trading-system (private).
-워크플로: .github/workflows/star-pipeline.yml. 예약: 매일 00:17 Asia/Seoul = 15:17 UTC.
+수집 워크플로: .github/workflows/star-pipeline.yml. 현재 사용자 요청으로 disabled_manually(예약 일시중지).
+설정된 예약식은 매일 00:17 Asia/Seoul = 15:17 UTC이나 활성 예약이 아니며 다음 실행 시각은 없습니다.
+검증 전용 워크플로: .github/workflows/star-validate.yml (수동, 사이트 요청 없음).
+대안: pipeline/run_direct.py. 직접 실행 로그와 재개 상태는 operations/direct_runs.json 및 data/checkpoint.json.
 초기 코드 push는 10건 표본, schedule/수동 collect는 최대 350건·40페이지·450회 요청입니다.
 
 - 실행환경: GitHub-hosted ubuntu-24.04, Python 3.12, 최대 45분, 한 작업만 동시 실행.
@@ -36,6 +39,8 @@ gh run cancel RUN_ID --repo shjoo0217-dev/automated-trading-system
 메타데이터 schema 변경은 코드 버전과 함께 관리하고, 과거 Release를 재작성하지 않습니다.
 
 ## 비용 근거
+
+현재 자동 수집 예약은 중지되어 반복 예약 비용은 발생하지 않습니다. 검증 전용 수동 실행과 재개한 직접 실행은 별도로 기록합니다. 아래는 재활성화 시의 가정입니다.
 
 현재 확인한 게시판은 316건·32페이지. full scan 예상 1 robots + 1 약관 + 32 목록 + 316 상세 = 350 HTTP 요청. 오래된 HTML에 이미지 데이터가 내장되어 있어 전체 100MB 한도로 나누어 재개할 수 있습니다.
 3초 간격만 약 17.5분; 설치·테스트·상태 저장·ZIP 업로드를 합쳐 회당 약 20~25분,

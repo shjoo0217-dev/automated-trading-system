@@ -75,10 +75,16 @@ HistoricalProvider는 과거 시점 데이터, LiveExecution은 미래 호가·�
 후속 개발에는 시점별 투자 가능 universe, 포트폴리오 중복보유·거래비용·회전율·거래정지·상폐 정산,
 페이퍼 트레이딩, 주문 중복 방지, 일일 손실 한도와 실행 중단 제어가 필요합니다.
 
+## 직접 실행 대안 및 현재 예약 상태
+
+GitHub 자동 수집 실패 알림에 대한 사용자 요청을 반영해 STAR 수집 예약을 일시중지했습니다. 사이트 수집은 현재 Codex 관리형 실행환경의 직접 프로세스로 수행합니다. 이 대안의 실행 ID·로그는 operations/direct_runs.json과 direct_execution.log에 있습니다. GitHub는 코드/데이터 검증과 Release/체크포인트 보관에 계속 사용합니다.
+
+ZIP을 해제한 상위 폴더에서 macOS/Linux는 `bash investment_dataset/pipeline/run_direct.sh`, Windows는 `powershell -File investment_dataset/pipeline/run_direct.ps1`로 재개할 수 있습니다. Python 3.12와 인터넷 연결이 필요합니다. 사용자 노트북의 예약 작업을 실제 설치하지는 않았습니다. 노트북·브라우저 종료 후 독립 지속 운영은 더 이상 이번 완료 조건이 아닙니다. 다음 예약 실행은 없습니다.
+
 ## 클라우드 운영과 남은 일
 
 배포와 실제 실행 증거는 operations/deployment_status.json, 원격 로그는 GitHub Actions, 영구 결과는 Releases입니다.
-GitHub Actions runner는 작업 완료 후 정리됩니다. 실행 중인 원격 작업·서버측 예약·영구 저장은 노트북/브라우저/Codex 세션과 독립입니다.
+GitHub Actions runner는 작업 완료 후 정리되지만 현재 STAR 자동 수집은 비활성입니다. 직접 실행 프로세스는 현재 실행환경이 유지되어야 합니다. 완료된 결과의 GitHub/Drive 영구 보관은 프로세스 종료와 별개입니다.
 단, GitHub 예약은 정확한 시각 SLA가 없으며 서비스 장애·계정/결제/Actions 비활성화·사용량 제한에 영향을 받습니다.
 Actions artifact의 만료 저장을 영구 저장이라고 간주하지 않습니다. 여기서는 삭제 전까지 유지되는 private Release assets와 state branch를 사용합니다.
 현재 Google Drive에는 이 대화의 검증된 스냅샷을 저장합니다. 매일 Drive로 자동 미러링하는 인증은 연결하지 않았습니다.

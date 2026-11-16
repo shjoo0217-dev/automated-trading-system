@@ -113,3 +113,5 @@ security_history,delisted_at,"[""string"", ""null""]",True,상장폐지일,ticke
 security_history,corp_code,"[""string"", ""null""]",True,OpenDART 법인코드,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
 security_history,known_at,"[""string"", ""null""]",True,이 연결정보를 알 수 있었던 시점,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
 security_history,source_id,"[""string"", ""null""]",True,공급자·라이선스·원문 식별자,ticker는 문자열; 모든 시각은 timezone 포함; 문서버전은 file_sha256,schema_only
+report,inline_image_count,"[""integer"", ""null""]",True,본문 data: 이미지 수; 실제 이미지 내용은 저장하지 않음,내용 저장 없이 지문으로만 변경 확인,see_manifest
+report,inline_image_sha256,"""array""",False,내장 이미지 변경 확인용 해시만 저장; 이미지 복원 불가,내용 저장 없이 지문으로만 변경 확인,see_manifest

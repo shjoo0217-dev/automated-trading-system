@@ -1,0 +1,23 @@
+name: STAR code and dataset validation only
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: investment_dataset/pipeline/requirements.lock.txt
+      - run: python -m pip install -r investment_dataset/pipeline/requirements.lock.txt
+      - name: Validate parser, leakage controls and dataset schemas
+        env:
+          PYTHONPATH: investment_dataset/pipeline
+        run: python -m pytest investment_dataset/pipeline/tests -q

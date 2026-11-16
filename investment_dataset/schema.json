@@ -208,6 +208,20 @@
         "training_eligible": {
           "type": "boolean",
           "description": "모든 품질/권리/시간 조건 통과 여부"
+        },
+        "inline_image_count": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "본문 data: 이미지 수; 실제 이미지 내용은 저장하지 않음"
+        },
+        "inline_image_sha256": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "내장 이미지 변경 확인용 해시만 저장; 이미지 복원 불가"
         }
       },
       "required": [
